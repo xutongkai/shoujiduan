@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我创建的拼团</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body style="background: #F7F7F7;">
+		<div class="mine_box">
+			<div class="mine_box_title">天道欧洲领航-马歇尔留学计划（步入欧洲名校殿堂，开启品质留学之旅）</div>
+			<div class="mine_box_center">
+				<div class="mine_bc_status">拼团中</div>
+				<div class="mine_bc_text">5人拼团</div>
+				<div class="mine_bc_time" att="21151"></div>
+			</div>
+			<div class="mine_box_money">
+				<div class="mine_bm_new">￥35.00</div>
+				<div class="mine_bm_old">￥35.00</div>
+			</div>
+		</div>
+		<div class="mine_box">
+			<div class="mine_box_title">天道欧洲领航-马歇尔留学计划（步入欧洲名校殿堂，开启品质留学之旅）</div>
+			<div class="mine_box_center">
+				<div class="mine_bc_status">拼团中</div>
+				<div class="mine_bc_text">5人拼团</div>
+				<div class="mine_bc_time" att="15"></div>
+			</div>
+			<div class="mine_box_money">
+				<div class="mine_bm_new">￥35.00</div>
+				<div class="mine_bm_old">￥35.00</div>
+			</div>
+		</div>
+		<!--<div class="mine_box">
+			<div class="mine_box_title">天道欧洲领航-马歇尔留学计划（步入欧洲名校殿堂，开启品质留学之旅）</div>
+			<div class="mine_box_center">
+				<div class="mine_bc_status">拼团中</div>
+				<div class="mine_bc_text">5人拼团</div>
+				<div class="mine_bc_time">剩余<span></span>：<span></span>：<span></span></div>
+			</div>
+			<div class="mine_box_money">
+				<div class="mine_bm_new">￥35.00</div>
+				<div class="mine_bm_old">￥35.00</div>
+			</div>
+		</div>
+		<div class="mine_box">
+			<div class="mine_box_title">天道欧洲领航-马歇尔留学计划（步入欧洲名校殿堂，开启品质留学之旅）</div>
+			<div class="mine_box_center">
+				<div class="mine_bc_status">拼团中</div>
+				<div class="mine_bc_text">5人拼团</div>
+				<div class="mine_bc_time">剩余<span></span>：<span></span>：<span></span></div>
+			</div>
+			<div class="mine_box_money">
+				<div class="mine_bm_new">￥35.00</div>
+				<div class="mine_bm_old">￥35.00</div>
+			</div>
+		</div>-->
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+ 			
+
+			 // 倒计时
+			function resetTime(dom,time){
+			  var timer=null;
+			  var t=time;
+			  var m=0;
+			  var s=0;
+			  m=Math.floor(t/60);
+			  m<10&&(m='0'+m);
+			  s=Math.floor(t%60);
+			  $(dom).html(m+":"+s);
+			  function countDown(){
+			   s--;
+			
+			   if(s<=0){
+			    s=59;
+			    m--;
+			    if(m<=0){
+			            $(dom).remove();
+			        clearInterval(timer);
+			                return;
+			    }
+			   }
+			   s<10&&(s='0'+s);
+			 console.log(m+":"+s);
+			   $(dom).html(m+":"+s);
+			  }
+			  timer=setInterval(countDown,1000);
+			  
+			}
+			function daojishi(){
+			        var arr = $('.mine_bc_time');
+					console.log(arr);
+			        for(let i=0;i<arr.length;i++){
+						console.log(arr[i]);
+			            resetTime(arr[i],$(arr[i]).attr('att'));
+			            
+			        }
+			    }
+			daojishi();
+			
+			      
+			      
+		</script>
+	</body>
+</html>
