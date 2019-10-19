@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>商品评价</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" href="css/swiper.min.css">
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="x_news_header">
+			<img src="img/title_ico_back2.png" alt="" class="x_nh_return" />
+			<span class="x_new_text">商品评价</span>
+		</div>
+		
+		<div class="assess_header">
+			<div class="assess_header_list list_one">
+				<!--<img class="assess_header_liso_img" src="img/pl_ico_chosen.png"/>-->
+				全部 24772
+			</div>
+			<div class="assess_header_list list_two">
+				好评 24772
+			</div>
+			<div class="assess_header_list list_three">
+				中评 12
+			</div>
+			<div class="assess_header_list list_four">
+				差评 0
+			</div>
+		</div>
+		<div class="assess_empty"></div>
+		
+		<!--商品评价列表-->
+		<div class="sp_assess_box">
+			<div class="assess_list">
+				<img src="img/avatar.png" alt="" class="assess_list_img" />
+				<div class="assess_list_box">
+					<div class="assess_lb_title">
+						<div class="assess_lb_title_name">昵称</div>
+						<div class="assess_lb_title_time">2019-02-03</div>
+					</div>
+					<div class="assess_lb_box">
+						<img src="img/pj_ico_r.png" alt="" class="assess_lbb_img" />
+						<img src="img/pj_ico_r.png" alt="" class="assess_lbb_img" />
+						<img src="img/pj_ico_r.png" alt="" class="assess_lbb_img" />
+						<img src="img/pj_ico_r.png" alt="" class="assess_lbb_img" />
+						<img src="img/pj_ico_g.png" alt="" class="assess_lbb_img" />
+					</div>
+					<div class="assess_lb_text">评价内容，文字文字评价内容，文字文字评价内容，文字文字</div>
+					<div class="assess_lbi_box">
+						<img src="img/sign_ico_facebook.png" alt="" class="assess_lbi_img" />
+						<img src="img/sign_ico_facebook.png" alt="" class="assess_lbi_img" />
+						<img src="img/sign_ico_facebook.png" alt="" class="assess_lbi_img" />
+						<img src="img/sign_ico_facebook.png" alt="" class="assess_lbi_img" />
+						<img src="img/sign_ico_facebook.png" alt="" class="assess_lbi_img" />
+					</div>
+				</div>
+			</div>
+			<div class="assess_list">
+				<img src="img/avatar.png" alt="" class="assess_list_img" />
+				<div class="assess_list_box">
+					<div class="assess_lb_title">
+						<div class="assess_lb_title_name">昵称</div>
+						<div class="assess_lb_title_time">2019-02-03</div>
+					</div>
+					<div class="assess_lb_box">
+						<img src="img/pj_ico_r.png" alt="" class="assess_lbb_img" />
+						<img src="img/pj_ico_r.png" alt="" class="assess_lbb_img" />
+						<img src="img/pj_ico_r.png" alt="" class="assess_lbb_img" />
+						<img src="img/pj_ico_r.png" alt="" class="assess_lbb_img" />
+						<img src="img/pj_ico_g.png" alt="" class="assess_lbb_img" />
+					</div>
+					<div class="assess_lb_text">评价内容，文字文字评价内容，文字文字评价内容，文字文字</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$('.assess_header_list').click(function(){
+				$('.assess_header_list').css("color","#333");
+				$('.assess_header_list').css("border","1px solid #FFF");
+				$(this).css("color","#FF423F");
+				$(this).css("border","1px solid #FF423F");
+			})
+		</script>
+	</body>
+</html>

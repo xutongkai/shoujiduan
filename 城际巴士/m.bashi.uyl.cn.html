@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="css/zxdc.css" />
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+		<title></title>
+	</head>
+	<body>
+		<div class="z-zx-sy">
+			<header>
+				<img src="img/z-zx-logo.png" />
+				<p>掌上巴士</p>
+			</header>
+			<section>
+				<img id="z-zx-map" src="img/z-zx-map.png" />
+				<img class="z-car-top" src="img/z-zx-car.png" />
+				<div class="z-qcode">
+					<img src="img/z-zx-qcode.png" />
+					<p>进入小程序</p>
+				</div>
+			</section>
+			<!--<div class="z-bgmap"></div>-->
+			<div class="z-zx-download">
+				<ul>
+					<span>司机版</span>
+					<li>
+						<img />
+						<span>IOS正式版</span>
+					</li>
+					<li>
+						<img />
+						<span>Android版</span>
+					</li>
+				</ul>
+				<ul>
+					<span>用户版</span>
+					<li>
+						<img />
+						<span>IOS正式版</span>
+					</li>
+					<li>
+						<img />
+						<span>Android版</span>
+					</li>
+				</ul>
+			</div>
+			<footer>
+				<span>&copy;版权所有 长春市惠云科技有限公司 &nbsp;地址：吉林省长春市二道区拖拉机宿舍青8-25号</span><br/>
+				<span>邮箱：hykjgs1@163.com &nbsp;ICP备案号：鲁ICP备10012159号-73</span><br />
+				<a href="http://www.uyl.cn"></a><span>服务与技术支持：<img src="img/z-yl-logo.png" /></span></a>
+			</footer>
+		</div>
+		<img style="position: fixed; z-index: 10; width: 100px; height: 100px; right: 30px; bottom: 200px;" src="img/order_ico_home.png" />
+	</body>
+	<script>
+		window.onload = function() {
+			var car = document.querySelector('.z-car-top');
+			var bgmap = document.querySelector('.z-bgmap');
+			var code = document.querySelector('.z-qcode');
+		　　car.style.transform = 'translateY(-923px)';
+			code.style.opacity = "1";
+			$("#z-zx-map").fadeToggle(6000);
+		}; 
+	</script>
+</html>

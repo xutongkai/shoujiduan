@@ -1,0 +1,140 @@
+<!--任务详情-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>任务详情</title>
+		<script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+  		<script src="js/layer/layer.js"></script>
+  		<link rel="stylesheet" href="Swiper-3.4.2/dist/css/swiper.min.css">
+		<link rel="stylesheet" type="text/css" href="css/layer.css"/>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" type="text/css" href="css/index2.css"/>
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		
+		<!--客户修改-->
+		<div class="container">
+			<!--<div class="xiugai-header">
+				<img class="xiugai-header-img" src="img/timg.jpg"/>
+				<div class="renwu-list-imgbox-dengji">3级以上</div>
+			</div>-->
+			
+			<div class="swiper-container swiper-container1">
+			    <div class="swiper-wrapper swiper-wrapper1">
+			        <div class="swiper-slide swiper-slide1">
+			        	<div class="xiugai-header">
+							<img class="xiugai-header-img" src="img/timg.jpg"/>
+							<!--<div class="renwu-list-imgbox-dengji">3级以上</div>-->
+						</div>
+			        </div>
+			        <div class="swiper-slide swiper-slide1">
+			        	<div class="xiugai-header">
+							<img class="xiugai-header-img" src="img/timg.jpg"/>
+							
+						</div>
+			        </div>
+					
+			    </div>
+			    <!--等级-->
+			    <div class="renwu-list-imgbox-dengji">3级以上</div>
+			    
+			    <!-- 如果需要分页器 -->
+			    <div class="swiper-pagination"></div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			<div class="xiugai-title">暑假学生兼职宣传单发放，这里是任</div>
+			<div class="xiugai-moneylist">
+				<!--<div class="xiugai-moneylist-box"></div>-->
+				<div class="renwu-list-right-money-list">
+						<div class="renwu-list-right-money-list-number">￥15.33</div>
+						价格
+					</div>
+					<div class="renwu-list-right-money-list">
+						<div class="renwu-list-right-money-list-number">￥15.33</div>
+						任务收益
+					</div>
+					<div class="renwu-list-right-money-list">
+						<div class="renwu-list-right-money-list-number">￥15.33</div>
+						动态收益
+					</div>
+			</div>
+
+
+
+
+			<div class="container-time">截止时间：2018-09-14  11:22</div>
+			<div class="container-money">
+				<div class="container-money-list">
+					<img class="list-img" src="img/zujian43l2.png"/>
+					保证金：<text class="list-text">￥56.00</text>
+				</div>
+				<div class="container-money-list">
+					<img class="list-img" src="img/zujian43l3.png"/>
+					保证金：<text class="list-text">￥56.00</text>
+				</div>
+			</div>
+			<div class="container-money">
+				<div class="container-money-list">
+					<img class="list-img" src="img/zujian43l1.png"/>
+					保底收益：<text class="list-text">￥56.00</text>
+				</div>
+				<div class="container-money-list">
+					<img class="list-img" src="img/zujian43l4.png"/>
+					资金池收益：<text class="list-text">￥56.00</text>
+				</div>
+			</div>
+		</div>
+		<!--灰色占空条条-->
+		<div class="empty2"></div>
+
+		<!--主题内容-->
+		<div class="content">
+			<img class="content-img" src="img/timg.jpg" alt="" />
+			<text class="content-text xiugai-content-text">将一下图片跟文案复制到朋友圈即可领取宝宝乐玩具一份。里是任务描述儿绘画基础 | 帮您的孩子爱上绘画这里描述是商品名称少这里是任务描述
+少这里是任务描述儿绘画基础 | 帮您的孩子爱上绘画这里描述是商品名称少这里是任务描述儿绘画基础 | 帮您的孩子爱上绘画这里描述是商品名称</text>
+		</div>
+
+
+
+
+		<!--客户修改-->
+		
+		<div class="kehuxiugai-empty1"></div>
+		<div class="kehuxugai-buttom1">
+			<div class="kehuxugai-buttom1-left">价格：￥337</div>
+			<div class="kehuxugai-buttom1-right">领取任务</div>
+		</div>
+
+
+		<!--<div class="draw-button">领取任务</div>-->
+		<!--占空按钮底部-->
+		<!-- <div class="button-empty"></div> -->
+
+		<!--弹出框-->
+		<div class="toggle-box"></div>
+		<script type="text/javascript">
+			layer.open({
+			  type: 1,
+			  skin: 'layui-layer-demo', //样式类名
+			  title:false,
+			  closeBtn: 0, //不显示关闭按钮
+			  anim: 2,
+			  shadeClose: true, //开启遮罩关闭
+			  content: '<img src="img/456789.png" style="width:0.7rem;height: 0.7rem;margin: 0.3rem auto;"/><div style="font-size:0.18rem;color:#333;width:3.2rem;text-align: center;">保证金为0，请缴纳保证金</div><a href="pay.html" style="display:block;width:2rem;height: 0.44rem;background-color: rgb(247,87,87);margin:0 auto;margin-top:0.43rem;margin-bottom:0.26rem;border-radius: 0.1rem;line-height: 0.44rem;text-align: center;color: #fff;font-size: 0.15rem;">去缴纳</a>'
+			});
+		</script>
+		
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js" ></script>
+		<script src="Swiper-3.4.2/dist/js/swiper.min.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+	</body>
+</html>

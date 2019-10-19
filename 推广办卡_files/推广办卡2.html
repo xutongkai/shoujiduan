@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!-- saved from url=(0118)https://m.hhrcard.com/credit/miniprogram/copartner/PersonalPoster?id=dEpHNjJYU1c3YW9UY3dZTXk4MDRmQT09&platform_id=1003 -->
+<html class="hairlines" style="font-size: 18.75px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>
+            推广办卡
+    </title>
+	
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta http-equiv="Cache-Control" content="no-transform">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<!--<link rel="shortcut icon" href="https://hhr.hhrcard.com/static/img/credit/fav_icon.ico">-->
+	<!--<script type="text/javascript" src="jweixin-1.2.0.js.下载"></script>-->
+	<script type="text/javascript" src="zepto.min.js.下载"></script>
+	<!--<link rel="stylesheet" type="text/css" href="base.css">-->
+	<!--<link rel="stylesheet" href="module.css">-->
+	
+
+<style>
+html,body{
+  width:100%;
+  height:100%;
+}
+</style>
+<!--<link rel="stylesheet" type="text/css" href="global.css">-->
+<link rel="stylesheet" type="text/css" href="customer.css">
+<link rel="stylesheet" href="swiper-4.0.2.min.css">
+<script src="common.js.下载"></script>
+<script>
+  var baseFn = Object.create(baseFn);
+</script>
+<script src="./推广办卡_files/lottie.min.js.下载"></script>
+
+	<meta name="baidu-tc-cerfication" content="98dcb862c6c6e54c0b0142acecc1530c">
+	<meta name="applicable-device" content="mobile">
+	<!--<script src="xss.js.下载" type="text/javascript"></script>-->
+</head>
+<body>
+
+
+
+<div class="poster">
+  <div class="swiper-container swiper-container-horizontal swiper-container-ios">
+    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-508.296px, 0px, 0px);">
+              <div class="swiper-slide" style="width: 277.519px; margin-right: 1px;"><img src="7b83d2c452cd39bc8d6bd7edd12169fda0c474b5.png" alt=""></div>
+              <div class="swiper-slide swiper-slide-prev" style="width: 277.519px; margin-right: 1px;"><img src="6bd45c67402952847c07ef930ff1eaa7089dca1f.png" alt=""></div>
+              <div class="swiper-slide swiper-slide-active" style="width: 277.519px; margin-right: 1px;"><img src="24202dad0b244534c108af29b255714529e12a86.png" alt=""></div>
+            <!-- <div class="swiper-slide"><img src="//static.rong360.com/gl/uploads/allimg/180806/189_1549505831.png" alt=""></div> -->
+    </div>
+  </div>
+  <div class="update">
+    <p class="p1">长按图片可保存海报</p>    <p class="p2 single">
+                    </p>
+  </div>
+</div>
+
+ 
+
+
+
+
+<script src="swiper-4.0.2.min.js.下载"></script>
+<script>
+  var shareImg = '';
+  var mySwiper = new Swiper('.swiper-container', {
+    initialSlide :1,
+    slidesPerView: 1.35,//模块前后
+    centeredSlides: true,//选中tab居中
+    spaceBetween: 1,//tab间距
+    preventClicks: false,//阻止点击事件，false时，loop不能为true
+    effect:"slider",//coverflow,slider
+    on: {
+      slideChangeTransitionEnd: function(){
+        shareImg = $('.swiper-slide').eq(this.activeIndex).find('img').attr('src');
+      }
+    }
+  })
+  shareImg = $('.swiper-slide-active img').attr('src');
+
+  //分享回调
+  window.hhr_share = function(){
+    //location.href = 'hhrcardscheme://share?imgurl=' + encodeURIComponent(shareImg);
+    location.href = 'hhrcardscheme://share/?title=免费办理信用卡&desc=手机办卡最快1天领卡&imgurl=https%3A%2F%2Fstatic.rong360.com%2Fgl%2Fuploads%2Fallimg%2F180702%2F211_1130387721.png&page_url=' + encodeURIComponent(location.href);
+  }
+  //APP内保存海报
+  $("#saveBtn").click(function() {
+    if(baseFn.isAndroid()){
+      window.nativeMethod.saveImageToLocal(shareImg);
+    }else if(baseFn.isIos()){
+      window.whenRNPostMessageReady(function () {
+        window.postMessage(JSON.stringify({
+          "command": "saveImageToLocal",
+          "params": {
+          "imageUrl": shareImg
+          }
+        }));
+      });
+    }
+  })
+</script>
+
+<script type="text/javascript" src="./推广办卡_files/clipboard.min.js.下载"></script>
+<script>
+  /* 微信分享 */
+  baseFn.getWxConfig({
+    jsApiList:[
+      'onMenuShareTimeline',
+      'onMenuShareAppMessage'
+    ],
+    callback: function(){
+      baseFn.shareConfig({
+        title: '免费办理信用卡', 
+        desc: '手机办卡 最快1天领卡', 
+        link: location.href.split('#')[0], 
+        imgUrl: 'https://static.rong360.com/gl/uploads/allimg/180702/211_1130387721.png', 
+        type: 'link',
+        dataUrl:  '',
+      })
+    }
+  });
+
+  /*复制链接*/
+    var clipboard = new Clipboard('#copyBtn').on('success', function(e) {
+      var e = e || window.event;
+      console.log(e); 
+      var toast = new Toast({
+        content: '复制成功',
+        callback: function(){              
+        }
+      });
+      toast.show();  
+  }).on('error', function(e) {});
+
+  $(function() {
+      $("#updateBtn").click(function(){
+          var _this = $(this);
+          var poster_type = '';
+          //更新海报接口
+          $.ajax({
+              type:'post',
+              url: '/credit/miniprogram/copartner/PosterUpdate',
+              data:{
+                  type:poster_type
+              },
+              dataType: 'json',
+              beforeSend: function() {
+                  _this.html('<span id="loading"></span><span>正在更新</span>');
+                  bodymovin.loadAnimation({
+                      path:'/static/credit/copartner/js/white-loading.json',   //json文件路径
+                      loop:true,
+                      autoplay:true,
+                      renderer:'svg',  //渲染方式，有"html"、"canvas"和"svg"三种
+                      container:document.getElementById('loading')
+                  });
+                  _this.attr("disabled", "disabled");
+              },
+              success: function(res){
+                  if(res.code == 0){  //更新提交成功
+                      new Toast({
+                          'content': res.msg,
+                          'callback': function() {
+                              location.href = location.href;
+                          }
+                      }).show();
+                  }else if(res.code == 1){  //更新中
+
+                  }else if(res.code == 2){  //已更新
+                      new Toast({
+                          'content': res.msg
+                      }).show();
+                      _this.html('</span><span>更新海报</span>').removeAttr("disabled");
+                  }else{
+                      new Toast({
+                          'icon': 'fail',
+                          'content': res.msg
+                      }).show();
+                      _this.html('</span><span>更新海报</span>').removeAttr("disabled");
+                  }
+              },
+              error: function() {
+                  new Toast({
+                      'icon': 'fail',
+                      'content': '更新失败，请稍后再试'
+                  }).show();
+                  _this.html('</span><span>更新海报</span>').removeAttr("disabled");
+              }
+          });
+
+      })
+  })
+</script>
+
+
+</body></html>

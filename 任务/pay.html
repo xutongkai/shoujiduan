@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>明细</title>
+		<script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+  		<script src="js/layer/layer.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/layer.css"/>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" type="text/css" href="css/index2.css"/>
+   		
+	</head>
+	<body>
+		<div class="pay-header">
+			<div class="pay-header-text">金额</div>
+			<div class="pay-header-number">500</div>
+			<div class="pay-header-img">></div>
+		</div>
+		<div class="pay-select">选择缴纳方式</div>
+		<!--微信-->
+		<div class="pay-select-list-one">
+			<img class="pay-select-list-img" src="img/weixin.png"/>
+			<div class="pay-select-list-text">微信缴纳</div>
+			<img class="pay-select-list-one-status" src="img/zujian.png"/>
+			<img class="pay-select-list-one-status-hover" src="img/zujian43l6.png" style="display: none;"/>
+		</div>
+		<!--余额-->
+		<div class="pay-select-list-two">
+			<img class="pay-select-list-img2" src="img/setting_ico_message.png"/>
+			<div class="pay-select-list-text2">余额缴纳</div>
+			<img class="pay-select-list-two-status" src="img/zujian43l6" style="display: none;"/>
+			<img class="pay-select-list-two-status-hover" src="img/zujian.png"/>
+		</div>
+		
+		<div class="pay-button">确认</div>
+		
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+		<script type="text/javascript">
+			$('pay-select-list-one').click(function(){
+				$('pay-select-list-one-status').css("display","inline-block");
+				$('pay-select-list-one-status-hover').css("display","none");
+				$('pay-select-list-two-status').css("display","inline-block");
+				$('pay-select-list-one-status-hover').css("display","none");
+			})
+		</script>
+	</body>
+</html>

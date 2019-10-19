@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>任务推荐</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+   		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+   		<script src="js/html2canvas.js"></script>
+	</head>
+	<body>
+		<div class="renwutuijian-empty"></div>
+		<div class="renwutuijian-header" id="capture">
+			<img class="renwutuijian-header-image" src="img/ico_share_banner@2x.png"/>
+			<div class="renwutuijian-header-box">
+				<div class="renwutuijian-header-box-left">
+					<div class="renwutuijian-header-box-left-news">
+						<img class="renwutuijian-header-box-left-news-img" src="img/ico_share01@2x.png">
+						<div class="renwutuijian-header-box-left-news-title">
+							<div>奔跑的蚂蚁</div>
+							<div>158544547474</div>
+						</div>
+					</div>
+					<div class="renwutuijian-header-box-left-text">我是您的专属客服，您有任何问题可直接咨询</div>
+				</div>
+				<img class="renwutuijian-header-box-code" src="img/ico_big_jbbig@2x.png">
+			</div>
+		</div>
+		<div class="renwutuijian-text">长按图片可保存海报</div>
+		<div class="renwutuijian-buttom">
+			<div class="renwutuijian-buttom-renew">更新海报</div>
+			<div class="renwutuijian-buttom-copy">复制链接</div>
+		</div>
+		<!--<div class="capture-box" style="display: none;">
+			<img class="capture-box-img" src=""/>
+			<img class="capture-box-img2" src="img/pop_ico_closed@2x.png"/>
+		</div>-->
+		<!--<script type="text/javascript" src="js/renwutuijian.js"></script>-->
+		<script src="js/clipboard.js"></script>
+		<script type="text/javascript">
+			$(".renwutuijian-buttom-copy").click(function(){
+				copy()
+			})
+			function copy(){
+                              var url=this.location.href;                          // this.location.href 获取当前url地址    
+                              var clip = new ZeroClipboard.Client();   //实例化对象
+                             ZeroClipboard.setMoviePath("js/ZeroClipboard.swf"); //引用swf文件
+                             //clip.setHandCursor( true );  //将光标变成手型
+                            clip.setText(url);       //复制url参数
+                            clip.addEventListener('complete', function (client, text) {    //复制成功执行的操作
+                                 art.dialog.tips("复制成功！",3);
+                            }); 
+                            clip.glue(".renwutuijian-buttom-copy"); //  标签的id 这里不一定必须是button按钮
+
+                            }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>滚动</title>
+		<link rel="stylesheet" type="text/css" href="css/layer.css"/>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+		<!-- swiper -->
+		<link rel="stylesheet" href="Swiper-3.4.2/dist/css/swiper.min.css">
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+		<style>
+			* {
+                margin: 0;
+                padding: 0;
+            }
+            
+            li {
+                list-style: none;
+            }
+            
+            body {
+                line-height: 1.5;
+                font-size: 14px;
+            }
+            
+            .scroll {
+                display: inline-block;
+                overflow: hidden;
+                position: relative;
+                height: 50px;
+            }
+            
+            .scroll ul {
+                transform: translateY(0);
+            }
+            
+            .animate {
+                -webkit-transition: all .3s ease-out;
+            }
+            
+            .scroll li {
+                /*overflow: hidden;*/
+                display:block;
+                margin-left: 10px;
+                width: 300px;
+                height: auto;
+                /*height: 50px;*/
+                /*line-height: 30px;*/
+                color: #333;
+                /*text-overflow: ellipsis;*/
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                /*white-space: normal;*/
+               word-wrap: break-all;
+                border:1px solid red;
+                line-height: 50px;
+            }
+            
+		</style>
+	</head>
+	<body>
+		<div class="scroll">
+            <ul>
+                <li>发生发萨达多发达发达发发发撒发送到了方大建设路看电视剧或得15.53元</li>
+                <li>发生发萨达多发达发达发发发撒发送到了方大建设路看电视剧或得15.53元11111111111111111</li>
+                <li>哈哈哈你是谁呀</li>
+                <li>你猜猜我是哪个</li>
+            </ul>
+        </div>
+		<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    
+    <script>
+        $(function() {
+            var scrollDiv = $(".scroll"),
+                $ul = scrollDiv.find("ul"),
+                $li = scrollDiv.find("li"),
+                $length = $li.length,
+                $liHeight = scrollDiv.height(),
+                num = 0;
+
+            if(scrollDiv.length == 0) {
+                return;
+            }
+
+            if($length > 1) {
+                $ul.append($li.eq(0).clone());
+                setInterval(
+                    function() {
+                        num++;
+                        $ul.addClass("animate").css("-webkit-transform", "translateY(-" + $liHeight * (num) + "px)");
+                        setTimeout(
+                            function() {
+                                if(num == $length) {
+                                    $ul.removeClass("animate").css("-webkit-transform", "translateY(0)");
+                                    num = 0;
+                                }
+                            }, 300);
+                    }, 3000);
+            }
+        });
+    </script>
+	</body>
+</html>

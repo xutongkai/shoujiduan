@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>关注</title>
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" href="css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery.waterfall.js"></script>
+		<script src="js/layui.all.js"></script>
+	</head>
+
+	<body>
+		<div class="x_news_header">
+			<div class="s_sh_box">
+				<input type="text" class="s_shb_input" placeholder="搜索" value="" />
+				<img src="img/ico_deleteall.png" alt="" class="s_ssh_img" />
+			</div>
+			<a href="#">
+				<img src="img/nav_ico_message.png" alt="" class="s_sh_img" />
+			</a>
+		</div>
+
+		<div class="pt_lwraplist" id="cont_wrap">
+
+			<a href="#" class="pt_lwrapli">
+				<img class="pt_lwraplico" src="img/23.jpeg" />
+				<div class="pt_lwwrps_bot">
+					<span class="pt_lwwrps_time">5分钟前</span>
+					<img onclick="showMb(this)" class="pt_lwwrps_more" src="img/contact_ico_more.png" />
+				</div>
+				<div class="pt_lwwrps_titles">图片标题标题标题标题标图片标题标题标题标题标</div>
+			</a>
+
+			<a href="#" class="pt_lwrapli">
+				<img class="pt_lwraplico" src="img/zx.jpg" />
+				<div class="pt_lwwrps_bot">
+					<span class="pt_lwwrps_time">5分钟前</span>
+					<img onclick="showMb(this)" class="pt_lwwrps_more" src="img/contact_ico_more.png" />
+				</div>
+				<div class="pt_lwwrps_titles">图片标题标题标题标题标图片标题标题标题标题标</div>
+
+			</a>
+
+			<a href="#" class="pt_lwrapli">
+				<img class="pt_lwraplico" src="img/zx.jpg" />
+				<div class="pt_lwwrps_bot">
+					<span class="pt_lwwrps_time">5分钟前</span>
+					<img onclick="showMb(this)" class="pt_lwwrps_more" src="img/contact_ico_more.png" />
+				</div>
+				<div class="pt_lwwrps_titles">图片标题标题标题标题标图片标题标题标题标题标</div>
+
+			</a>
+
+			<a href="#" class="pt_lwrapli">
+				<img class="pt_lwraplico" src="img/23.jpeg" />
+				<div class="pt_lwwrps_bot">
+					<span class="pt_lwwrps_time">5分钟前</span>
+					<img onclick="showMb(this)" class="pt_lwwrps_more" src="img/contact_ico_more.png" />
+				</div>
+
+			</a>
+
+			<a href="#" class="pt_lwrapli">
+				<img class="pt_lwraplico" src="img/23.jpeg" />
+				<div class="pt_lwwrps_bot">
+					<img onclick="showMb(this)" class="pt_lwwrps_more" src="img/contact_ico_more.png" />
+				</div>
+
+			</a>
+			<a href="#" class="pt_lwrapli">
+				<img class="pt_lwraplico" src="img/zx.jpg" />
+				<div class="pt_lwwrps_bot">
+					<span class="pt_lwwrps_time">5分钟前</span>
+					<img onclick="showMb(this)" class="pt_lwwrps_more" src="img/contact_ico_more.png" />
+				</div>
+				<div class="pt_lwwrps_titles">图片标题标题标题标题标图片标题标题标题标题标</div>
+				<div class="pt_lwwrps_zzuser">
+					<img class="pt_lwwruser_ico" src="img/avatar.png" />
+					<div class="pt_lwwr_right">
+						<h2 class="pt_lwwr_name">作者名字</h2>
+						<p class="pt_lwwr_hbname">画板名称</p>
+					</div>
+				</div>
+			</a>
+			<a href="#" class="pt_lwrapli">
+				<img class="pt_lwraplico" src="img/23.jpeg" />
+				<div class="pt_lwwrps_bot">
+					<span class="pt_lwwrps_time">5分钟前</span>
+					<img onclick="showMb(this)" class="pt_lwwrps_more" src="img/contact_ico_more.png" />
+				</div>
+				<div class="pt_lwwrps_titles">图片标题标题标题标题标图片标题标题标题标题标</div>
+				<div class="pt_lwwrps_zzuser">
+					<img class="pt_lwwruser_ico" src="img/avatar.png" />
+					<div class="pt_lwwr_right">
+						<h2 class="pt_lwwr_name">作者名字</h2>
+						<p class="pt_lwwr_hbname">画板名称</p>
+					</div>
+				</div>
+			</a>
+
+		</div>
+
+		<div class="ss_tababr_empty"></div>
+		<div class="ss_tabbar">
+			<div class="ss_tabbar_list ss_tabbar_click">
+				<img src="img/tab_ico_homed.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">主页</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_class.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">分类</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_follow.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">关注</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_notice.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">通知</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_me.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">已收藏</div>
+			</div>
+		</div>
+
+		<div class="ind_mb_wrap">
+			<div class="ind_pbl_more">
+				<div class="ind_pmore_tops">
+					选项
+					<img class="ind_colse_more" src="img/top_ico_closed.png" />
+				</div>
+
+				<div class="ind_pmbot_wp">
+					<div href="#" class="ind_pmbot_row shouc_but">
+						<svg class="ind_pmbot_icos" height="20" width="20" viewBox="0 0 24 24" aria-label="收藏" role="img">
+							<path d="M18 13.5c0-2.22-1.21-4.15-3-5.19V2.45A2.5 2.5 0 0 0 17 0H7a2.5 2.5 0 0 0 2 2.45v5.86c-1.79 1.04-3 2.97-3 5.19h5v8.46L12 24l1-2.04V13.5h5z"></path>
+						</svg>
+						<div class="ind_pmbr_right">
+							<h2 class="ind_pmbr_txt">收藏</h2>
+						</div>
+					</div>
+					<div id="fs_wrpas" href="#" class="ind_pmbot_row">
+						<svg class="ind_pmbot_icos" height="20" width="20" viewBox="0 0 24 24" aria-label="发送" role="img">
+							<path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path>
+						</svg>
+
+						<div class="ind_pmbr_right">
+							<h2 class="ind_pmbr_txt">发送</h2>
+						</div>
+					</div>
+					<a href="#" class="ind_pmbot_row">
+						<svg class="ind_pmbot_icos" height="16" width="16" viewBox="0 0 24 24" aria-label="下载图片" role="img">
+							<path d="M21 14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-6a2 2 0 0 1 4 0v4h14v-4a2 2 0 0 1 2-2zM8.815 6.987l1.176 1.178V2a2 2 0 0 1 4 0v6.178l1.196-1.193a2 2 0 1 1 2.826 2.831l-6.025 6.013-6.004-6.016a2 2 0 0 1 2.831-2.826z"></path>
+						</svg>
+
+						<div class="ind_pmbr_right">
+							<h2 class="ind_pmbr_txt">下载</h2>
+						</div>
+					</a>
+					<a href="#" class="ind_pmbot_row">
+						<svg class="ind_pmbot_icos" height="20" width="20" viewBox="-2 -2 28 28" aria-label="隐藏" role="img">
+							<path d="M15.18 12l7.16-7.16c.88-.88.88-2.3 0-3.18-.88-.88-2.3-.88-3.18 0L12 8.82 4.84 1.66c-.88-.88-2.3-.88-3.18 0-.88.88-.88 2.3 0 3.18L8.82 12l-7.16 7.16c-.88.88-.88 2.3 0 3.18.44.44 1.01.66 1.59.66.58 0 1.15-.22 1.59-.66L12 15.18l7.16 7.16c.44.44 1.01.66 1.59.66.58 0 1.15-.22 1.59-.66.88-.88.88-2.3 0-3.18L15.18 12z"></path>
+						</svg>
+						<div class="ind_pmbr_right">
+							<h2 class="ind_pmbr_txt">隐藏</h2>
+							<span class="ind_pmbr_con">不在看到那么多类似的Pin图</span>
+						</div>
+					</a>
+					<div href="#" class="ind_pmbot_row jb_tp_class">
+						<svg class="ind_pmbot_icos" height="16" width="16" viewBox="0 0 24 24" aria-label="举报" role="img">
+							<path d="M7.91 18.89A8.013 8.013 0 0 0 18.89 7.91L7.91 18.89zm-2.82-2.83L16.06 5.09A8.015 8.015 0 0 0 5.09 16.06zM12 24C5.37 24 0 18.63 0 12S5.37 0 12 0s12 5.37 12 12-5.37 12-12 12z"></path>
+						</svg>
+						<div class="ind_pmbr_right">
+							<h2 class="ind_pmbr_txt">举报</h2>
+							<span class="ind_pmbr_con">这违反了社区准则</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!--分享图片-->
+		<div class="zf_box" style="display: none;">
+			<div class="zf_box_content">
+				<!--<div class="zf_bc_header">
+					<div class="zf_bch_left"></div>
+					<div class="zf_bch_center">分享图片</div>
+					<img src="img/top_ico_closed.png" alt="" class="zf_bch_right" />
+				</div>-->
+				<div class="ind_pmore_tops">
+					分享此图片
+					<img class="ind_colse_more" src="img/top_ico_closed.png" />
+				</div>
+				<div class="zf_bc_lis">
+					<div class="zf_bcl_box">
+						<img src="img/sign_ico_sina.png" alt="" class="zf_bclb_img" />
+						<div class="zf_bclb_text">微博</div>
+					</div>
+					<div class="zf_bcl_box">
+						<img src="img/sign_ico_sina_friend.png" alt="" class="zf_bclb_img" />
+						<div class="zf_bclb_text">朋友圈</div>
+					</div>
+					<div class="zf_bcl_box">
+						<img src="img/sign_ico_wechat.png" alt="" class="zf_bclb_img" />
+						<div class="zf_bclb_text">微信</div>
+					</div>
+					<div class="zf_bcl_box">
+						<img src="img/sign_ico_email.png" alt="" class="zf_bclb_img" />
+						<div class="zf_bclb_text">邮箱</div>
+					</div>
+				</div>
+				<div class="zf_bc_ibox">
+					<img src="img/top_ico_search.png" alt="" class="zf_bc_img" />
+					<input type="text" placeholder="昵称或者邮箱" class="zf_bc_input" />
+				</div>
+				<div class="zf_bc_listt">
+					<img src="img/sign_ico_qq.png" alt="" class="zf_bcl_img" />
+					<div class="zf_bcl_name">用户名</div>
+					<div class="zf_bcl_botton">发送</div>
+				</div>
+				<div class="zf_bc_listt">
+					<img src="img/sign_ico_qq.png" alt="" class="zf_bcl_img" />
+					<div class="zf_bcl_name">用户名</div>
+					<div class="zf_bcl_botton">发送</div>
+				</div>
+				<div class="zf_bc_listt">
+					<img src="img/sign_ico_qq.png" alt="" class="zf_bcl_img" />
+					<div class="zf_bcl_name">用户名</div>
+					<div class="zf_bcl_botton">发送</div>
+				</div>
+			</div>
+		</div>
+
+		<!--弹出界面-->
+		<div class="form_k_wrap">
+			<div class="form_k_lis" style="display: block;">
+				<div class="jt_header">
+					<div>举报图片</div>
+					<img src="img/top_ico_closed.png" class="jt_header_img close_jbym" />
+				</div>
+
+				<div class="jt_list_box">
+					<div href="#" class="jt_list">
+						<div class="jt_list_left">
+							<div class="jt_ll_title">垃圾信息</div>
+							<div class="jt_ll_font">误导性或重复的帖子</div>
+						</div>
+						<img src="img/title_ico_more.png" alt="" class="jt_list_img" />
+					</div>
+					<div href="#" class="jt_list">
+						<div class="jt_list_left">
+							<div class="jt_ll_title">裸露或者色情内容</div>
+							<div class="jt_ll_font">色情内容</div>
+						</div>
+						<img src="img/title_ico_more.png" alt="" class="jt_list_img" />
+					</div>
+					<div href="#" class="jt_list">
+						<div class="jt_list_left">
+							<div class="jt_ll_title">自我伤害</div>
+							<div class="jt_ll_font">绝食、割伤、自杀</div>
+						</div>
+						<img src="img/title_ico_more.png" alt="" class="jt_list_img" />
+					</div>
+					<div href="#" class="jt_list">
+						<div class="jt_list_left">
+							<div class="jt_ll_title">错误医疗信息</div>
+							<div class="jt_ll_font">对健康和安全的有害或误导性内容</div>
+						</div>
+						<img src="img/title_ico_more.png" alt="" class="jt_list_img" />
+					</div>
+					<div href="#" class="jt_list">
+						<div class="jt_list_left">
+							<div class="jt_ll_title">仇恨言论或符号</div>
+							<div class="jt_ll_font">针对受保护团体的攻击</div>
+						</div>
+						<img src="img/title_ico_more.png" alt="" class="jt_list_img" />
+					</div>
+					<div href="#" class="jt_list">
+						<div class="jt_list_left">
+							<div class="jt_ll_title">暴力画面</div>
+							<div class="jt_ll_font">暴力形象或者提倡暴力</div>
+						</div>
+						<img src="img/title_ico_more.png" alt="" class="jt_list_img" />
+					</div>
+					<div href="#" class="jt_list">
+						<div class="jt_list_left">
+							<div class="jt_ll_title">我的知识产权</div>
+							<div class="jt_ll_font">版权或者商标侵权</div>
+						</div>
+						<img src="img/title_ico_more.png" alt="" class="jt_list_img" />
+					</div>
+					<div href="#" class="jt_list">
+						<div class="jt_list_left">
+							<div class="jt_ll_title">暴力画面</div>
+							<div class="jt_ll_font">暴力形象或者提倡暴力</div>
+						</div>
+						<img src="img/title_ico_more.png" alt="" class="jt_list_img" />
+					</div>
+					<div href="#" class="jt_list">
+						<div class="jt_list_left">
+							<div class="jt_ll_title">我的知识产权</div>
+							<div class="jt_ll_font">版权或者商标侵权</div>
+						</div>
+						<img src="img/title_ico_more.png" alt="" class="jt_list_img" />
+					</div>
+				</div>
+			</div>
+
+			<div class="form_k_lis jbtp_ejym">
+				<div class="jt_header">
+					<div>举报图片</div>
+					<img src="img/top_ico_closed.png" class="jt_header_img close_jbxq" />
+				</div>
+				<div class="jt_tname">举报骚扰信息？</div>
+				<div class="jt_zbox">
+					<div class="jt_tbox">
+						<div class="jt_box_name">我们会删除的内容包括：</div>
+						<div class="jt_box_box">
+							<div class="jt_bb_dot"></div>
+							<div class="jt_bb_text">针对具体个人的攻击</div>
+						</div>
+						<div class="jt_box_box">
+							<div class="jt_bb_dot"></div>
+							<div class="jt_bb_text">个人身份信息</div>
+						</div>
+					</div>
+					<div class="jt_tbox">
+						<div class="jt_box_name">我们会删除的内容包括：</div>
+						<div class="jt_box_box">
+							<div class="jt_bb_dot"></div>
+							<div class="jt_bb_text">针对具体个人的攻击</div>
+						</div>
+						<div class="jt_box_box">
+							<div class="jt_bb_dot"></div>
+							<div class="jt_bb_text">个人身份信息</div>
+						</div>
+					</div>
+				</div>
+				<div class="jt_pb_box">
+					
+					<div class="jb_switch_k">
+						<div class="jt_pbb_name">屏蔽 用户名</div>
+						<div class="layui-form layui-forms">
+							<input type="checkbox" name="xxx" lay-skin="switch">
+						</div>
+					</div>
+					<div class="jt_pbb_content">
+						如果你屏蔽了 用户名 ，你们仍可以查看对方的个人资料，但是你们不可以发送消息、关注或收藏对方的图片。
+					</div>
+				</div>
+				<div class="jt_jbotton">举报</div>
+				
+			</div>
+			
+		</div>
+		
+		<div class="sc_k_wraps">
+			<div class="sc_lik_wrap">
+				<div class="jt_header">
+					<div>选择画板</div>
+					<img src="img/top_ico_closed.png" class="jt_header_img close_xzhb" />
+				</div>
+				<div class="cjhb_mids_wrps">
+					<div class="xzhb_top_k">
+						<div class="xzhb_top_lfico">
+							<img src="img/imageo.png" />
+						</div>
+						<textarea class="xzhb_top_textk" placeholder="请输入图片描述">图片描述内容图片描述内容，图片描述
+	内容</textarea>
+					</div>
+					<div class="xzhb_hb_list">
+						<div class="xzhb_hb_li">
+							<img class="xzhb_hb_lico" src="img/sign_ico_sina.png" />
+							<div class="xzhb_hb_liname">画板名称</div>
+						</div>
+						<div class="xzhb_hb_li">
+							<img class="xzhb_hb_lico" src="img/sign_ico_sina.png" />
+							<div class="xzhb_hb_liname">画板名称</div>
+						</div>
+						<div class="xzhb_hb_li">
+							<img class="xzhb_hb_lico" src="img/sign_ico_sina.png" />
+							<div class="xzhb_hb_liname">画板名称</div>
+						</div>
+						<div class="xzhb_hb_li">
+							<img class="xzhb_hb_lico" src="img/sign_ico_sina.png" />
+							<div class="xzhb_hb_liname">画板名称</div>
+						</div>
+						<div class="xzhb_hb_li">
+							<img class="xzhb_hb_lico" src="img/sign_ico_sina.png" />
+							<div class="xzhb_hb_liname">画板名称</div>
+							<img class="xzhb_hb_lisuo" src="img/self_ico_ys.png" />
+							<img class="xzhb_hb_more" src="img/title_ico_more.png" />
+						</div>
+					</div>
+					<div class="xzhb_hb_list">
+						<div class="xzhb_hb_li">
+							<img class="xzhb_hb_lico" src="img/sign_ico_sina.png" />
+							<div class="xzhb_hb_liname">画板名称</div>
+						</div>
+						<div class="xzhb_hb_li">
+							<img class="xzhb_hb_lico" src="img/sign_ico_sina.png" />
+							<div class="xzhb_hb_liname">画板名称</div>
+						</div>
+						<div class="xzhb_hb_li">
+							<img class="xzhb_hb_lico" src="img/sign_ico_sina.png" />
+							<div class="xzhb_hb_liname">画板名称</div>
+						</div>
+						<div class="xzhb_hb_li">
+							<img class="xzhb_hb_lico" src="img/sign_ico_sina.png" />
+							<div class="xzhb_hb_liname">画板名称</div>
+						</div>
+					</div>
+				</div>
+				<div class="cjhb_bot_wrp">
+					<img class="cjhb_badd_ico" src="img/top_ico_add.png" />
+					创建画板
+				</div>
+			</div>
+			<div class="sc_lik_wrap creat_hb" style="display: none;">
+				<div class="jt_header">
+					<div>创建画板</div>
+					<img src="img/title_ico_back2.png" class="jt_header_img close_cjhb" />
+					<button class="xjhb_cj_buts">创建</button>
+				</div>
+				<div class="sc_xjhb_name">画板名称</div>			
+				<input type="text" class="txhbmc_inp" placeholder="填写画板名称" />
+				<div class="jb_switch_k" style="box-sizing: border-box; padding: 0 0.12rem;">
+					<div class="jt_pbb_name">屏蔽 用户名</div>
+					<div class="layui-form layui-forms">
+						<input type="checkbox" name="xxx" lay-skin="switch">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
+
+<script type="text/javascript">
+	$(function() {
+		/*渲染瀑布流*/
+		$('#cont_wrap').waterfall({
+			itemClass: ".pt_lwrapli",
+			minColCount: 2,
+			spacingHeight: 0,
+			spacingWidth: 0,
+			resizeable: true,
+			ajaxCallback: function(success, end) {
+
+			}
+		})
+		
+		layui.form.render();
+
+		/*输入框js*/
+		$('.s_ssh_img').click(function() {
+			$('.s_shb_input').val("");
+		})
+		$('.s_shb_input').on('input', function(e) {
+			if($(this).val().length) {
+				$('.s_ssh_img').show();
+			} else {
+				$('.s_ssh_img').hide();
+			}
+		})
+		$('.s_ssh_img').click(function() {
+			$('.s_shb_input').val('');
+			$(this).hide();
+		})
+
+		
+
+		
+		/*瀑布流单个点击弹框*/
+		$('.ind_colse_more').click(function() {
+			$(this).parent().parent().parent().hide();
+		})
+		$('#fs_wrpas').click(function() {
+			$('.ind_mb_wrap').hide();
+			$('.zf_box').show()
+		})
+		//点击举报 弹出举报页面
+		$('.jb_tp_class').click(function(){
+			$('.ind_mb_wrap').hide();
+			$('body').css('overflow','hidden');
+			$('.form_k_wrap').show();
+		})
+		//关闭举报图片弹框第一个页面
+		$('.close_jbym').click(function(){
+			$('.form_k_wrap').hide();
+			$('body').attr('style','');
+		})
+		//关闭举报图片弹框第二个页面  收藏  关闭创建画板
+		$('.close_jbxq,.close_cjhb').click(function(){
+			$(this).parent().parent().hide();
+		})
+		//点击举报图片弹出举报图片第二个页面
+		$('.jt_list').click(function(){
+			$('.jbtp_ejym').show();
+		})
+
+		//收藏 关闭选择画板界面
+		$('.close_xzhb').click(function(){
+			$('.sc_k_wraps').hide();
+			$('body').attr('style','');
+		})
+		
+		//点击收藏  弹出收藏框
+		$('.shouc_but').click(function(){
+			$('.ind_mb_wrap').hide();
+			$('.sc_k_wraps').show();
+			$('body').css('overflow','hidden');
+		})
+		//创建画板
+		$('.cjhb_bot_wrp').click(function(){
+			$('.creat_hb').show();
+		})
+
+	})
+
+	function showMb(_this) {
+		event.preventDefault();
+		$('.ind_mb_wrap').show();
+	}
+</script>

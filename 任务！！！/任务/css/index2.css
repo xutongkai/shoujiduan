@@ -1,0 +1,419 @@
+/*图片最大宽*/
+img{
+	max-width: 100%;
+}
+
+.container{
+	width:100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.header{
+	width:100%;
+	height: 0.2rem;
+	position: relative;
+}
+/*.header-img{
+	width:0.36rem;
+	height: 0.2rem;
+}*/
+.header-v3{
+	position: absolute;
+	top:0;
+	left:0;
+	height: 0.2rem;
+	line-height: 0.2rem;
+	display: inline-block;
+	width: auto;
+	padding: 0 0.07rem;
+	color:#fff;
+	font-size:0.1rem;
+	background-color: #E0C77B;
+	background-size: auto 100%;
+}
+.header-v3-text{
+	position: relative;
+	/*top:0.03rem;
+	left:0.07rem;*/
+	z-index: 99999;
+}
+.container-title{
+	width:3.45rem;
+	height: 0.57rem;
+	color:#333;
+	font-size:0.18rem;
+	line-height: 0.24rem;
+	text-align: center;
+	font-weight:bold;
+}
+.container-time{
+	font-size:0.1rem;
+	color:#999;
+}
+
+.container-money{
+	width:3.45rem;
+	display: flex;
+	flex-direction: row;
+	/*justify-content: space-between;*/
+	font-size:0.12rem;
+	line-height: 0.12rem;
+	color:#999;
+	margin-top:0.23rem;
+}
+.container-money-list{
+	width:1.8rem;
+	display: flex;
+	flex-direction: row;
+}
+.list-img{
+	width:0.14rem;
+	height: 0.14rem;
+	margin-right:0.04rem;
+}
+.list-text{
+	color:#E90303;
+}
+.empty2{
+	width:100%;
+	height: 0.1rem;
+	background-color: #eee;
+	margin: 0.16rem 0;
+}
+
+
+/*主题内容*/
+.content{
+	width:100%;
+	padding: 0.15rem;
+	box-sizing: border-box;
+	font-size:0.14rem;
+}
+
+.content>img,.content-img{
+	max-width: 100%;
+	width:3.45rem;
+	height: 3.45rem;
+	margin-bottom: 0.1rem;
+}
+
+/*领取任务*/
+.draw-button{
+	/* position: fixed;
+	bottom:0.09rem; */
+	width:3.45rem;
+	height: 0.46rem;
+	color:#fff;
+	background-color: #4E8CEE;
+	font-size:0.16rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	font-weight:400;
+	border-radius: 0.08rem;
+	margin: 0.09rem 0.15rem;
+}
+.button-empty{
+	width:100%;
+	height: 0.64rem;
+
+}
+
+
+/*公告页*/
+.proc-container{
+	width:100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 0.17rem;
+	box-sizing: border-box;
+}
+.proc-title{
+	width: 100%;
+	text-align: center;
+	font-size:0.18rem;
+	line-height: 0.24rem;
+	font-weight:bold;
+	color:#333333;
+	padding: 0 0.2rem;
+	box-sizing: border-box;
+}
+.proc-time{
+	font-size:0.1rem;
+	color:#999;
+	text-align: center;
+	margin-top:0.2rem;
+}
+.proc-text{
+	font-size:0.14rem;
+	line-height: 0.3rem;
+	padding:0.1rem 0.18rem;
+}
+
+
+/*=明细  余额*/
+.money-header{
+	width:100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.money-content-text{
+	font-size:0.14rem;
+	line-height: 0.16rem;
+	text-align: center;
+	margin-top:0.3rem;
+}
+
+
+/*提现....................................*/
+.money-content-number{
+	font-size:0.44rem;
+	font-weight:bold;
+	color:#000;
+	text-align: center;
+	margin:0.18rem 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+.money-empey{
+	width:100%;
+	height: 0.1rem;
+	background-color: #F5F5F5;
+}
+.money-list{
+	width:100%;
+	height: 0.6rem;
+	border-bottom: 1px solid #EFEFEF;
+
+}
+.money-list-top{
+	padding: 0 0.15rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top:0.14rem;
+	box-sizing: border-box;
+}
+.money-list-top-text{
+	font-size:0.16rem;
+	line-height: 0.2rem;
+	color:#666;
+}
+.money-list-top-number{
+	color:#F1553C;
+	font-size:0.14rem;
+	margin-top:0.1rem;
+}
+.money-time{
+	font-size:0.13rem;
+	color:#999;
+	line-height: 0.18rem;
+	margin-left:0.15rem;
+}
+
+/*缴纳保证金*/
+.pay-header{
+	width:100%;
+	height: 0.56rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size:0.16rem;
+}
+.pay-header-text{
+	color:#333;
+	margin-left:0.12rem;
+}
+.pay-header-number{
+	color:#000;
+	margin-left:0.6rem;
+	flex:1;
+}
+.pay-header-img{
+
+	margin-right:0.1rem;
+	color:#ccc;
+}
+.pay-select{
+	width:100%;
+	height: 0.5rem;
+	background-color: #F7F7F7;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size:0.14rem;
+	color:#999;
+	padding-left:0.1rem;
+	box-sizing: border-box;
+}
+.pay-select-list-one,
+.pay-select-list-two{
+	width:100%;
+	height: 0.56rem;
+	border-bottom: 1px solid #E5E5E5;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.pay-select-list-img{
+	width:0.24rem;
+	height: 0.22rem;
+	margin-left:0.16rem
+}
+/*余额图片*/
+.pay-select-list-img2{
+	width:0.3rem;
+	height: 0.3rem;
+	margin-left:0.16rem
+}
+.pay-select-list-text{
+	font-size:0.14rem;
+	line-height: 0.18rem;
+	color:#666;
+	margin-left:0.24rem;
+}
+/*余额*/
+.pay-select-list-text2{
+	font-size:0.14rem;
+	line-height: 0.18rem;
+	color:#666;
+	margin-left:0.2rem;
+}
+.pay-select-list-one-status,.pay-select-list-one-status-hover,.pay-select-list-two-status,.pay-select-list-two-status-hover{
+	width:0.2rem;
+	height: 0.2rem;
+	margin-left: 2.18rem;
+}
+
+.pay-button{
+	width:2rem;
+	height: 0.44rem;
+	border-radius: 25px;
+	background-color:rgb(243,78,78);
+	color:#fff;
+	font-size:0.15rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin: 0.48rem auto;
+}
+
+
+
+/*提现按钮*/
+.money-content-button{
+	font-size:0.3rem;
+	color:#666666;
+	margin-left:0.2rem;
+}
+
+
+
+.tixian{
+	width:100%;
+	
+}
+.tixian-text{
+	margin-left:0.16rem;
+	height: 0.36rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size:0.16rem;
+	color:#333;
+}
+.tixian-input{
+	margin-left:0.16rem;
+	width: calc(100%-0.16rem);
+	height: 0.56rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size:0.24rem;
+	color:#666;
+}
+.tixian-font{
+	width: calc(100%-0.16rem);
+	height: 0.18rem;
+	font-size:0.12rem;
+	margin-left: 0.2rem;
+	border-top:1px solid #E5E5E5;
+	color:#666;
+}
+.tixian-button{
+	width:90%;
+	line-height: 0.56rem;
+	font-size:0.18rem;
+	color:#fff;
+	background-color: rgb(84,135,231);
+	margin: 0 auto;
+	margin-top:0.5rem;
+	text-align: center;
+	border-radius: 0.06rem;
+}
+
+
+.money-header{
+	width:100%;
+	
+}
+.money-header-yue{
+	width:calc(100% - 0.3rem);
+	margin:0 auto;
+	height: 0.46rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+.money-header-yue-left{
+	font-size:0.14rem;
+	color:#666;
+	/*display: flex;
+	flex-direction: row;
+	align-items: center;*/
+}
+.money-header-yue-left-text{
+	color:#000;
+	font-size:0.22rem;
+}
+.money-header-yue-button{
+	font-size:0.14rem;
+	color:#E0C77B;
+	padding: 0.03rem 0.1rem;
+	border:1px solid #E0C77B;
+	border-radius: 16px;
+}
+.money-header-list{
+	width:100%;
+	height: 0.6rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.money-header-list-box{
+	width:25%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-left:0.01rem solid #ddd;
+}
+.money-header-list-box:first-child{
+	border-left:none;
+}
+.money-header-list-box-number{
+	font-size:0.14rem;
+	color:#000;
+}
+.money-header-list-box-text{
+	font-size:0.12rem;
+	color:#666;
+	margin-top:0.02rem;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>积分商城</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" href="css/swiper.min.css">
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="s_sheader">
+			<div class="s_sh_box">
+				<input type="text" class="s_shb_input" placeholder="搜索" value="" />
+				<img src="img/ico_deleteall.png" alt="" class="s_ssh_img" />
+			</div>
+			<!--<div class="s_sh_cancel">取消</div>-->
+			<img src="img/nav_ico_scan.png" alt="" class="s_sh_img" />
+		</div>
+		<div class="st_box">
+			<div class="st_box_list">
+				<img src="img/sign_ico_wechat.png" alt="" class="stbl_img" />
+				<div class="stbl_name">用户名</div>
+				<div class="stbl_botton">关注</div>
+			</div>
+			<div class="st_box_list">
+				<img src="img/sign_ico_wechat.png" alt="" class="stbl_img" />
+				<div class="stbl_name">用户名</div>
+				<div class="stbl_botton">关注</div>
+			</div>
+			<div class="st_box_list">
+				<img src="img/sign_ico_wechat.png" alt="" class="stbl_img" />
+				<div class="stbl_name">用户名</div>
+				<div class="stbl_botton">关注</div>
+			</div>
+			<div class="st_box_list">
+				<img src="img/sign_ico_wechat.png" alt="" class="stbl_img" />
+				<div class="stbl_name">用户名</div>
+				<div class="stbl_botton">关注</div>
+			</div>
+			<div class="st_box_list">
+				<img src="img/sign_ico_wechat.png" alt="" class="stbl_img" />
+				<div class="stbl_name">用户名</div>
+				<div class="stbl_botton">关注</div>
+			</div>
+		</div>
+		<div class="ss_box" style="display: none;">
+			<div class="sb_content">
+				<div class="sb_content_title">
+					<div class="sb_ct_img"></div>
+					<div class="sb_ct_name">筛选结果</div>
+					<img src="img/top_ico_closed.png" alt="" class="sb_ct_img" />
+				</div>
+				<div class="sb_ct_list">
+					<div class="sb_ctl_title">筛选依据</div>
+					<div class="sb_ctl_condition">图片</div>
+				</div>
+				<div class="sb_ct_list">
+					<div class="sb_ctl_title">用户</div>
+					<div class="sb_ctl_condition">画板</div>
+				</div>
+				<div class="sb_ct_list">
+					<div class="sb_ctl_title">只显示</div>
+					<div class="sb_ctl_condition">你的图片</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$('.s_ssh_img').click(function(){
+					$('.s_shb_input').val("");
+				})
+				$('.s_sh_img').click(function(){
+					$('.ss_box').show();
+				})
+				$('.sb_content_title img').click(function(){
+					$('.ss_box').hide();
+				});
+				$('.ss_box').click(function(){
+					$('.ss_box').hide();
+				});
+				$('.sb_content').click(function(){
+					event.stopPropagation();
+				});
+			})
+			
+		</script>
+	</body>
+</html>

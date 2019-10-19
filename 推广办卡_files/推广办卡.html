@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- saved from url=(0118)https://m.hhrcard.com/credit/miniprogram/copartner/PersonalPoster?id=dEpHNjJYU1c3YW9UY3dZTXk4MDRmQT09&platform_id=1003 --><html class="hairlines" style="font-size: 18.75px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>
+            推广办卡
+   </title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta http-equiv="Cache-Control" content="no-transform">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<script type="text/javascript" src="zepto.min.js.下载"></script>
+	<link rel="stylesheet" type="text/css" href="customer.css">
+	<link rel="stylesheet" href="swiper-4.0.2.min.css">
+<body>
+<div class="poster">
+  <div class="swiper-container swiper-container-horizontal swiper-container-ios">
+    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-508.296px, 0px, 0px);">
+              <div class="swiper-slide" style="width: 277.519px; margin-right: 1px;"><img src="ico_share_banner@2x (1).png" alt=""></div>
+              <div class="swiper-slide swiper-slide-prev" style="width: 277.519px; margin-right: 1px;"><img src="ico_share_banner@2x (1).png" alt=""></div>
+              <div class="swiper-slide swiper-slide-active" style="width: 277.519px; margin-right: 1px;"><img src="ico_share_banner@2x (1).png" alt=""></div>
+    </div>
+  </div>
+</div>
+<script src="swiper-4.0.2.min.js.下载"></script>
+<script>
+  var shareImg = '';
+  var mySwiper = new Swiper('.swiper-container', {
+    initialSlide :1,
+    slidesPerView: 1.35,//模块前后
+    centeredSlides: true,//选中tab居中
+    spaceBetween: 1,//tab间距
+    preventClicks: false,//阻止点击事件，false时，loop不能为true
+    effect:"slider",//coverflow,slider
+    on: {
+      slideChangeTransitionEnd: function(){
+        shareImg = $('.swiper-slide').eq(this.activeIndex).find('img').attr('src');
+      }
+    }
+  })
+  shareImg = $('.swiper-slide-active img').attr('src');
+
+  //分享回调
+  window.hhr_share = function(){
+    //location.href = 'hhrcardscheme://share?imgurl=' + encodeURIComponent(shareImg);
+    location.href = 'hhrcardscheme://share/?title=免费办理信用卡&desc=手机办卡最快1天领卡&imgurl=https%3A%2F%2Fstatic.rong360.com%2Fgl%2Fuploads%2Fallimg%2F180702%2F211_1130387721.png&page_url=' + encodeURIComponent(location.href);
+  }
+  //APP内保存海报
+  $("#saveBtn").click(function() {
+    if(baseFn.isAndroid()){
+      window.nativeMethod.saveImageToLocal(shareImg);
+    }else if(baseFn.isIos()){
+      window.whenRNPostMessageReady(function () {
+        window.postMessage(JSON.stringify({
+          "command": "saveImageToLocal",
+          "params": {
+          "imageUrl": shareImg
+          }
+        }));
+      });
+    }
+  })
+</script>
+</body></html>

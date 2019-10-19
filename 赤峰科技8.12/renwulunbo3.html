@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://www.swiper.com.cn/demo/slides-scale.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/css.css"/>
+  <link rel="stylesheet" href="./renwulunbo3_files/swiper.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <script src="Swiper-3.4.2/dist/js/swiper.min.js"></script>
+  <script src="js/html2canvas.js"></script>
+  <style>
+    html, body {
+      /*position: relative;*/
+      height: 100%;
+    }
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+      
+    }
+    /*.swiper-container{
+    	margin-top:0.2rem;
+      width: 200%;
+     margin-left:-50%;
+     display: flex;
+     flex-direction: row;
+     
+     
+    }
+    .swiper-slideB{
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+	  transition: 300ms;
+	  transform: scale(0.8);
+	  width:2.6rem;
+	  height: 4.4rem;
+	  margin-top:0.2rem;
+    }
+	.swiper-slide-active,.swiper-slide-duplicate-active{
+      transform: scale(1);
+      height: 4.9rem;
+      margin-top:-0.1rem;
+	}*/
+  </style>
+</head>
+<body style="width:100%;overflow: hidden;">
+  <!-- Swiper -->
+		  <div class="swiper-container swiper-containerA swiper-container-initialized swiper-container-horizontal swiper-container-ios">
+		    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1036px, 0px, 0px);">
+		      <div class="swiper-slide swiper-slideB"  data-swiper-slide-index="0" style="margin-right: 30px;">
+		      	<div id="swiper-slide1" style="height: 100%;width: 2.6rem;display: flex;flex-direction: row;justify-content: center;">
+		      		<img class="swiper-slideB-img swiper-slideB-img1" id="swiper-slide1-img" src="img/ico_share_banner@2x.png"/>
+		      		<!--渲染后照片透明度0-->
+		      		<img style="width:100%;height: 100%;position: absolute;top:0;left:0;z-index: 999999999;opacity: 0;" class="swiper-slideA-img swiper-slideA-img11" id="swiper-slide1-img" src=""/>
+		          <div class="swiper-slideA-box swiper-slideA-box1" id="swiper-slide1-box" style="bottom:0.45rem;">
+		            		<div class="swiper-slideA-box-box">
+		            			<div class="swiper-slideA-box-box-top">
+		            				<img class="swiper-slideA-box-box-top-img" src="img/ico_checked@2x.png"/>
+		            				<div class="swiper-slideA-box-box-top-box">
+		            					<div class="swiper-slideA-box-box-top-img-name">奔跑的蚂蚁</div>
+		            					<div class="swiper-slideA-box-box-top-number">A331565320</div>
+		            				</div>
+		            			</div>
+		            			<div class="swiper-slideA-box-box-bottom">我是您的专属客服，您有任何问题可直接咨询</div>
+		            		</div>
+		            		<img class="swiper-slideA-box-img" src="img/ico_big_jbbig@2x.png"/>
+		          </div>
+		      	</div>	
+		      </div>
+		      <div class="swiper-slide swiper-slideB" data-swiper-slide-index="1" style="margin-right: 30px;">
+		      	<div  id="swiper-slide2" style="height: 100%;width: 2.6rem;display: flex;flex-direction: row;justify-content: center;">
+		      		<img class="swiper-slideA-img swiper-slideA-img2" id="swiper-slide1-img" src="img/ico_share_banner@2x.png"/>
+		            <div class="swiper-slideA-box swiper-slideA-box2" id="swiper-slide1-box">
+		            		<div class="swiper-slideA-box-box">
+		            			<div class="swiper-slideA-box-box-top">
+		            				<img class="swiper-slideA-box-box-top-img" src="img/ico_checked@2x.png"/>
+		            				<div class="swiper-slideA-box-box-top-box">
+		            					<div class="swiper-slideA-box-box-top-img-name">奔跑的蚂蚁</div>
+		            					<div class="swiper-slideA-box-box-top-number">B1565330323</div>
+		            				</div>
+		            			</div>
+		            			<div class="swiper-slideA-box-box-bottom">我是您的专属客服，您有任何问题可直接咨询</div>
+		            		</div>
+		            		<img class="swiper-slideA-box-img" src="img/ico_big_jbbig@2x.png"/>
+		            </div>
+		          </div>
+		      </div>
+		      <div class="swiper-slide  swiper-slideB" data-swiper-slide-index="2" style="margin-right: 30px;">
+		      	<div id="swiper-slide3"  style="height: 100%;width: 2.6rem;display: flex;flex-direction: row;justify-content: center;">
+		      			<img class="swiper-slideA-img swiper-slideA-img3" id="swiper-slide1-img" src="img/ico_share_banner@2x.png"/>
+		            <div class="swiper-slideA-box swiper-slideA-box3" id="swiper-slide1-box">
+		            		<div class="swiper-slideA-box-box">
+		            			<div class="swiper-slideA-box-box-top">
+		            				<img class="swiper-slideA-box-box-top-img" src="img/ico_checked@2x.png"/>
+		            				<div class="swiper-slideA-box-box-top-box">
+		            					<div class="swiper-slideA-box-box-top-img-name">奔跑的蚂蚁</div>
+		            					<div class="swiper-slideA-box-box-top-number">c1565330832</div>
+		            				</div>
+		            			</div>
+		            			<div class="swiper-slideA-box-box-bottom">我是您的专属客服，您有任何问题可直接咨询</div>
+		            		</div>
+		            		<img class="swiper-slideA-box-img" src="img/ico_big_jbbig@2x.png"/>
+		            </div>
+		        </div>
+		      </div>
+		    </div>
+		</div>
+		<div class="baocunhaobao">长按图片可保存海报</div>
+		<div class="swiperB-bottom-box">
+			<div class="swiperB-bottom-box-left">更新海报</div>
+			<div class="swiperB-bottom-box-right">复制链接</div>
+		</div>
+		<!--用于复制网络连接-->
+		<input class="r_copy" type="" name="" id="" value="" style="opacity: 0;"/>
+  <script type="text/javascript" src="js/renwulunbo.js"></script>
+  <script>
+  	$(function(){
+  		var swiper = new Swiper('.swiper-container', {
+	      slidesPerView: 3,
+	      spaceBetween: 30,
+		  	centeredSlides: true,
+		  	loop: true,
+	      pagination: {
+	        el: '.swiper-pagination',
+	        clickable: true,
+	      },
+	    });
+	    
+	    var url = window.location.href;
+	    $(".r_copy").val(url);
+	    var copyBtn = document.getElementsByClassName('swiperB-bottom-box-right')[0];
+		copyBtn.onclick = function(){
+		var copyVal = document.getElementsByClassName("r_copy")[0];
+		copyVal.select();
+		try{
+				        if(document.execCommand('copy', false, null)){
+				            //success info
+				            alert("复制成功")
+				        } else{
+				            //fail info
+				            console.log("复制失败");
+				        }
+				    } catch(err){
+				        //fail info
+				        console.log("doSomething...");
+				    }
+		}
+  	})
+    
+  </script>
+
+
+</body></html>

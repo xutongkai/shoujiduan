@@ -1,0 +1,263 @@
+body{
+	background-color: #fff;
+}
+/*字幕喇叭*/
+.zimu-img-box{
+	position: absolute;
+	width:0.5rem;
+	height: 30px;
+	background-color: #fff;
+	top:1.5rem;
+	left:0;
+	background: #fff;
+}
+
+/*小圆点*/
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:-18px;
+}
+.empty{
+	width:100%;
+	height: 0.1rem;
+	background-color: #F5F5F5;
+}
+.option{
+	width:100%;
+	height: 0.7rem;
+	background: #fff;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 0.2rem;
+	box-sizing: border-box;
+}
+.option-list1{
+	width:calc(50% - 0.1rem);
+	height: 0.46rem;
+	background-color: #BAD4FF;
+	/*margin-left:0.26rem;*/
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border-radius:0.04rem;
+}
+.options-lis-img{
+	width:0.4rem;
+	height:0.4rem;
+}
+.options-lis-font{
+	color:#4E8CEE;
+	font-size:0.14rem;
+	margin-left:0.05rem;
+}
+.option-list2{
+	width:calc(50% - 0.1rem);
+	height: 0.46rem;
+	background-color: #BAD4FF;
+	/*margin-left:0.16rem;*/
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border-radius:0.04rem;
+}
+
+/* 轮播图 */
+.swiper-container {
+	width: 100%;
+	height: 1.5rem;
+	position: relative;
+}
+/*搜索*/
+.swiper-container-search{
+	position: absolute;
+	top:0.1rem;
+	right:0.1rem;
+	width:0.9rem;
+	height: 0.3rem;
+	background-color: #FEFEFE;
+	z-index: 999999;
+	border-radius: 0.15rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.swiper-container-search-img{
+	width:0.14rem;
+	height: 0.14rem;
+	margin-left: 0.15rem;
+}
+.swiper-container-search-text{
+	font-size:0.12rem;
+	color:#999;
+	margin-left:0.02rem
+}
+
+
+
+.container{
+	width:100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.title{
+	width:3.45rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin:0.11rem 0;
+}
+.title-text{
+	font-size:0.16rem;
+	line-height: 0.16rem;
+	color:#333;
+}
+.title-img{
+	width:0.2rem;
+	height: 0.2rem;
+}
+.list{
+	width:3.45rem;
+	/* height: 1.09rem; */
+	box-shadow:0px 3px 9px rgba(241,241,243,1);
+	border-radius:8px;
+	margin-top:0.18rem;
+	position: relative;
+}
+/*aaa*/
+.list-title{
+	margin-left: 0.1rem;
+	color:#333;
+	font-size:0.15rem;
+	line-height: 0.26rem;
+}
+.list-main{
+	width:3.25rem;
+	font-size:0.12rem;
+	margin-top:0.03rem;
+	margin-left:0.1rem;
+}
+.list-footer{
+	width:3.25rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size:0.12rem;
+	margin-top:0.05rem;
+	margin-bottom: 0.09rem;
+	margin-left: 0.1rem;
+}
+.list-footer-money>text{
+	color:#E90303;
+}
+/* 我的任务 */
+.header{
+	width:100%;
+	height: 0.46rem;
+	border:1px solid #ddd;
+	font-size:0.16rem;
+	display: flex;
+	flex-direction: row;
+}
+.header-list{
+	width:33.33%;
+	height:0.46rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.header-list-box{
+	width:0.62rem;
+	height: 0.46rem;
+	border-bottom: 0.01rem solid #ddd;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.header-list-box-hover{
+	border-bottom: 0.01rem solid #4E8CEE;
+	color:#4E8CEE;
+}
+
+/* 已领取 */
+.list-footer-button{
+	width:0.64rem;
+	height: 0.26rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	font-size:0.12rem;
+	background-color: #ccc;
+	color:#fff;
+	border-radius: 0.06rem;
+}
+/* 状态 */
+.list-status{
+	width:0.49rem;
+	height: 0.26rem;
+	position: absolute;
+	right:0;
+	top:0
+
+}
+.list-status-img{
+	width:0.49rem;
+	height: 0.26rem;
+}
+.list-status-text{
+	position: absolute;
+	left:0.09rem;
+	top:0.04rem;
+	color:#fff;
+	font-size:0.12rem;
+}
+
+
+/*轮播字幕*/
+/*.lunbo{
+	width:100%;
+	height: 0.40rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}*/
+.zimu-img{
+	/*position: absolute;*/
+	width:10%;
+	height: 0.3rem;
+	margin-left:0.09rem;
+	left: 0.1rem;
+}
+.zimu-box{
+	width:100%;
+	height: 0.4rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+#affiche {
+    color: #999;
+    display: block;
+    width: 90%;
+    height: 30px;
+    /*margin: 0 auto;*/
+    position: relative;
+    overflow: hidden;
+    font-size:0.14rem;
+    /*padding-left: 10%;*/
+}
+.affiche_text {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    line-height: 30px;
+    display: block;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

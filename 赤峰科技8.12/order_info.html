@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>缴纳保证金</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+		<!-- swiper -->
+   		<link rel="stylesheet" type="text/css" href="css/indexaa.css"/>
+   		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+<style>
+.faburenwu-upload{width:100%;margin-left:0;}
+.bg{
+	display:block;
+	width:100%;
+	background-color:#F7F7F7;
+	height:10px;
+}
+</style>
+<body>
+	<!--<div class="detail-header">
+		<img class="detail-header-img" src="{$data['ico']}" onerror="this.src='/image/no_img.png'"/>
+		<div class="detail-header-center">
+			<div class="detail-header-center-title">{$data['title']}</div>
+			<div class="detail-header-center-time">
+				<div class="detail-header-center-time-number">34.35</div>后自动放弃
+			</div>
+		</div>
+		<div class="detail-header-number">
+			<div class="detail-header-number-money">+{$data['avg_price']}</div>
+			<div class="detail-header-number-number">剩余{$data['sheng_num']}份</div>
+		</div>
+	</div>
+	<div class="bg">
+		
+	</div>
+	<div class="detail-content">
+		<div class="detail-content-title">任务须知</div>
+		<div class="detail-content-title-text">{$data['intro']}</div>
+		<div class="detail-content-title">任务步骤</div>
+		<div class="detail-content-box">
+			<div class="detail-content-box-text">{$data['step']}</div>
+			
+		</div>
+		<div class="detail-course">
+			<div class="detail-course-title">详细教程</div>
+			<div class="detail-course-text">（共{:count($data['detail_step'])}步 点击图片查看）</div>
+		</div>
+		<div class="detail-course-box">
+			{volist name="$data['detail_step']" id="vo"}
+			<div class="detail-course-box-list">
+				<img class="detail-course-box-list-img" src="{$vo}" onerror="this.src='/image/no_img.png'"/>
+				<div class="detail-course-box-list-empty">{$key+1}</div>
+			</div>
+			{/volist}
+		</div>
+		
+
+		<div class="detail-course">
+			<div class="detail-course-title">截图示例</div>
+			<div class="detail-course-text">（共{:count($data['demo_img'])}张 点击图片查看)</div>
+		</div>
+		<div class="detail-course-box">
+			{volist name="$data['demo_img']" id= "vo"}
+			<div class="detail-course-box-list">
+				<img class="detail-course-box-list-img" src="{$vo}" onerror="this.src='/image/no_img.png'"/>
+				<div class="detail-course-box-list-empty">{$key+1}</div>
+			</div>
+			{/volist}
+			
+		</div>
+
+		{if $data['link']}-->
+		<input type="text" readonly="readonly"   value="1111" class="detail-website">
+		<!-- <div class="detail-website">{$data['link']}</div> -->
+		<div class="detail-copy">复制链接</div>
+		<div class="detail-opent">请在浏览器中打开此链接</div>
+		<!--{/if}-->
+	</div>
+	<div class="bg">
+		
+	<!--</div>
+	<div class="detail-content">
+		<div class="detail-content-title">资料提交</div>
+
+		<form action="{:url('orderInfo')}" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="order_no" value="{$data['order_no']}">
+			<div class="detail-ziliao">
+				<div class="detail-ziliao-name">姓名</div>
+				<input class="detail-ziliao-input" placeholder="请输入姓名" type="text" name="name"/>
+			</div>
+			<div class="error-box">
+            </div>
+			<div class="detail-ziliao">
+				<div class="detail-ziliao-name">手机号</div>
+				<input class="detail-ziliao-input" placeholder="请输入手机号" type="text" name="tel"/>
+				<div class="detail-ziliao-button" id="r_send">获取验证码</div>
+			</div>
+			<div class="error-box">
+             </div>
+			<div class="detail-ziliao">
+				<div class="detail-ziliao-name">验证码</div>
+				<input class="detail-ziliao-input" placeholder="收到的验证码" type="text" name="code"/>
+			</div>
+			<div class="error-box">
+             </div>
+			<div class="detail-shangchuan">上传截图</div>
+			<div class="faburenwu-upload" data-num = "{:count($data['demo_img'])}">
+				<div class="upload-box add">
+					<div class="u-del" onclick="del_img(this,'image[]')"><img src="/image/close.png"></div>
+					<img src="__mobile__/img/2X.png">
+					<input type="file" name="image[]" onchange = "changepic(this,'image[]')" accept = 'image/*'>
+				</div>
+			</div>
+			
+			<button class="detail-button" type="submit">提交资料</button>
+		</form>
+		<div class="detail-botton-text">审核通过奖励自动到账，审核1-2个工作日</div>-->
+	</div>
+	
+	
+	
+	<!--<script type="text/html" id="upload_temp">
+		<div class="upload-box add">
+			<div class="u-del" onclick="del_img(this,'{{name}}')"><img src="/image/close.png"></div>
+			<img src="__mobile__/img/2X.png">
+			<input type="file" name="{{name}}" onchange = "changepic(this,'{{name}}')" accept = 'image/*'>
+		</div>
+	</script>-->
+
+	<script>
+//		$(function(){
+//			
+//			$('form').validate({
+//				rules:{
+//					name:"required",
+//					tel:{
+//						required:true,
+//						isMobile:true
+//					},
+//					code:"required"
+//				},
+//				messages:{
+//					name:"请输入姓名",
+//					tel:{
+//						required:"请输入手机号",
+//						isMobile:"手机号格式错误"
+//					},
+//					code:"请输入验证码"
+//				},
+//
+//              errorPlacement: function(error, element) {  
+//                  error.appendTo(element.parents('.detail-ziliao').next());  
+//              }
+//			});
+//
+//
+//			$('form').ajaxForm(function(d){
+//				var o = JSON.parse(d);
+//				toast(o.msg);
+//				if(o.code == 1){
+//					window.history.back('-1');
+//				}
+//			})
+//			
+
+//			$('#r_send').click(function(){
+//              var tel = $("input[name='tel']").val();
+//              if($.trim(tel) == ''){
+//                  toast('请输入手机号码');
+//              }
+//              send_verify('{:url("common_api/sendCode")}',{"mobile":tel,"type":2},'#r_send');
+//          })
+			
+			
+			
+			var copyBtn = document.getElementsByClassName('detail-copy')[0];
+
+				copyBtn.onclick = function(){
+//					var copyVal = "aaaa";
+				    var copyVal = document.getElementsByClassName("detail-website")[0];
+				        copyVal.select();
+				    
+//				    try{
+//				        if(document.execCommand('copy', false, null)){
+//				            //success info
+//				            console.log("doSomething...");
+//				        } else{
+//				            //fail info
+//				            console.log("doSomething...");
+//				        }
+//				    } catch(err){
+//				        //fail info
+//				        console.log("doSomething...");
+//				    }
+				}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>任务详情</title>
+		<script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+  		<script src="js/layer.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/layer.css"/>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+		<script type="text/javascript" src="js/layer.js"></script>
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<div class="prepara-header-empty"></div>
+		<div class="prepara-header">
+			<img class="prepara-header-img" src="img/ico_select@2x.png"/>
+			<input class="prepara-header-input" placeholder="请输入职位/公司" type="" name="" id="" value="" />
+			<div class="prepara-header-text">搜索</div>
+		</div>
+		<!-- 筛选按钮 -->
+		<div class="prepara-tab">
+			<div class="prepara-tab-list">
+				<div class="prepara-tab-list-text">综合</div>
+			</div>
+			<div class="prepara-tab-list">
+				<div class="prepara-tab-list-text">价格</div>
+				<div class="prepara-tab-list-box">
+					<img class="prepara-tab-list-box-img" src="img/ico_up@2x1.png"/>
+					<img class="prepara-tab-list-box-img" src="img/ico_xl@2x.png"/>
+				</div>
+			</div>
+			<div class="prepara-tab-list">
+				<div class="prepara-tab-list-text">时间</div>
+				<!--蓝箭头在上-->
+				<!--<div class="prepara-tab-list-box">
+					<img class="prepara-tab-list-box-img" src="img/ico_uped@2x.png"/>
+					<img class="prepara-tab-list-box-img" src="img/ico_up@2x1 - buttom.png"/>
+				</div>-->
+
+				<!--蓝箭头朝下-->
+				<div class="prepara-tab-list-box">
+					<img class="prepara-tab-list-box-img" src="img/ico_up@2x1.png"/>
+					<img class="prepara-tab-list-box-img" src="img/ico_uped@2x1-button.png"/>
+				</div>
+			</div>
+		</div>
+		<!-- 列表 -->
+		<div class="prepara-list">
+			<div class="prepara-list-left">
+				<div class="prepara-list-title">WEB前端工程师</div>
+				<div class="prapara-list-content">web前端开发，小程序制作，商程序制作，商程序制作，商城制作…</div>
+				<div class="prapara-list-gonsi">
+                            临沂秀目网络有限公司 |
+							<text class="prapara-list-money">5500-7000/月</text>
+                </div>
+			</div>
+			<div class="prepara-list-right">
+				<div class="prepara-list-right-adress">兰山区</div>
+				<div class="prepara-list-right-button">申请</div>
+			</div>
+		</div>
+		<div class="prepara-list">
+			<div class="prepara-list-left">
+				<div class="prepara-list-title">WEB前端工程师</div>
+				<div class="prapara-list-content">web前端开发，小程序制作，商程序制作，商程序制作，商城制作…</div>
+				<div class="prapara-list-gonsi">
+                            临沂秀目网络有限公司 |
+							<text class="prapara-list-money">5500-7000/月</text>
+                </div>
+			</div>
+			<div class="prepara-list-right">
+				<div class="prepara-list-right-adress">兰山区</div>
+				<div class="prepara-list-right-button">申请</div>
+			</div>
+		</div>
+		
+
+		<script type="text/javascript">
+			  //询问框
+				  layer.open({
+				    content: '<input style="color:#333;" placeholder="请输入状态码" type="" name="" id="" value="" />'
+				    ,btn: ['取消', '确定']
+				    ,yes: function(index){
+				      location.reload();
+				      layer.close(index);
+				    }
+				  });
+		</script>
+	</body>
+</html>

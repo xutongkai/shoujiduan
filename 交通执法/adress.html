@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>交通执法</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+   		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<body style="background-color: #F7F7F7;">
+		<div class="t_place">地点</div>
+		<!--<div class="t_dz">
+			<div class="t_dz_text">山东省临沂市兰山区上海路</div>
+			<img src="images/ico_more.png" alt="" class="t_dz_img" />
+		</div>-->
+		<div class="t_dz">
+			<div class="t_dz_name">地址</div>
+			<input type="text" class="t_dz_input" placeholder="请准确输入地址"/>
+		</div>
+		<div class="t_dz">
+			<div class="t_dz_name">路段</div>
+			<input type="text" class="t_dz_input" placeholder="请准确输入路段详细信息"/>
+		</div>
+		<div class="t_dz">
+			<div class="t_dz_name">时间</div>
+			<!--<div class="t_dz_time">2019-09-06  11:30:09</div>-->
+			<input class="t_dz_time" type="date" name="" id="" value=""/>
+			<img src="images/ico_more.png" alt="" class="t_dz_img" />
+		</div>
+		<div class="t_tit">上传照片</div>
+		<div class="t_explan">至少需要上传3张</div>
+		<div class="t_upload">
+			<div class="t_ui">
+				<img src="images/a.png" alt="" class="t_u_img" />
+				<img src="images/ico_delete_image.png" alt="" class="t_u_imgb" />
+			</div>
+			<div class="t_ui">
+				<img src="images/a.png" alt="" class="t_u_img" />
+				<img src="images/ico_delete_image.png" alt="" class="t_u_imgb" />
+			</div>
+			 <div class="t_button">
+			 	<img src="images/addimage.png" alt="" class="t_button_img" />
+			 	<input id="file" class="t_button_input" onchange="changepic(this)" type="file">
+			 </div>
+		</div>
+		<div class="t_titt">文字说明</div>
+		<textarea class="t_textarea" placeholder="输入文字说明" name="" rows="" cols=""></textarea>
+		<div class="t_tit">工作内容</div>
+		<div class="t_selbox">
+			<select class="x_select" name="city" lay-verify="">
+			  <option value="">请选择</option>
+			  <option value="010">美式英语</option>
+			  <option value="021">甲骨文</option>
+			  <option value="0571">俄文</option>
+			</select>
+			<img class="t_selimg" src="images/ico_more.png"/>
+		</div>
+		<div class="t_tit">责任人</div>
+		<div class="t_selbox t_selboxb">
+			<div class="t_text">请选择</div>
+			<img class="t_selimg" src="images/ico_more.png"/>
+		</div>
+		
+		<div class="t_button_tijiao">提交</div>
+		
+		<div class="t_content" style="display: none;">
+			<div class="t_content_header">
+				<img class="t_ch_img" src="images/ico_search.png"/>
+				<input type="text" placeholder="请输入姓名关键字" class="t_ch_input" />
+			</div>
+			<div class="t_ch_box">
+				<div class="t_chb_title">A</div>
+				<div class="t_chb_list">
+					<div class="t_chbl_box">
+						<div class="t_cbox_name">王五</div>
+						<img src="images/fensi_ico_added.png" alt="" class="t_cbox_img" />
+					</div>
+				</div>
+				<div class="t_chb_list">
+					<div class="t_chbl_box">
+						<div class="t_cbox_name">王五</div>
+						<img src="" alt="" class="t_cbox_img" />
+					</div>
+				</div>
+			</div>
+			<div class="t_ch_box">
+				<div class="t_chb_title">A</div>
+				<div class="t_chb_list">
+					<div class="t_chbl_box">
+						<div class="t_cbox_name">王五</div>
+						<img src="" alt="" class="t_cbox_img" />
+					</div>
+				</div>
+				<div class="t_chb_list">
+					<div class="t_chbl_box">
+						<div class="t_cbox_name">王五</div>
+						<img src="" alt="" class="t_cbox_img" />
+					</div>
+				</div>
+			</div>
+			<div class="t_bbox">
+				<div class="t_bbox_left">取消</div>
+				<div class="t_bbox_right">确定</div>
+			</div>
+		</div>
+		<script src="js/index.js"></script>
+	</body>
+</html>

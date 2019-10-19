@@ -1,0 +1,14 @@
+$(function(){
+	$('.s_header-shouru').click(function(){
+		$('.s_header-shouru').css("border-color","rgb(102,103,211)");
+		$('.s_header-tixian').css("border-color","#FFF");
+		$('.s_shouru-box').show();
+		$('.s_tixian-box').hide();
+	})
+	$('.s_header-tixian').click(function(){
+		$('.s_header-tixian').css("border-color","rgb(102,103,211)");
+		$('.s_header-shouru').css("border-color","#FFF");
+		$('.s_shouru-box').hide();
+		$('.s_tixian-box').show();
+	})
+})

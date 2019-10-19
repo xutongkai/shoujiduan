@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>我的</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" href="css/layui.css" />
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+   		<script src="js/jquery.js"></script>
+		<script src="js/jquery.waterfall.js"></script>
+		<script src="js/layui.all.js"></script>
+	</head>
+	<body>
+		<div class="x_news_header">
+			<div class="s_sh_box">
+				<img src="img/top_ico_search.png" alt="" class="search_t_icos" />
+				<input type="text" class="s_shb_input" placeholder="搜索" value="" />
+				<img src="img/ico_deleteall.png" alt="" class="s_ssh_img" />
+			</div>
+			<a href="#" class="s_right_xxico">
+				<img src="img/nav_ico_message.png" alt="" class="s_sh_img" />
+			</a>
+			<div href="#" class="s_right_xxico">
+				<img src="img/nav_ico_add.png" alt="" class="s_sh_img join_imgs" />
+			</div>
+			<a href="#" class="s_right_xxico">
+				<img src="img/nav_ico_setting.png" alt="" class="s_sh_img" />
+			</a>
+			<div class="qx_search_but">取消</div>
+			<img src="img/nav_ico_scan.png" style="display: none;" class="s_sh_img sxtj_buts" />
+		</div>
+		
+		<div class="mine_ktops">
+			<div class="mine_username">用户名</div>
+			<img class="mine_kt_head" src="img/sign_ico_sina.png" />
+		</div>
+		<div class="mine_kto_rks">
+			<div class="mine_fsgz">100位粉丝</div><div class="mine_fsgz">68关注</div>
+		</div>
+		
+		<div class="mine_tabbars">
+			<div class="mine_tabli mine_tabclick">
+				画板
+			</div>
+			<div class="mine_tabli">
+				图片
+			</div>
+			<div class="mine_tabli">
+				已尝试
+			</div>
+		</div>
+		
+		<div class="mine_botcont">
+			<div class="mine_bt_tjs">4个画板</div>
+			<div class="mine_bt_wrps">
+				<div class="mine_btk_tops">
+					<div class="mine_kb_lk">
+						<img src="img/23.jpeg" />
+					</div>
+					<div class="mine_kb_rk">
+						<div class="mine_kb_rklis">
+							<img src="img/23.jpeg" />
+						</div>
+						<div class="mine_kb_rklis">
+							<img src="img/23.jpeg" />
+						</div>
+						<div class="mine_kb_rklis">
+							<img src="img/23.jpeg" />
+						</div>
+						<div class="mine_kb_rklis">
+							<img src="img/23.jpeg" />
+						</div>
+					</div>
+				</div>
+				<div class="hbname_mines">
+					画板名称
+				</div>
+				<div class="hbtime_mines">5小时前</div>
+			</div>
+			<div class="mine_bt_wrps">
+				<div class="mine_btk_tops">
+					<div class="mine_kb_lk">
+						<img src="img/23.jpeg" />
+					</div>
+					<div class="mine_kb_rk">
+						<div class="mine_kb_rklis">
+							<img src="img/23.jpeg" />
+						</div>
+						<div class="mine_kb_rklis">
+							<img src="img/23.jpeg" />
+						</div>
+						<div class="mine_kb_rklis">
+							<img src="img/23.jpeg" />
+						</div>
+						<div class="mine_kb_rklis">
+							<img src="img/23.jpeg" />
+						</div>
+					</div>
+				</div>
+				<div class="hbname_mines">
+					画板名称
+				</div>
+				<div class="hbtime_mines">5小时前</div>
+			</div>
+			
+			<div class="mine_bt_tjs">7张图片</div>
+			<div class="pt_lwraplist" id="cont_wrap">
+				<a href="#" class="pt_lwrapli">
+					<img class="pt_lwraplico" src="img/23.jpeg" />
+					<div class="pt_lwwrps_titles">图片标题标题标题标题标图片标题标题标题标题标</div>
+				</a>
+				<a href="#" class="pt_lwrapli">
+					<img class="pt_lwraplico" src="img/zx.jpg" />
+					<div class="pt_lwwrps_titles">图片标题标题标题标题标图片标题标题标题标题标</div>
+				</a>
+				<a href="#" class="pt_lwrapli">
+					<img class="pt_lwraplico" src="img/zx.jpg" />
+					<div class="pt_lwwrps_titles">图片标题标题标题标题标图片标题标题标题标题标</div>
+				</a>
+			</div>
+		</div>
+		
+		
+		<div class="ss_tababr_empty"></div>
+		<div class="ss_tabbar">
+			<div class="ss_tabbar_list ss_tabbar_click">
+				<img src="img/tab_ico_homed.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">主页</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_class.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">分类</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_follow.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">关注</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_notice.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">通知</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_me.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">已收藏</div>
+			</div>
+		</div>
+		
+		<!--点击搜索框弹出页面-->
+		<div class="i_search_wp">
+			<div class="s_nav_wrpas">
+				<div class="s_nav_lis s_nav_click">最佳</div>
+				<div class="s_nav_lis">我的</div>
+				<div class="s_nav_lis">用户</div>
+			</div>
+			<div class="s_nav_table">
+				
+				<div class="s_tablis" style="display: block;">
+					<div class="zjss_wraps">
+						<div class="s_zs_title">
+							最近搜索
+							<img class="s_zs_closes" src="img/ico_deleteall.png" />
+						</div>
+						<div class="s_zs_list">cat</div>
+						<div class="s_zs_list">cat</div>
+						<div class="s_zs_list">cat</div>
+						<div class="s_zs_list">cat</div>
+					</div>
+					
+					<div class="s_zs_list">cat</div>
+					<div class="s_zs_list">cat</div>
+					<div class="s_zs_list">cat</div>
+					<div class="s_zs_list">cat</div>
+					<div class="s_zs_title">用户</div>
+					<div class="s_user_list">
+						<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+						<div class="s_ul_content">
+							<div class="s_ulc_name">东东</div>
+							<div class="ulc_com">546565.com</div>
+						</div>
+					</div>
+					<div class="s_user_list">
+						<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+						<div class="s_ul_content">
+							<div class="s_ulc_name">东东</div>
+							<div class="ulc_com">546565.com</div>
+						</div>
+					</div>
+					<div class="search_typs">
+						名为"1"的用户
+					</div>
+					<div class="s_zs_title">图版</div>
+					<div class="s_user_list">
+						<div class="s_hb_lefts">
+							<img src="img/23.jpeg" />
+						</div>
+						<div class="s_ul_content">
+							<div class="s_ulc_name">1354521</div>
+							<div class="ulc_com">14asd1a4sd4as54d</div>
+						</div>
+					</div>
+					<div class="search_typs">
+						名为"1"的画板
+					</div>
+				</div>
+				<div class="s_tablis">
+					<div class="s_zs_title">最近搜索</div>
+					<div class="s_zs_list">cat</div>
+					<div class="s_zs_list">cat</div>
+					<div class="s_zs_title">设计库热门</div>
+					<div class="s_zs_list">cat</div>
+					<div class="s_zs_list">cat</div>
+				</div>
+				<div class="s_tablis">
+					<div class="s_user_title">用户</div>
+					<div class="s_user_list">
+						<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+						<div class="s_ul_content">
+							<div class="s_ulc_name">东东</div>
+							<div class="ulc_com">546565.com</div>
+						</div>
+					</div>
+					<div class="s_user_list">
+						<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+						<div class="s_ul_content">
+							<div class="s_ulc_name">东东</div>
+							<div class="ulc_com">546565.com</div>
+						</div>
+					</div>
+					<div class="s_user_list">
+						<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+						<div class="s_ul_content">
+							<div class="s_ulc_name">东东</div>
+							<div class="ulc_com">546565.com</div>
+						</div>
+					</div>
+					<div class="s_user_list">
+						<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+						<div class="s_ul_content">
+							<div class="s_ulc_name">东东</div>
+							<div class="ulc_com">546565.com</div>
+						</div>
+					</div>
+					<div class="search_typs">
+						名为"1"的用户
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<!--添加Pin图或图版-->
+		<div class="mine_mb_wrap">
+			<div class="ind_pbl_more">
+				<div class="ind_pmore_tops">
+					添加Pin图或图版
+					<img class="ind_colse_more" src="img/top_ico_closed.png" />
+				</div>
+				<div class="ind_pmbot_wp">
+					<div href="#" class="ind_pmbot_row cjhb_r_k">
+						<div class="ind_pmbr_right">
+							<h2 class="ind_pmbr_txt">新建画板</h2>
+						</div>
+					</div>
+					<div class="s_zs_title" style="margin-top: 0; padding-left: 0.06rem;">Pin图</div>
+					
+					<a href="#" class="ind_pmbot_row">
+						<div class="ind_pmbr_right">
+							<h2 class="ind_pmbr_txt">链接</h2>
+						</div>
+					</a>
+					<div href="#" class="ind_pmbot_row upload_files">
+						<div class="ind_pmbr_right">
+							<h2 class="ind_pmbr_txt">相册</h2>
+						</div>
+						<input type="file" class="uplfiles_inp" id="files" />
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="sc_lik_wrap creat_hb" style="display: none;">
+			<div class="jt_header">
+				<div>创建画板</div>
+				<img src="img/title_ico_back2.png" class="jt_header_img close_cjhb2" />
+				<button class="xjhb_cj_buts">创建</button>
+			</div>
+			<div class="sc_xjhb_name">画板名称</div>	
+			<input type="text" class="txhbmc_inp" placeholder="填写画板名称" />
+			<div class="jb_switch_k" style="box-sizing: border-box; padding: 0 0.12rem;">
+				<div class="jt_pbb_name">设为私密图板</div>
+				<div class="layui-form layui-forms">
+					<input type="checkbox" name="xxx" lay-skin="switch">
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="sc_lik_wrap xzhb_upload" style="display: none;">
+			<div class="jt_header">
+				<div>选择画板</div>
+				<img src="img/title_ico_back2.png" class="jt_header_img close_cjhb" />
+			</div>
+			
+			<div class="cjhb_mids_wrps">
+				<div class="upload_xzhbs">
+					<div class="upload_xzleft" style="background-color: rgb(142,142,142); background-image: url(img/23.jpeg); "></div>
+					<textarea class="tjms_xzhb" placeholder="添加描述"></textarea>
+				</div>
+				<div class="sytb_txt_up">所有图板</div>
+				<div class="sytb_up_list">
+					<div class="sytb_up_li">
+						<div class="sytb_uli_tb">
+							<img src="img/23.jpeg" />
+						</div>
+						<span class="sytb_uli_tbmc">1231</span>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="cjhb_bot_wrp">
+				<img class="cjhb_badd_ico" src="img/top_ico_add.png" />
+				创建画板
+			</div>
+		</div>
+		<!--创建画板2-->
+		<div class="sc_lik_wrap creat_hb2" style="display: none;">
+			<div class="jt_header">
+				<div>创建画板</div>
+				<img src="img/title_ico_back2.png" class="jt_header_img close_cjhb" />
+				<button class="xjhb_cj_buts">创建</button>
+			</div>
+			<div class="sc_xjhb_name">画板名称</div>	
+			<input type="text" class="txhbmc_inp" placeholder="填写画板名称" />
+			<div class="jb_switch_k" style="box-sizing: border-box; padding: 0 0.12rem;">
+				<div class="jt_pbb_name">设为私密图板</div>
+				<div class="layui-form layui-forms">
+					<input type="checkbox" name="xxx" lay-skin="switch">
+				</div>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>
+
+
+<script>
+	
+	$(function(){
+		
+		/*渲染瀑布流*/
+		$('#cont_wrap').waterfall({
+			itemClass: ".pt_lwrapli",
+			minColCount: 2,
+			spacingHeight: 0,
+			spacingWidth: 0,
+			resizeable: true,
+			ajaxCallback: function(success, end) {
+
+			}
+		})
+		
+		layui.form.render();
+		
+		//点击创建画板弹出画板界面
+		$('.cjhb_r_k').click(function(){
+			$('.creat_hb').show();
+			$('body').css('overflow-y','hidden');
+			$('.mine_mb_wrap').hide();
+		})
+		//点击关闭创建画板
+		$('.close_cjhb').click(function(){
+			$(this).parent().parent().hide();
+			$('body').attr('style','');
+		})
+		
+		//点击选择画板中的创建画板
+		$('.cjhb_bot_wrp').click(function(){
+			$('.creat_hb2').show();
+		})
+		//
+		$('.close_cjhb2').click(function(){
+			$(this).parent().parent().hide();
+		})
+		
+		$('.mine_tabli').click(function(){
+			if(!$(this).hasClass('mine_tabclick')){
+				$(this).siblings().removeClass('mine_tabclick');
+				$(this).addClass('mine_tabclick');
+			}
+		})
+		//点击弹出添加Pin图或图版弹框
+		$('.join_imgs').click(function(){
+			$('.mine_mb_wrap').show();
+		})
+		//点击关闭添加Pin图或图版弹框
+		$('.ind_colse_more').click(function(){
+			$(this).parent().parent().parent().hide();
+		})
+		
+		
+		//监听文件上传
+		$('#files').change(function(){
+			
+			$('body').css('overflow-y','hidden');
+			$('.mine_mb_wrap').hide();
+			$('.xzhb_upload').show();
+			
+		})
+		
+		/*输入框js*/
+		$('.s_ssh_img').click(function() {
+			$('.s_shb_input').val("");
+		})
+		$('.s_shb_input').on('input', function(e) {
+			if($(this).val().length) {
+				$('.s_ssh_img').show();
+			} else {
+				$('.s_ssh_img').hide();
+			}
+		})
+		$('.s_ssh_img').click(function() {
+			$('.s_shb_input').val('');
+			$(this).hide();
+		})
+		/*搜索框聚焦*/
+		$('.s_shb_input').bind('focus',function(){
+			$('.s_right_xxico').hide();
+			$('.qx_search_but').show();
+			$('.i_search_wp').show();
+			$('.ss_tabbar').css('z-index','1');
+			$('body').css('overflow-y','hidden');
+
+		})
+		
+		/*点击搜索框取消  隐藏搜索*/
+		$('.qx_search_but').click(function(){
+			$('.s_right_xxico').show();
+			$('.qx_search_but').hide();
+			$('.i_search_wp').hide();
+			$('.ss_tabbar').attr('style','');
+			$('body').attr('style','');
+		})
+		//点击搜索table切换
+		$('.s_nav_lis').click(function(){
+			var ind = $(this).index();
+			$(this).addClass('s_nav_click');
+			$(this).siblings().removeClass('s_nav_click')
+			$('.s_tablis').hide();
+			$($('.s_tablis')[ind]).show();
+		})	
+	})
+	
+</script>

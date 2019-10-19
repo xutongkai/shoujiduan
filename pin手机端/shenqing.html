@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>申请成为供应商</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" href="css/swiper.min.css">
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<body style="background-color:#F8F8F8;">
+		<div class="dt_header">
+			<div class="dt_header_text">申请成为供应商</div>
+			<img  class="dt_header_img" src="img/title_ico_back.png"/>
+		</div>
+		<div class="applyfor_list">
+			<div class="apply_box">
+				<div class="apply_box_title"><text>*</text>品牌名称</div>
+				<div class="apply_box_right">
+					<input type="text" placeholder="审核后不可修改" class="apply_box_right_input" />
+				</div>
+			</div>
+		</div>
+		<div class="applyfor_list">
+			<div class="apply_box">
+				<div class="apply_box_title"><text>* </text>联系人</div>
+				<div class="apply_box_right">
+					<input type="text" placeholder="请填写联系人姓名" class="apply_box_right_input" />
+				</div>
+			</div>
+		</div>
+		<div class="applyfor_list">
+			<div class="apply_box" style="border-bottom: none;">
+				<div class="apply_box_title"><text>* </text>品牌名称</div>
+				<div class="apply_box_right">
+					<input type="text" placeholder="请填写手机号" class="apply_box_right_input" />
+				</div>
+			</div>
+		</div>
+		<div class="applyfor_box">
+			<div class="applyfor_box_title">品牌logo图片上传</div>
+			
+			<div class="applyfor_box_img" id="applyfor_img1">
+				<img src="img/addimage.png" alt="" style="width:100%;height: 100%;"/>
+				<input class="applyfor_box_input" onchange="changepic(this)" type="file">
+			</div>
+			
+		</div>
+		<div class="applyfor_box">
+			<div class="applyfor_box_title">营业执照上传</div>
+			<div class="applyfor_box_img" id="applyfor_img2">
+				<img src="img/addimage.png" alt="" style="width:100%;height: 100%;"/>
+				<input id="file" class="applyfor_box_input" onchange="changepics(this)" type="file">
+			</div>
+		</div>
+		<div class="applyfor_select">
+			<img src="img/tz_ico_chosen.png" alt="" class="applyfor_select_img" />
+			<div class="applyfor_select_text">我已仔细阅读<text>《易美居福利社授权声明》</text></div>
+		</div>
+		<div class="applyfor_button">提交</div>
+	</body>
+	
+	<script type="text/javascript">
+		function changepic(obj) {
+		        //console.log(obj.files[0]);//这里可以获取上传文件的name
+		        var newsrc=getObjectURL(obj.files[0]);
+		//      document.getElementById('show').src=newsrc;
+		//      $('.identific-upload-img2').attr("src",newsrc)
+				$("#applyfor_img1").before('<img class="applyfor_box_img" src="'+newsrc+'" alt="" />')
+		    }
+		    //建立一個可存取到該file的url
+		    function getObjectURL(file) {
+		        var url = null ;
+		        // 下面函数执行的效果是一样的，只是需要针对不同的浏览器执行不同的 js 函数而已
+		        if (window.createObjectURL!=undefined) { // basic
+		            url = window.createObjectURL(file) ;
+		        } else if (window.URL!=undefined) { // mozilla(firefox)
+		            url = window.URL.createObjectURL(file) ;
+		        } else if (window.webkitURL!=undefined) { // webkit or chrome
+		            url = window.webkitURL.createObjectURL(file) ;
+		        }
+		        return url ;
+		    }
+		    function changepics(obj) {
+		        //console.log(obj.files[0]);//这里可以获取上传文件的name
+		        var newsrc=getObjectURL(obj.files[0]);
+		//      document.getElementById('show').src=newsrc;
+		//      $('.identific-upload-img2').attr("src",newsrc)
+				$("#applyfor_img2").before('<img class="applyfor_box_img" src="'+newsrc+'" alt="" />')
+		    }
+		    //建立一個可存取到該file的url
+		    function getObjectURL(file) {
+		        var url = null ;
+		        // 下面函数执行的效果是一样的，只是需要针对不同的浏览器执行不同的 js 函数而已
+		        if (window.createObjectURL!=undefined) { // basic
+		            url = window.createObjectURL(file) ;
+		        } else if (window.URL!=undefined) { // mozilla(firefox)
+		            url = window.URL.createObjectURL(file) ;
+		        } else if (window.webkitURL!=undefined) { // webkit or chrome
+		            url = window.webkitURL.createObjectURL(file) ;
+		        }
+		        return url ;
+		    }
+		    
+		    
+		$(function(){
+			$(".applyfor_select").click(function(){
+				if($(".applyfor_select_img").attr("src")=="img/tz_ico_chosen.png"){
+					$(".applyfor_select_img").attr("src","")
+				}else{
+					$(".applyfor_select_img").attr("src","img/tz_ico_chosen.png")
+				}
+			})
+		})
+	</script>
+</html>
+

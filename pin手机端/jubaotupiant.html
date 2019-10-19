@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>举报图片2</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" href="css/swiper.min.css">
+   		<link rel="stylesheet" href="css/layui.css">
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="jt_header">
+			<div>举报图片</div>
+			<img src="img/top_ico_closed.png"  class="jt_header_img"/>
+		</div>
+		 <div class="jt_tname">举报骚扰信息？</div>
+		 <div class="jt_zbox">
+		 		<div class="jt_tbox">
+				 	<div class="jt_box_name">我们会删除的内容包括：</div>
+				 	<div class="jt_box_box">
+				 		<div class="jt_bb_dot"></div>
+				 		<div class="jt_bb_text">针对具体个人的攻击</div>
+				 	</div>
+				 	<div class="jt_box_box">
+				 		<div class="jt_bb_dot"></div>
+				 		<div class="jt_bb_text">个人身份信息</div>
+				 	</div>
+				 </div>
+				 <div class="jt_tbox">
+				 	<div class="jt_box_name">我们会删除的内容包括：</div>
+				 	<div class="jt_box_box">
+				 		<div class="jt_bb_dot"></div>
+				 		<div class="jt_bb_text">针对具体个人的攻击</div>
+				 	</div>
+				 	<div class="jt_box_box">
+				 		<div class="jt_bb_dot"></div>
+				 		<div class="jt_bb_text">个人身份信息</div>
+				 	</div>
+				 </div>
+		 </div>
+		 <div class="jt_pb_box">
+		 	<div class="jt_pbb_name">屏蔽  用户名</div>
+		 	<div class="jt_pbb_content">
+		 		如果你屏蔽了 用户名 ，你们仍可以查看对方的个人资料，但是你们不可以发送消息、关注或收藏对方的图片。
+		 	</div>
+		 </div>
+		 <div class="jt_jbotton">举报</div>
+		 <form class="layui-form layui-forms" action="">
+			<input type="checkbox" name="xxx" lay-skin="switch">
+		 </form>
+		 
+		<div class="ss_tababr_empty"></div>
+		<div class="ss_tabbar">
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_home.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text" style="color:#333;">主页</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_class.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">分类</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_follow.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">关注</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_notice.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">通知</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_me.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">已收藏</div>
+			</div>
+		</div>
+		<script src="js/layui.all.js"></script>
+		<script type="text/javascript">
+			layui.use('form', function(){
+			  var form = layui.form;
+			  
+			  //监听提交
+			  form.on('submit(formDemo)', function(data){
+			    layer.msg(JSON.stringify(data.field));
+			    return false;
+			  });
+			});
+			
+			
+		</script>
+	</body>
+</html>
+
+
+

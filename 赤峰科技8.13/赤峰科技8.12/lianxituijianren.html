@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>联系推荐人</title>
+		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+        <link rel="stylesheet" type="text/css" href="css/layer.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+        <script type="text/javascript" src="js/layer.js"></script>
+    </head>
+    <body>
+        <div class="referee-empty"></div>
+        <div class="referee-title">我的专属客服</div>
+        <div class="referee-box">
+            <div class="referee-top">
+                <img class="referee-top-img" src="img/ico_user_man@2x.png"></img>
+                <div class="referee-top-center">
+                    <div class="referee-top-center-name">奔跑的蜗牛</div>
+                    <div class="referee-top-center-text">身份：合伙人</div>
+                </div>
+                <img class="referee-top-wx" src="img/ico_wechat_dl@2x.png" alt="">
+                <img class="referee-top-phone" src="img/ico_tel@2x(1).png" alt="">
+            </div>
+            <div class="referee-text">专属客服是面向用户的第一责任人，在享有平台相关权益的同时，也肩负对用户进行指导、培训和排解疑惑的责任和义务。</div>
+        </div>
+        <div class="referee-time">
+            <div class="referee-time-title">您已加入团队2天</div>
+            <div class="referee-time-number">关系绑定事件：2019年7月11日 12：45</div>
+        </div>
+        <script type="text/javascript">
+        //询问框
+        layer.open({
+            content: '微信号：158536957 已复制，可直接黏贴'
+            ,btn: ['取消', '去黏贴']
+            ,yes: function(index){
+             location.reload();
+             layer.close(index);
+            }
+        });
+        
+        
+        </script>
+    </body>
+</html>

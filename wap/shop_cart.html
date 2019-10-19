@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>购物车</title>
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+
+	<body style="background-color: #F8F8F8;">
+		<div class="dt_header">
+			<div class="dt_header_text">购物车</div>
+			<img class="dt_header_img" src="img/title_ico_back.png" />
+		</div>
+
+		<div class="sc_cartList">
+			<label class="sc_list">
+				<div class="sc_list_top">
+					<!--<img src="img/ico_chosen.png" alt="" class="sc_lt_select" />-->
+					<input type="checkbox" name="cart" class="sc_lt_select" />
+					
+					<img src="img/sign_ico_wechat.png" class="sc_lt_img" />
+					<div class="sc_lt_box">
+						<div class="sc_lt_box_title">不锈钢免钉卫浴置物挂件</div>
+						<div class="sc_lt_box_name">勒托304免钉</div>
+						<div class="sc_lt_box_empty"></div>
+						<div class="sc_lt_box_money">￥<span>288.00</span></div>
+					</div>
+				</div>
+				<div class="sc_list_stepper">
+					<button type="button" class="sc_ls_cut"></button>
+					<input type="text" value="10" class="sc_ls_content" readonly />
+					<button type="button" class="sc_ls_add"></button>
+				</div>
+			</label>
+			<label class="sc_list">
+				<div class="sc_list_top">
+					<input type="checkbox" name="cart" class="sc_lt_select" />
+					<img src="img/sign_ico_wechat.png" class="sc_lt_img" />
+					<div class="sc_lt_box">
+						<div class="sc_lt_box_title">不锈钢免钉卫浴置物挂件</div>
+						<div class="sc_lt_box_name">勒托304免钉</div>
+						<div class="sc_lt_box_empty"></div>
+						<div class="sc_lt_box_money">￥<span>288.00</span></div>
+					</div>
+				</div>
+				<div class="sc_list_stepper">
+					<button type="button" class="sc_ls_cut"></button>
+					<input type="text" value="10" class="sc_ls_content" readonly />
+					<button type="button" class="sc_ls_add"></button>
+				</div>
+			</label>
+		</div>
+
+		<div class="sc_bottom">
+			<label class="sc_qx_wps">
+				<!--<img src="" alt="" class="sc_bottom_img" />-->
+				<input type="checkbox" class="scqx_inps" />
+				<div class="sc_bottom_text">全选</div>
+			</label>
+			<div class="sc_bottom_sum">合计：<span class="sc_bottom_sum_span">1690000</span>
+				<p class="sc_bottom_sum_p">积分</p>
+			</div>
+			<div class="sc_bottom_empty"></div>
+			<div att="1" class="sc_bottom_bj">编辑</div>
+			<div att="1" class="sc_bottom_js">结算</div>
+		</div>
+		<div class="ss_tabbar">
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_s_home.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text" style="color:#333;">主页</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_class.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">分类</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_shopcarted.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">购物车</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_kefu.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">客服</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_me.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">我的</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
+
+<script>
+	$(function() {
+
+		//点击 - 
+		$('body').on('click', '.sc_ls_cut', function() {
+			event.stopPropagation();
+			var num = $(this).parent().children('input').val();
+			num--;
+			if(num == 1) {
+				$(this).prop('disabled', true);
+			}
+			$(this).parent().children('input').val(num);
+		})
+
+		//点击 +
+		$('body').on('click', '.sc_ls_add', function() {
+			event.stopPropagation();
+			var num = $(this).parent().children('input').val();
+			num++;
+			if(num > 1) {
+				$(this).siblings('button[class=sc_ls_cut]').prop('disabled', false);
+			}
+			$(this).parent().children('input').val(num);
+		})
+
+		//监听全选change事件
+		$('.scqx_inps').change(function() {
+			if($(this).is(':checked')) {
+				$('.sc_lt_select').prop('checked', true)
+			} else {
+				$('.sc_lt_select').prop('checked', false)
+			}
+		})
+
+		$('input[name=cart]').change(function() {
+			var a = 1;
+			$('input[name=cart]').each(function(i, item) {
+				if(!$(item).is(':checked')) {
+					a = 0;
+				}
+			})
+			if(a == 0) {
+				$('.scqx_inps').prop('checked',false);
+			} else {
+				$('.scqx_inps').prop('checked',true);
+			}
+		})
+		
+		$('.sc_bottom_bj').click(function(){
+			
+			if($(this).attr('att')==1){
+				$(this).attr('att',2);
+				$(this).html('完成');
+				$('.sc_bottom_js').attr('att',2);
+				$('.sc_bottom_js').html('删除');
+				
+				console.log($('input[name=cart]:checked').length);
+				
+			}else{
+				$(this).attr('att',1);
+				$(this).html('编辑');
+				$('.sc_bottom_js').attr('att',1);
+				$('.sc_bottom_js').html('结算');
+			}
+			
+		})
+		
+		
+		
+	})
+</script>

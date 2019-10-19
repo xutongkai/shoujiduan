@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>画板详情</title>
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+   		<link rel="stylesheet" href="css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery.waterfall.js"></script>
+		<script src="js/layui.all.js"></script>
+	</head>
+
+	<body>
+		
+		<div class="sp_header">
+			<img src="img/title_ico_back2.png" alt="" class="sp_ha" />
+			<div class="sp_hempty"></div>
+			<img src="img/nav_ico_write.png" class="nav_tpdet_bj bjhb_buts" />
+			<img src="img/nav_ico_forword.png" class="nav_tpdet_bj fxhb_buts" />
+		</div>
+		
+		<div class="hbmc_names">画板名称</div>
+		<div class="mine_kto_rks">
+			<div class="mine_fsgz">100位粉丝</div><div class="mine_fsgz">68关注</div>
+		</div>
+		
+		<div class="mine_tabbars">
+			<div class="mine_tabli mine_tabclick">
+				你的图片
+			</div>
+			<div class="mine_tabli">
+				更多灵感
+			</div>
+		</div>
+		
+		<div class="tp_titles_rows">图片</div>
+		<div class="pt_lwraplist" id="cont_wrap">
+			<a href="#" class="pt_lwrapli">
+				<img class="pt_lwraplico" src="img/23.jpeg" />
+				<div class="pt_lwwrps_titles">图片标题标题标题标题标图片标题标题标题标题标</div>
+			</a>
+			<a href="#" class="pt_lwrapli">
+				<img class="pt_lwraplico" src="img/zx.jpg" />
+				<div class="pt_lwwrps_titles">图片标题标题标题标题标图片标题标题标题标题标</div>
+			</a>
+			<a href="#" class="pt_lwrapli">
+				<img class="pt_lwraplico" src="img/zx.jpg" />
+				<div class="pt_lwwrps_titles">图片标题标题标题标题标图片标题标题标题标题标</div>
+			</a>
+		</div>
+		
+		
+		<div class="sc_lik_wrap bjhb_mb" style="display: none;">
+			<div class="jt_header">
+				<div>编辑画板</div>
+				<img src="img/title_ico_back2.png" class="jt_header_img close_bjhb" />
+				<button class="xjhb_cj_buts">完成</button>
+			</div>
+			<div class="sc_xjhb_name">画板名称</div>	
+			<input type="text" class="txhbmc_inp" placeholder="填写画板名称" />
+			<div class="jb_switch_k" style="box-sizing: border-box; padding: 0 0.12rem;">
+				<div class="jt_pbb_name">设为私密图板</div>
+				<div class="layui-form layui-forms">
+					<input type="checkbox" name="xxx" lay-skin="switch">
+				</div>
+			</div>
+			<div class="del_tp_buts">
+				删除画板
+			</div>
+			
+			<div class="deltp_mbks">
+				<div class="deltp_qrtk">
+					<div class="deltp_qrk_title">
+						确认删除此画板?
+					</div>
+					<div class="deltp_nots">你讲无法恢复此操作</div>
+					<div class="tyzh_buts">删除</div>
+					<div class="tyzh_qx_buts">取消</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--分享图片-->
+		<div class="zf_box" style="display: none;">
+			<div class="zf_box_content">
+				<div class="ind_pmore_tops">
+					分享此图板
+					<img class="ind_colse_more" src="img/top_ico_closed.png" />
+				</div>
+				<div class="zf_bc_lis">
+					<div class="zf_bcl_box">
+						<img src="img/sign_ico_sina.png" alt="" class="zf_bclb_img" />
+						<div class="zf_bclb_text">微博</div>
+					</div>
+					<div class="zf_bcl_box">
+						<img src="img/sign_ico_sina_friend.png" alt="" class="zf_bclb_img" />
+						<div class="zf_bclb_text">朋友圈</div>
+					</div>
+					<div class="zf_bcl_box">
+						<img src="img/sign_ico_wechat.png" alt="" class="zf_bclb_img" />
+						<div class="zf_bclb_text">微信</div>
+					</div>
+					<div class="zf_bcl_box">
+						<img src="img/sign_ico_email.png" alt="" class="zf_bclb_img" />
+						<div class="zf_bclb_text">邮箱</div>
+					</div>
+				</div>
+				<div class="zf_bc_ibox">
+					<img src="img/top_ico_search.png" alt="" class="zf_bc_img" />
+					<input type="text" placeholder="昵称或者邮箱" class="zf_bc_input" />
+				</div>
+				<div class="zf_bc_listt">
+					<img src="img/sign_ico_qq.png" alt="" class="zf_bcl_img" />
+					<div class="zf_bcl_name">用户名</div>
+					<div class="zf_bcl_botton">发送</div>
+				</div>
+				<div class="zf_bc_listt">
+					<img src="img/sign_ico_qq.png" alt="" class="zf_bcl_img" />
+					<div class="zf_bcl_name">用户名</div>
+					<div class="zf_bcl_botton">发送</div>
+				</div>
+				<div class="zf_bc_listt">
+					<img src="img/sign_ico_qq.png" alt="" class="zf_bcl_img" />
+					<div class="zf_bcl_name">用户名</div>
+					<div class="zf_bcl_botton">发送</div>
+				</div>
+			</div>
+		</div>
+		
+
+	</body>
+
+</html>
+
+
+<script>
+	
+	$(function(){
+		
+		/*渲染瀑布流*/
+		$('#cont_wrap').waterfall({
+			itemClass: ".pt_lwrapli",
+			minColCount: 2,
+			spacingHeight: 0,
+			spacingWidth: 0,
+			resizeable: true,
+			ajaxCallback: function(success, end) {
+
+			}
+		})
+		
+		layui.form.render();
+		
+		//编辑画板
+		$('.bjhb_buts').click(function(){
+			$('body').css('overflow-y','hidden');
+			$('.bjhb_mb').show();
+		})
+		//关闭编辑画板
+		$('.close_bjhb').click(function(){
+			$('.bjhb_mb').hide();
+			$('body').attr('style','');
+		})
+		
+		//点击删除画板弹出确认框
+		$('.del_tp_buts').click(function(){
+			$('.deltp_mbks').show();
+		})
+		//点击取消删除画板
+		$('.tyzh_qx_buts').click(function(){
+			$('.deltp_mbks').hide();
+		})
+		
+		
+		
+		$('.fxhb_buts').click(function(){
+			$('.zf_box').show();
+		})
+		//点击关闭分享图版
+		$('.ind_colse_more').click(function(){
+			$('.zf_box').hide();
+		})
+		
+		$('.mine_tabli').click(function(){
+			if(!$(this).hasClass('mine_tabclick')){
+				$(this).siblings().removeClass('mine_tabclick');
+				$(this).addClass('mine_tabclick');
+			}
+		})
+		
+	})
+	
+</script>

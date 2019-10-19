@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>任务列表</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+		<!-- swiper -->
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+       <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+       		<script type="text/javascript" src="js/renwuliebiao.js"></script>
+	</head>
+	<body>
+		<div class="renwu-header">
+			<div class="renwu-header-title">完成任务每天领钱</div>
+			<div class="renwu-header-content">
+				<div class="renwu-header-content-list1">
+					<div class="renwu-header-content-list-number">1</div>
+					<div class="renwu-header-content-list-text">完成任务</div>
+				</div>
+				<div class="renwu-header-content-list1 renwu-header-content-list">
+					<div class="renwu-header-content-list-number">2</div>
+					<div class="renwu-header-content-list-text">审核通过</div>
+				</div>
+				<div class="renwu-header-content-list1 renwu-header-content-list">
+					<div class="renwu-header-content-list-number">3</div>
+					<div class="renwu-header-content-list-text">我拿奖励</div>
+				</div>
+			</div>
+		</div>
+		<div class="renwu-going">进行中</div>
+		<!--列表-->
+		<div class="index-list">
+			<img class="index-list-img" src="img/ico_share01@2x.png"/>
+			<div class="index-list-center">
+				<div class="index-list-center-title">京东金融新用户</div>
+				<!--<div class="index-list-center-content">京东金融新用户金世纪阿昆index-list-center-content达…</div>-->
+				<div class="index-list-center-number"><text att='15' class="index-list-center-number-text"> <script></script> </text >后自动放弃</div>
+			</div>
+			<div class="index-list-money">+1.32元</div>
+		</div>
+		<!--列表-->
+		<div class="index-list">
+			<img class="index-list-img" src="img/ico_share01@2x.png"/>
+			<div class="index-list-center">
+				<div class="index-list-center-title">京东金融新用户</div>
+				<!--<div class="index-list-center-content">京东金融新用户金世纪阿昆index-list-center-content达…</div>-->
+				<div class="index-list-center-number"><text att='20' class="index-list-center-number-text">  </text>后自动放弃</div>
+			</div>
+			<div class="index-list-money">+1.32元</div>
+		</div>
+		<div class="index-empty"></div>
+		<div class="renwu-going">投放中</div>
+		<!--列表-->
+		<div class="index-list">
+			<img class="index-list-img" src="img/ico_share01@2x.png"/>
+			<div class="index-list-center">
+				<div class="index-list-center-title">京东金融新用户</div>
+				<div class="index-list-center-content">京东金融新用户金世纪阿昆index-list-center-content达…</div>
+				<div class="index-list-center-number">剩余237份</div>
+			</div>
+			<div class="index-list-money">+1.32元</div>
+		</div>
+		<!--列表-->
+		<div class="index-list">
+			<img class="index-list-img" src="img/ico_share01@2x.png"/>
+			<div class="index-list-center">
+				<div class="index-list-center-title">京东金融新用户</div>
+				<div class="index-list-center-content">京东金融新用户金世纪阿昆index-list-center-content达…</div>
+				<div class="index-list-center-number">剩余237份</div>
+			</div>
+			<div class="index-list-money">+1.32元</div>
+		</div>
+
+		<div class="renwu-eject"  style="display: none;">
+
+			<!--任务描述弹出层-->
+			<div class="renwu-eject-content" style="display: none;">
+				<div class="renwu-eject-content-top">
+					<div class="renwu-eject-content-top-text">映客直播新用户注册互动就送5元现金红包</div>
+					<img class="renwu-eject-content-top-img" src="img/ico_slide_close@2x.png"/>
+				</div>
+				<div class="renwu-eject-center">
+					<img class="renwu-eject-center-img" src="img/ico_jb_small@2x.png">
+					<div class="renwu-eject-center-text">
+						<div class="renwu-eject-center-text1">0.32元</div>
+						<div class="renwu-eject-center-text2">剩余237份 有专属</div>
+					</div>
+				</div>
+				<a class="renwu-eject-begin" href="">开始任务</a>
+				<a class="renwu-eject-draw" href="">领取奖励</a>
+			</div>
+			<!--任务放弃弹出层-->
+			<div class="renwu-eject-content2">
+				<div class="renwu-eject-content2-title">确认放弃任务</div>
+				<div class="renwu-eject-content2-button">
+					<div class="renwu-eject-content2-button-left">放弃任务</div>
+					<div class="renwu-eject-content2-button-right">继续任务</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
+
+
+<script>
+	
+	$(function(){
+		
+		var arr = $('.index-list-center-number-text');
+		console.log(arr);
+		for(let i=0;i<arr.length;i++){
+			
+			resetTime(arr[i],$(arr[i]).attr('att'));
+			
+		}
+		
+	})
+	
+	
+</script>

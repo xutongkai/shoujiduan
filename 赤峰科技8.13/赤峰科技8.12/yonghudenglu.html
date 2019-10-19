@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title></title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="y_empty"></div>
+		<div class="y_box">
+			<img class="y_box-img" src="img/shouji.png"/>
+			<input class="y_box-input" placeholder="请输入本人常用手机号" type="number" name="" id="" value="" />
+		</div>
+		<div class="y_box" style="margin-top:0.2rem;">
+			<img class="y_box-img" src="img/duanxin.png"/>
+			<input class="y_box-input" placeholder="请输入本人常用手机号" type="number" name="" id="" value="" />
+			<div class="y_box-buttom">获取验证码</div>
+		</div>
+		<div class="y_select">
+			<img class="y_select-img" src=""/>
+			<div class="y_select-text1">我同意</div>
+			<a class="y_select-text2">《用户注册协议》</a>
+		</div>
+		<div class="y_buttom">登录</div>
+		<div class="y_text">若您未注册，验证后会自动注册并登录</div>
+		<script>
+		$(function(){
+				var status = true;
+				$(".y_box-buttom").click(function(){
+					var time = 60;
+						if(status == false){
+							return
+						}
+						status = false;
+						
+					$(".y_box-buttom").html(time);
+					var timer = setInterval(function(){
+						time--;
+						$(".y_box-buttom").html(time);
+						if(time<=0){
+							clearInterval(timer)
+							$(".y_box-buttom").html("获取验证码");	
+							status = false;
+						}
+					},1000)
+				})
+				
+				
+				$(".y_select").click(function(){
+				if($(".y_select-img").attr("src")==""){
+					$(".y_select-img").attr("src","img/ico_check@2x.png");
+					$(".y_buttom").css("background-color","rgb(62,155,243)");
+					$(".y_buttom").css("color","#FFF");
+				}else{
+					$(".y_select-img").attr("src","");
+					$(".y_buttom").css("background-color","#D0D0D0");
+					$(".y_buttom").css("color","#999");
+				}
+			})
+			})
+			
+		</script>
+	</body>
+</html>

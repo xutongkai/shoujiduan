@@ -1,0 +1,168 @@
+
+/**
+ * 校验手机号
+ * date:2017-11-17
+ * @param {Object} phone 手机号码
+ */
+function is_mobile(phone){
+    if(!(/^1[34578]{1}\d{9}$/.test(phone))){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+
+/**
+ * 提示框
+ * @param msg  显示内容
+ * @param time 显示描述
+ */
+function toast(msg){
+    layui.use('layer', function(){
+      var layer = layui.layer;
+      layer.msg('<span style="color:#fff;">'+msg+'</span>');
+    });  
+    
+}
+
+/**
+ * 询问框
+ * @param msg
+ * @param res
+ * @param no
+ */
+function confirm(msg,res,no,callback){
+    layer.open({
+        content: msg
+        ,btn: [res,no]
+        ,yes: callback
+    });
+
+}
+/**
+ * 获取dom的值
+ * date:2017-10-10
+ * @param {Object} dom   要获取值的dom对象
+ * @param {Object} type	 取值类型 1：value 2:innerHTML 3:innerText
+ */
+
+function get_val(dom,type){
+    var domObj = document.querySelector(dom);
+    switch(type){
+        case 1:return domObj.value;
+            break;
+        case 2:return domObj.innerHTML;
+            break;
+        case 3:return domObj.innerText;
+            break;
+        default: return domObj.value;
+    }
+}
+
+/**
+ * 添加值
+ * @param dom
+ * @param val
+ * @param type
+ */
+function set_val(dom,val,type){
+    var domObj = document.querySelector(dom);
+    switch(type){
+        case 1:domObj.value = val;
+            break;
+        case 2:domObj.innerHTML = val;
+            break;
+        case 3:domObj.innerText = val;
+            break;
+        default: domObj.value = val;
+    }
+}
+/**
+ * 字段验证
+ * @param value
+ * @param type
+ */
+function field_check(value,type){
+    value = $.trim(value);
+    switch(type){
+        case 1: //必填
+            if(value === '')return false;break;
+        case 2: //是否为手机号
+            if(!is_mobile(value)) return false;break;
+    }
+    return true;
+}
+
+/**
+ * ajax请求
+ * @param url
+ * @param data
+ * @param callback
+ */
+function return_ajax(url,data,callback){
+    $.ajax({
+        url:url,
+        async:false,
+        data:data,
+        type:"json",
+        type:'POST',
+        success:callback,
+        error:function(){
+            alert('网络异常，请稍后再试');
+        }
+    })
+}
+
+
+/**
+ *发送验证码[针对同个页面多个发送按钮]
+ * date:2017-11-17
+ * @param {Object} url		发送验证码url
+ * @param {Object} param	参数
+ * @param {Object} dom		点击dom元素
+ */
+var sendVerify = 90;
+function send_verify(url,param,dom){
+    var sendBtn = document.querySelector(dom);
+    var sendVerifyTime = sendBtn.getAttribute('data-svtime');
+    if(sendVerifyTime === null || sendVerifyTime == 0){
+        return_ajax(url,param,function(e){
+            var obj = JSON.parse(e);
+            if(obj.status == 1){
+                toast(obj.msg);
+                sendBtn.setAttribute('data-svtime',sendVerify);
+                sendVerifyCountDown(sendBtn);
+            }else{
+                toast(obj.msg);
+                return;
+            }
+        })
+    }
+}
+
+//倒计时
+function sendVerifyCountDown(dom){
+    var downTime = dom.getAttribute('data-svtime');
+    if(downTime > 0){
+        dom.innerText = '重新获取: '+downTime;
+        downTime--;
+        dom.setAttribute('data-svtime',downTime);
+        setTimeout(function(){
+            sendVerifyCountDown(dom);
+        },1000)
+    }else{
+        dom.setAttribute('data-svtime',0);
+        dom.innerText = '重新获取';
+    }
+}
+
+
+/**
+ * 页面跳转
+ * @param url
+ */
+function loc(url){
+    window.location.href = url+'/city_id/'+readCookie('city_id');
+}
+

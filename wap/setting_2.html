@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>设置</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" href="css/swiper.min.css">
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="x_news_header">
+			<img src="img/title_ico_back2.png" alt="" class="x_nh_return" />
+			<span class="x_new_text">设置</span>
+		</div>
+		
+		<div class="me_modpasss_row">
+			<div class="me_mdp_rleft">邮箱</div>
+			<input type="text" placeholder="请输入邮箱" class="me_mdp_rinps" />
+		</div>
+		<div class="me_modpasss_row">
+			<div class="me_mdp_rleft">姓名</div>
+			<input type="password" placeholder="请输入姓名" class="me_mdp_rinps" />
+		</div>
+		<div class="me_modpasss_row">
+			<div class="me_mdp_rleft">国家</div>
+			<select class="me_mdp_rinps">
+				<option>中国</option>
+				<option>美国</option>
+			</select>
+		</div>
+		<div class="me_modpasss_row">
+			<div class="me_mdp_rleft">语言</div>
+			<select class="me_mdp_rinps">
+				<option>汉语</option>
+				<option>英语</option>
+			</select>
+		</div>
+		
+		<div class="me_modpasss_row">
+			<div class="me_mdp_rleft">性别</div>
+			
+			<label class="xb_lab_wrap">
+				<input name="sex" checked type="radio" />男
+			</label>
+			<label class="xb_lab_wrap">
+				<input name="sex" type="radio" />女
+			</label>
+			<label class="xb_lab_wrap">
+				<input name="sex" type="radio" />保密
+			</label>
+			
+		</div>
+		
+		<div class="me_modpasss_row">
+			<div class="me_mdp_rleft">品牌类型</div>
+			<select class="me_mdp_rinps">
+				<option>运动</option>
+				<option>学习</option>
+			</select>
+		</div>
+		
+		<a href="#" class="me_modpasss_row">
+			<div class="me_mdp_rleft">修改密码</div>
+			<div class="me_mdp_rinps"></div>
+			<img class="me_mdpmore_ico" src="img/title_ico_more.png" />
+		</a>
+		
+		<div class="me_modpasss_row tyzh_click">
+			<div class="me_mdp_rleft">停用账户</div>
+			<div class="me_mdp_rinps"></div>
+			<img class="me_mdpmore_ico" src="img/title_ico_more.png" />
+		</div>
+		
+		<div class="me_modpasss_row gbzh_click">
+			<div class="me_mdp_rleft">关闭账户</div>
+			<div class="me_mdp_rinps"></div>
+			<img class="me_mdpmore_ico" src="img/title_ico_more.png" />
+		</div>
+		
+		<button class="modpasss_buts">保存</button>
+		
+		
+		<div class="setting_mb">
+			<div class="setting_tytk tyzh_mb_tk">
+				<div class="settk_title">确定暂时停用此账户？</div>	
+				<div class="settk_botcont">
+					<p class="settk_tishi">
+						如果想再次使用设计库，使用52401493@qq.com
+登录即可。
+在此期间，没有人会看到你的图库或个人资料。
+别人仍会看到你给他们发送的私信。
+					</p>
+					<div class="tyzh_buts">停用账户</div>
+					<div class="tyzh_qx_buts">取消</div>
+				</div>
+			</div>
+			<div class="setting_tytk gbzh_mb_tk">
+				<div class="settk_title">确定关闭此账户？</div>	
+				<div class="settk_botcont">
+					<p class="settk_tishi">
+						如果想再次使用设计库，使用52401493@qq.com
+登录即可。
+在此期间，没有人会看到你的图库或个人资料。
+别人仍会看到你给他们发送的私信。
+					</p>
+					<div class="tyzh_buts">关闭账户</div>
+					<div class="tyzh_qx_buts">取消</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
+
+
+<script>
+	
+	$(function(){
+		//点击停用账户弹框
+		$('.tyzh_click').click(function(){
+			$('.tyzh_mb_tk').show();
+			$('.gbzh_mb_tk').hide();
+			$('.setting_mb').show();
+		})
+		
+		//点击停用账户弹框
+		$('.gbzh_click').click(function(){
+			$('.tyzh_mb_tk').hide();
+			$('.gbzh_mb_tk').show();
+			$('.setting_mb').show();
+		})
+		
+		//点击取消 关闭幕布
+		$('.tyzh_qx_buts').click(function(){
+			$('.setting_mb').hide();
+		})
+		
+	})
+	
+	
+</script>

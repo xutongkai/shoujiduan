@@ -1,0 +1,130 @@
+/*9.17新!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+.jz_box{
+	width:calc(100% - 0.24rem);
+	margin:0 auto;
+}
+.jz_name{
+	font-size:0.2rem;
+	color:#333;
+	font-weight: bold;
+	margin-top:0.2rem;
+	line-height: ;
+}
+.jz_n_jt{
+	width:100%;
+	font-size:0.15rem;
+	line-height: 0.16rem;
+	margin-top:0.06rem;
+	color:#333;
+}
+.jz_zrr{
+	font-size:0.2rem;
+	color:#333;
+	font-weight: bold;
+	margin-top:0.2rem;
+}
+.jz_zrr_name{
+	width:100%;
+	font-size:0.15rem;
+	line-height: 0.16rem;
+	margin-top:0.08rem;
+	color:#333;
+}
+.jz_dd{
+	font-size:0.2rem;
+	color:#333;
+	font-weight: bold;
+	margin-top:0.2rem;
+}
+.jz_dd_adress{
+	font-size:0.15rem;
+	color:#333;
+	line-height: 0.16rem;
+	margin-top:0.08rem;
+}
+.jz_li{
+	width:100%;
+	margin-top:0.08rem;
+	font-size:0.15rem;
+	display: flex;
+	flex-direction: row;
+}
+.jz_li_name{
+	color:#999999;
+	margin-right:0.18rem;
+}
+.jz_li_text{
+	flex: 1;
+	color:#333;
+}
+.jz_sm{
+	font-size:0.2rem;
+	color:#333;
+	font-weight: bold;
+	margin-top:0.2rem;
+}
+.jz_sm_text{
+	font-size:0.15rem;
+	line-height: 0.16rem;
+	margin-top:0.08rem;
+}
+.jz_delate{
+	width:100%;
+	height: 0.49rem;
+	line-height: 0.49rem;
+	border:1px solid #EFEFEF;
+	background-color: #FBFBFB;
+	font-size:0.16rem;
+	text-align: center;
+	color:#999999;
+	margin-top:0.4rem;
+}
+.jz_zhaopian{
+	width:100%;
+	overflow: hidden;
+	margin-top:0.08rem;
+}
+.jz_zhaopian_img{
+	display: inline-block;
+	width:1.14rem;
+	height: 1.14rem;
+	margin-right:0.05rem;
+	margin-bottom:0.05rem;
+	float:left;
+}
+.jz_zhaopian_img:first-child(3n){
+	margin-left:0;
+}
+.jz_zhaopian_video{
+	width:1.14rem;
+	height: 1.14rem;
+	margin-left:0.05rem;
+	margin-bottom:0.05rem;
+}
+.jz_chakan{
+	position: fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.6);
+	z-index: 999;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.jx_chakan_box{
+	width:100%;
+	position: relative;
+}
+.jz_chakan_img{
+	width:100%;
+}
+.jz_chakan_delate{
+	position: absolute;
+	top:0.1rem;
+	right:0.1rem;
+	width:0.3rem;
+	height: 0.3rem;
+}

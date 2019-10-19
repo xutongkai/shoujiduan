@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge"/>-->
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link type="text/css" rel="stylesheet" href="css/css.css" />
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/js-weixin.js"></script>
+		
+	</head>
+<script src="https://webapi.amap.com/maps?v=1.4.14&key=93ed1a8a21dd80445cc66d449b904cb3&plugin=AMap.Driving,AMap.Geocoder"></script>
+	
+	<body>
+		
+		<!--<img class="ydy" style="position: fixed; left: 0; top: 0; z-index: 162;" src="img/indbj.png" />-->
+		
+		<!--<div id="lqyhq" style="width:100%; height: 100%; position: fixed; display: flex; justify-content: center; align-items: center; left: 0; top: 0; z-index: 162;">
+			<div style="width: 219px; height: 216px; background: url(img/yhq_bj.png) 100% 100% #fff; border-radius: 8px; ">
+				<div style="font-size: 14px; width: 100%; margin: 17px 0; text-align: center; line-height: 20px; color: #3399FA;">领取优惠券</div>
+				<a href="m.bashi.uyl.cn.html" style="width: 143px; height: 38px; background-color: #3399FA; border-radius: 4px; text-align: center; line-height: 38px; color: #fff; font-size: 14px; display: block; margin: 0 auto;" href="#">下载APP领取10元</a>
+				<div style="width: 143px; height: 38px; margin: 17px auto 0; background-color: #666666; text-align: center; line-height: 38px; color: #fff; border-radius: 4px; display: block;">我着急，直接下单</div>
+			</div>
+		</div>-->
+
+		<div class="home_top">
+			<div class="top_li top_li_click">拼个车</div>
+			<a href="jcjs.html" class="top_li">机场接送</a>
+			<div class="top_li">电话订车</div>
+		</div>
+		
+		<img class="bj_ico" src="img/bj.png" />
+		<img class="go_order" src="img/order.png" />
+		<img class="go_order" style="top: 180px;" src="img/me.png" />
+		
+		<div class="mb_wrap">
+			<div class="bj_wrap">
+				<img class="close_bj" src="img/chahao.png" />
+				<div class="bj_top">
+					<img class="bj_top_ico" src="img/icon-life-alarm.png" />
+				</div>
+				<span class="yjbj_txt">一键报警</span>
+				<span class="bj_ts">一键报警后 ，会把司机信息、当前位置以短信的形式发送给紧急联系人</span>
+				<div class="bj_mid">
+					<span class="jjlxr_txt">紧急联系人</span>
+					<span class="bj_lxr">编辑</span>
+				</div>
+				<div class="jjlxr_li">
+					<img class="jjlxr_li_ico" src="img/iocn_black_head.png" />
+					<span class="lxr_gx">父亲</span>
+					<span class="lxr_tel">13645456444</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="map_wrap">
+			<div id="container"></div>
+			<div class="mid_wrap xl1" style="display: block;">
+				<div class="mid_top">
+					<div class="lw_city go">朝阳镇</div>
+					<img class="lw_ico" src="img/qh.png" />
+					<div class="lw_city to">长春市</div>
+				</div>
+				<div class="mid_addr">
+					<div class="addr_cont">
+						<img class="addr_ico" src="img/addr_ico.png" /><input class="addr_txt" value="" /><span style="color: red; margin-left: 10px; font-size: 12px;">(必填*)</span>
+						<!--<img class="addr_ico" src="img/addr_ico.png" /><span class="addr_txt"></span>-->
+					</div>
+				</div>
+				<input class="mid_but" type="button" value="确定上车地点" />
+			</div>
+			<div class="mid_wrap xl2" style="display: none;">
+				<div class="mid_top">
+					<div class="lw_city go">朝阳镇</div>
+					<img class="lw_ico" src="img/qh.png" />
+					<div class="lw_city to">长春市</div>
+				</div>
+				<div class="lx_list">
+					<div class="lx_li lx_li_click">专线1</div>
+					<div class="lx_li">专线1</div>
+					<div class="lx_li">专线1</div>
+					<div class="lx_li">专线1</div>
+					<div class="lx_li">专线1</div>
+					<div class="lx_li">专线1</div>
+					<div class="lx_li">专线1</div>
+				</div>
+				<div class="mid_addr">
+					<div class="addr_cont">
+						<img class="addr_ico" src="img/addr_ico.png" /><span class="addr_bd">请在地图上选点</span>
+					</div>
+				</div>
+				<input class="mid_but" disabled type="button" value="确定上车地点" />
+			</div>
+			<img class="addr_img" src="img/addr.png" />
+		</div>
+		
+		
+
+		<script>
+			var map = '',
+				qidian = 1, //1 朝阳到长春 2长春到朝阳
+				geocoder,
+				type = 1,
+				marker,
+				data = [{
+					"id": 1,
+					"name": "朝阳镇",
+					"lnglats": ["126.06601", "42.661602"]
+				}, {
+					"id": 2,
+					"name": "吉大南校",
+					"lnglats": ["125.29015123839997", "43.82432568326238"]
+				}, {
+					"id": 3,
+					"name": "前卫医院",
+					"lnglats": ["125.289875", "43.836939"]
+				}, {
+					"id": 4,
+					"name": "南湖广场",
+					"lnglats": ["125.289047", "43.851509"]
+				}, {
+					"id": 5,
+					"name": "红旗街",
+					"lnglats": ["125.280971", "43.857425"]
+				}, {
+					"id": 6,
+					"name": "省人民医院",
+					"lnglats": ["125.29927611349997", "43.87045666860378"]
+				}, {
+					"id": 7,
+					"name": "吉大医院",
+					"lnglats": ["125.30188", "43.877859"]
+				}, {
+					"id": 8,
+					"name": "康平广场",
+					"lnglats": ["125.31367", "43.895071"]
+				}, {
+					"id": 9,
+					"name": "胜利公园",
+					"lnglats": ["125.31493484969998", "43.8985069985176"]
+				}];
+				
+				
+			$(function() {
+				
+				$('.addr_txt').bind('input',function(){
+					console.log()
+				})
+				
+				cyz();
+//				xl1点击确认上车地点
+				$('.xl1').children('.mid_but').click(function() {
+					if(qidian == 1) {
+						$('.xl2').children('.mid_but').val('确定下车地点');
+						ccs();
+					} else {
+						//前往微信小程序
+					}
+				})
+				//xl2点击确认上车地点
+				$('.xl2').children('.mid_but').click(function() {
+					if(qidian == 2) {
+						$('.xl1').children('.mid_but').val('确定下车地点');
+						cyz();
+					} else {
+						//前往微信小程序
+					}
+				})
+
+				//点击切换方向
+				$('.lw_ico').click(function() {
+					$('.xl2').children('.mid_but').attr('disabled','disabled');
+					if(qidian == 1) {
+						$('.addr_bd').html('');
+						$('.xl2').children('.mid_but').val('确定上车地点');
+						ccs();
+						qidian = 2;
+						$('.go').html('长春市');
+						$('.to').html('朝阳镇');
+					} else if(qidian == 2) {
+						qidian = 1;
+						$('.xl1').children('.mid_but').val('确定上车地点');
+						cyz();
+						$('.go').html('朝阳镇');
+						$('.to').html('长春市');
+					}
+				})
+				
+				//点击报警弹出报警框
+				$('.bj_ico').click(function(){
+					$('.mb_wrap').css("display","flex");
+				})
+				
+				$('.close_bj').click(function(){
+					$('.mb_wrap').hide();
+				})
+				
+				$('.ydy').click(function(){
+					$(this).hide();
+				})
+
+			})
+
+			//渲染朝阳镇地图
+			function ccs() {
+				destroyMap();
+				$('.xl1').hide();
+				$('.xl2').show();
+				$('.addr_img').hide();
+				slhccs();
+			}
+
+			//渲染朝阳镇地图
+			function cyz() {
+				destroyMap();
+				$('.xl2').hide();
+				$('.xl1').show();
+				$('.addr_img').show();
+				slhcyz('126.06601', '42.661602');
+				
+//				logMapinfo();
+//				map.on('moveend', logMapinfo);
+//				map.on('zoomend', logMapinfo);
+			}
+
+			/*实例化路线*/
+			function slhcyz(lnt, lat) {
+				map = new AMap.Map('container', {
+					resizeEnable: true, //是否监控地图容器尺寸变化
+					zoom: 17,
+					center: [lnt, lat], //初始地图中心点
+				});
+				marker = new AMap.Marker({
+						position: ["126.06601", "42.661602"],
+						offset: new AMap.Pixel(-12, -12),
+						map: map,
+						draggable: false, //是否可拖动
+						content: '<div val="朝阳镇" class="kf_bd"><span class="zd_name">朝阳镇</span></div>'
+					});
+			}
+
+			/*实例化长春市路线*/
+			function slhccs() {
+				map = new AMap.Map('container', {
+					resizeEnable: true, //是否监控地图容器尺寸变化
+					zoom: 17,
+				});
+				for(var i = 0, marker, driving1; i < data.length; i++) {
+					marker = new AMap.Marker({
+						position: data[i].lnglats,
+						offset: new AMap.Pixel(-12, -12),
+						map: map,
+						draggable: false, //是否可拖动
+						content: '<div ontouchstart="start(this)" val="' + data[i].name + '" class="kf_bd"><span class="zd_name">' + data[i].name + '</span></div>'
+					});
+
+					if(i > 0) {
+						driving1 = new AMap.Driving({
+							map: map,
+							hideMarkers: true,
+							showTraffic: false,
+						});
+						var a = i - 1;
+						// 根据起终点经纬度规划驾车导航路线
+						driving1.search(new AMap.LngLat(data[a].lnglats[0], data[a].lnglats[1]), new AMap.LngLat(data[i].lnglats[0], data[i].lnglats[1]));
+					}
+				}
+			}
+
+			function start(_this) {
+				if(qidian == 1) {
+					$('.kf_bd').removeClass('bd_zhong')
+					$(_this).addClass('bd_zhong');
+				} else {
+					$('.kf_bd').removeClass('bd_qi')
+					$(_this).addClass('bd_qi');
+				}
+				$('.addr_bd').html($(_this).attr('val'));
+				$('.xl2').children('.mid_but').removeAttr('disabled');
+			}
+			//销毁地图
+			function destroyMap() {
+				map && map.destroy();
+				console.log("地图已销毁");
+			}
+
+			//显示地图层级与中心点信息
+			function logMapinfo() {
+				var zoom = map.getZoom(); //获取当前地图级别
+				var center = map.getCenter(); //获取当前地图中心位置
+				regeoCode(center.lng + ',' + center.lat)
+			};
+			//获取标点地址
+			function regeoCode(lnglat) {
+				if(!geocoder) {
+					geocoder = new AMap.Geocoder({
+						city: "010", //城市设为北京，默认：“全国”
+						radius: 1000 //范围，默认：500
+					});
+				}
+				geocoder.getAddress(lnglat, function(status, result) {
+					if(status === 'complete' && result.regeocode) {
+						var address = result.regeocode.formattedAddress;
+						$('.addr_txt').html(address);
+						if(address.indexOf('朝阳镇') == -1) {
+							$('.xl1').children('.mid_but').attr('disabled', 'disabled')
+						} else {
+							$('.xl1').children('.mid_but').removeAttr('disabled')
+						}
+						console.log(address);
+					} else {
+						console.log(JSON.stringify(result))
+					}
+				});
+			}
+		</script>
+
+	</body>
+
+</html>
+
+<!--<script>
+		var map = new AMap.Map('container', {
+		        resizeEnable: true, //是否监控地图容器尺寸变化
+		        zoom:11, //初始化地图层级
+		        center: [116.397428, 39.90923] //初始化地图中心点
+		    });
+	</script>-->

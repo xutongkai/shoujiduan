@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>通知</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+		<!-- swiper -->
+   		<link rel="stylesheet" type="text/css" href="css/index(1)(1).css"/>
+   		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="t_box">
+			<div class="t_box-box">
+				<div class="t_box-title">
+					<!--<div class="t_box-title-zhiding">置顶</div>-->
+					<div class="t_box-title-name">合伙人推广规范守则</div>
+				</div>
+				<div class="t_box-number">
+					<div class="t_box-number-time">2019-08-07 17:57:46</div>
+					<div class="t_box-number-buttom">
+						<div class="t_box-number-buttom-drop"></div>
+						 <div class="t_box-number-buttom-text">展开</div>
+						<img src="img/ico_more@2xbutton.png" alt="" class="t_box-number-buttom-img" />
+					</div>
+				</div>
+				
+			</div>
+			<div class="t_box-context" style="display: none;">
+				
+			</div>	
+		</div>
+		<div class="t_box">
+			<div class="t_box-box">
+				<div class="t_box-title">
+					<span class="t_box-title-zhiding">置顶</span>
+					合伙人推广规范守则阿斯顿发发斯蒂芬阿斯顿
+				</div>
+				<div class="t_box-number">
+					<div class="t_box-number-time">2019-08-07 17:57:46</div>
+					<div class="t_box-number-buttom">
+						<!--<div class="t_box-number-buttom-drop"></div>-->
+						 <div class="t_box-number-buttom-text">展开</div>
+						<img src="img/ico_more@2xbutton.png" alt="" class="t_box-number-buttom-img" />
+					</div>
+				</div>
+				
+			</div>
+			<div class="t_box-context" style="display: none;">
+				
+			</div>	
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				var status = true;
+				$('.t_box-number-buttom').click(function(){
+					
+					staut=false
+					setTimeout(function(){
+						status = true
+					},1000)
+					
+					if($(this).children('.t_box-number-buttom-text').html()=="展开"){
+						if(status==false){return};
+						$(this).children('.t_box-number-buttom-text').html("收起");
+						$(this).children('.t_box-number-buttom-img').attr("src","img/ico_more@2xtop.png");
+						$(this).parents('.t_box').children('.t_box-context').slideDown();
+						
+					}else{
+						if(status==false)return;
+						$(this).children('.t_box-number-buttom-text').html("展开");
+						$(this).children('.t_box-number-buttom-img').attr("src","img/ico_more@2xbutton.png");
+						$(this).parents('.t_box').children('.t_box-context').slideUp();
+					}
+					
+				})
+			})
+		</script>
+	</body>
+</html>

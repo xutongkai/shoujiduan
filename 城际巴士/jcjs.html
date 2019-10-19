@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge"/>-->
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta charset="UTF-8">
+		<title>机场接送</title>
+		<link type="text/css" rel="stylesheet" href="css/css.css" />
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/js-weixin.js"></script>
+		<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.11&key=93ed1a8a21dd80445cc66d449b904cb3&plugin=AMap.Driving,AMap.Geocoder,AMap.CircleEditor"></script>
+	</head>
+
+	<!--<script>
+		$(function() {
+			pushHistory();
+			window.addEventListener("popstate", function(e) {
+				alert("我监听到了浏览器的返回按钮事件啦"); //根据自己的需求实现自己的功能
+			}, false);
+
+			function pushHistory() {
+				var state = {
+					title: "title",
+					url: "#"
+				};
+				window.history.pushState(state, "title", "#");
+			}
+		});
+	</script>-->
+
+	<body>
+
+		<div class="home_top">
+			<a href="pgc.html" class="top_li">拼个车</a>
+			<div class="top_li top_li_click">机场接送</div>
+			<div class="top_li">电话订车</div>
+		</div>
+		
+		<img class="bj_ico" src="img/bj.png" />
+		<img class="go_order" src="img/order.png" />
+		<img class="go_order" style="top: 180px;" src="img/me.png" />
+		
+		<div class="mb_wrap">
+			<div class="bj_wrap">
+				<img class="close_bj" src="img/chahao.png" />
+				<a  href="tel:400-0000-688" class="bj_top">
+
+					<img class="bj_top_ico" src="img/icon-life-alarm.png" />
+				</a>
+				<span class="yjbj_txt">一键报警</span>
+				<span class="bj_ts">一键报警后 ，会把司机信息、当前位置以短信的形式发送给紧急联系人</span>
+				<div class="bj_mid">
+					<span class="jjlxr_txt">紧急联系人</span>
+					<span class="bj_lxr">编辑</span>
+				</div>
+				<div class="jjlxr_li">
+					<img class="jjlxr_li_ico" src="img/iocn_black_head.png" />
+					<span class="lxr_gx">父亲</span>
+					<span class="lxr_tel">13645456444</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="map_wrap">
+			<div id="container"></div>
+			<div class="mid_wrap xl1" style="display: block;">
+				<div class="mid_top">
+					<div class="lw_city go">朝阳镇</div>
+					<img class="lw_ico" src="img/qh.png" />
+					<div class="lw_city to">机场</div>
+				</div>
+				<div class="mid_addr">
+					<div class="addr_cont">
+						<img class="addr_ico" src="img/addr_ico.png" /><span class="addr_txt"></span>
+					</div>
+				</div>
+				<input class="mid_but" type="button" value="确定上车地点" />
+			</div>
+			<div class="mid_wrap xl2" style="display: none;">
+				<div class="mid_top">
+					<div class="lw_city go">朝阳镇</div>
+					<img class="lw_ico" src="img/qh.png" />
+					<div class="lw_city to">机场</div>
+				</div>
+				<div class="mid_addr">
+					<div class="addr_cont">
+						<img class="addr_ico" src="img/addr_ico.png" /><span class="addr_txt2"></span>
+					</div>
+				</div>
+				<input class="mid_but" type="button" value="确定上车地点" />
+			</div>
+			<img class="addr_img" src="img/addr.png" />
+		</div>
+
+		<script>
+			var map = '',
+				qidian = 1, //1 朝阳到机场 2机场到朝阳
+				geocoder, circle,
+				type = 1,
+				marker,
+				data = [{"id":1,"name":"朝阳镇","lnglats":["126.06601","42.661602"]},{"id":2,"name":"卫星广场","lnglats":["125.325833","43.83267"]},{"id":3,"name":"龙嘉机场","lnglats":["125.6920050000","43.9951080000"]}];;
+			$(function() {
+				cyz();
+
+				//xl1点击确认上车地点
+				$('.xl1').children('.mid_but').click(function() {
+					if(qidian == 1) {
+						$('.xl2').children('.mid_but').val('确定下车地点');
+						ccs();
+					} else {
+						//前往微信小程序
+					}
+				})
+				//xl2点击确认上车地点
+				$('.xl2').children('.mid_but').click(function() {
+					if(qidian == 2) {
+						$('.xl1').children('.mid_but').val('确定下车地点');
+						cyz();
+					} else {
+						//前往微信小程序
+					}
+				})
+				
+				//点击切换方向
+				$('.lw_ico').click(function() {
+					if(qidian == 1) {
+						$('.addr_bd').html('');
+						$('.xl2').children('.mid_but').val('确定上车地点');
+						ccs();
+						qidian = 2;
+						$('.go').html('机场');
+						$('.to').html('朝阳镇');
+					} else if(qidian == 2) {
+						qidian = 1;
+						$('.xl1').children('.mid_but').val('确定上车地点');
+						cyz();
+						$('.go').html('朝阳镇');
+						$('.to').html('机场');
+					}
+				})
+				
+				//点击报警弹出报警框
+				$('.bj_ico').click(function(){
+					$('.mb_wrap').css("display","flex");
+				})
+				
+				$('.close_bj').click(function(){
+					$('.mb_wrap').hide();
+				})
+
+			})
+
+			//渲染朝阳镇地图
+			function ccs() {
+				destroyMap();
+				$('.xl1').hide();
+				$('.xl2').show();
+				type=2;
+				slhccs();
+				logMapinfo();
+				map.on('moveend', logMapinfo);
+				map.on('zoomend', logMapinfo);
+				
+			}
+
+			//渲染朝阳镇地图
+			function cyz() {
+				type=1;
+				destroyMap();
+				$('.xl2').hide();
+				$('.xl1').show();
+				slhcyz('126.06601', '42.661602');
+				logMapinfo();
+				map.on('moveend', logMapinfo);
+				map.on('zoomend', logMapinfo);
+			}
+
+			/*实例化路线*/
+			function slhcyz(lnt, lat) {
+				map = new AMap.Map('container', {
+					resizeEnable: true, //是否监控地图容器尺寸变化
+					zoom: 17,
+					center: [lnt, lat], //初始地图中心点
+				});
+				for(var i = 0, marker, driving1; i < data.length; i++) {
+					marker = new AMap.Marker({
+						position: data[i].lnglats,
+						offset: new AMap.Pixel(-12, -12),
+						map: map,
+						draggable: false, //是否可拖动
+						content: '<div val="' + data[i].name + '" class="kf_bd"><span class="zd_name">' + data[i].name + '</span></div>'
+					});
+
+					if(i > 0) {
+						driving1 = new AMap.Driving({
+							map: map,
+							hideMarkers: true,
+							showTraffic: false,
+							autoFitView: false
+						});
+						var a = i - 1;
+						// 根据起终点经纬度规划驾车导航路线
+						driving1.search(new AMap.LngLat(data[a].lnglats[0], data[a].lnglats[1]), new AMap.LngLat(data[i].lnglats[0], data[i].lnglats[1]));
+					}
+				}
+			}
+
+			/*实例化机场路线*/
+			function slhccs() {
+				map = new AMap.Map('container', {
+					resizeEnable: true, //是否监控地图容器尺寸变化
+					zoom: 17,
+					center:['125.692005','43.995108'],
+				});
+				
+				circle = new AMap.Circle({
+			        center: [125.692005, 43.995108],
+			        radius: 2500, //半径
+		            strokeColor: "#FF33FF", //线颜色
+		            strokeOpacity: 0.2, //线透明度
+		            strokeWeight: 3,    //线宽
+		            fillColor: "#1791fc", //填充色
+		            fillOpacity: 0.4//填充透明度
+			    })
+				circle.setMap(map)
+				
+				for(var i = 0, marker, driving1; i < data.length; i++) {
+					marker = new AMap.Marker({
+						position: data[i].lnglats,
+						offset: new AMap.Pixel(-12, -12),
+						map: map,
+						draggable: false, //是否可拖动
+						content: '<div val="' + data[i].name + '" class="kf_bd"><span class="zd_name">' + data[i].name + '</span></div>'
+					});
+
+					if(i > 0) {
+						driving1 = new AMap.Driving({
+							map: map,
+							hideMarkers: true,
+							showTraffic: false,
+							autoFitView: false
+						});
+						var a = i - 1;
+						// 根据起终点经纬度规划驾车导航路线
+						driving1.search(new AMap.LngLat(data[a].lnglats[0], data[a].lnglats[1]), new AMap.LngLat(data[i].lnglats[0], data[i].lnglats[1]));
+					}
+				}
+			}
+
+			//销毁地图
+			function destroyMap() {
+				map && map.destroy();
+				console.log("地图已销毁");
+			}
+
+			//显示地图层级与中心点信息
+			function logMapinfo() {
+				var zoom = map.getZoom(); //获取当前地图级别
+				var center = map.getCenter(); //获取当前地图中心位置
+				regeoCode(center.lng + ',' + center.lat);
+				
+				if(type==2){
+					var myLngLat=new AMap.LngLat(center.lng,center.lat);
+					if(circle.contains(myLngLat)){//如果点在圆内则输出
+			        		$('.xl2').children('.mid_but').removeAttr('disabled')
+			        }else{
+			        		console.log('1112')
+			        		$('.xl2').children('.mid_but').attr('disabled', 'disabled')
+			        }
+				}
+			};
+			//获取标点地址
+			function regeoCode(lnglat) {
+				if(!geocoder) {
+					geocoder = new AMap.Geocoder({
+						city: "010", //城市设为北京，默认：“全国”
+						radius: 1000 //范围，默认：500
+					});
+				}
+				geocoder.getAddress(lnglat, function(status, result) {
+					if(status === 'complete' && result.regeocode) {
+						var address = result.regeocode.formattedAddress;
+						
+						if(type==1){
+							$('.addr_txt').html(address);
+							if(address.indexOf('朝阳镇') == -1) {
+								$('.xl1').children('.mid_but').attr('disabled', 'disabled')
+							} else {
+								$('.xl1').children('.mid_but').removeAttr('disabled')
+							}
+						}else{
+							$('.addr_txt2').html(address);
+						}
+						console.log(address);
+					} else {
+						console.log(JSON.stringify(result))
+					}
+				});
+			}
+		</script>
+
+	</body>
+
+</html>

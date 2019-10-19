@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .carousel{
+                position:relative;
+                width: 672px;
+                height: 320px;
+                margin: 100px auto;
+                /* overflow: hidden; */
+            }
+            .carousel .n_umit{
+                position: absolute;
+                top:0;
+                left:0;
+                width: 5000px;
+            }
+            .carousel .n_umit ul{
+                list-style: none;
+            }
+            .carousel .n_umit ul li{
+                float: left;
+            }
+            .carousel .btns .leftbtn{
+                position: absolute;
+                left:30px;
+                top:50%;
+                margin-top:-30px;
+                background-color: red;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+            }
+            .carousel .btns .rightbtn{
+                position: absolute;
+                right:30px;
+                top:50%;
+                margin-top:-30px;
+                background-color: red;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+            }
+            .carousel .cursor{
+                position: absolute;
+                bottom:20px;
+                left:50%;
+                margin-left:-50px;
+                width: 100px;
+                height: 10px;
+            }
+            .carousel .cursor ol{
+                list-style: none;
+            }
+            .carousel .cursor ol li{
+                width: 10px;
+                height: 10px;
+                background-color: #eee;
+                border-radius: 50%;
+                float: left;
+                margin-left: 10px;
+            }
+            .carousel .cursor ol li.cur{
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="carousel" id="carousel">
+            <div class="n_umit" id="n_umit">
+                <ul>
+                    <li><a href="#"><img src="./sohu/aaa.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="./sohu/bbb.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="./sohu/ccc.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="./sohu/ddd.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="./sohu/eee.jpg" alt=""></a></li>
+                </ul>
+            </div>
+            <div class="btns" id="btns">
+                <span class="leftbtn" id="leftbtn"></span>
+                <span class="rightbtn" id="rightbtn"></span>
+            </div>
+            <div class="cursor" id="cursor">
+                <ol>
+                    <li class="cur"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+            </div>
+        </div>
+        <script type="text/javascript" src="./js/animate-2.0.1.js"></script>
+        <script type="text/javascript">
+            var carousel = document.getElementById("carousel");
+            var n_umit = document.getElementById("n_umit");
+            var imgUl = n_umit.getElementsByTagName("ul")[0];
+            var leftbtn = document.getElementById("leftbtn");
+            var rightbtn = document.getElementById("rightbtn");
+            var cursor = document.getElementById("cursor");
+            var cursorLi = cursor.getElementsByTagName("li");
+            var imgs = n_umit.getElementsByTagName("li");
+            var idx = 0;
+            var bol = true;
+            // 克隆第一张图放在最后面
+            imgUl.appendChild(imgs[0].cloneNode(true));
+            // 自动
+            var timer=setInterval(rightbtnHanger,1000);
+            carousel.onmouseover =function(){
+                clearInterval(timer);
+            }
+            carousel.onmouseout = function(){
+                timer=setInterval(rightbtnHanger,1000);
+            }
+
+            // 左按钮
+            rightbtn.onclick = rightbtnHanger;
+            function rightbtnHanger(){
+                if(!bol) return;
+                bol = false;
+                setTimeout(function(){
+                    bol = true;
+                },1000);
+                idx++;
+                animate(n_umit,{"left":-672*idx},1000,function(){
+                    if(idx>4){
+                        idx = 0;
+                        n_umit.style.left = 0;
+                    }
+                });
+                changeCircles();
+            }
+
+            // 右按钮
+            leftbtn.onclick =function(){
+                if(!bol) return;
+                bol = false;
+                setTimeout(function(){
+                    bol = true;
+                },1000);
+                idx--;
+                if(idx<0){
+                    idx = 4;
+                    n_umit.style.left = -672 * 5 + "px";
+                }
+                animate(n_umit,{"left":-672*idx},1000);
+                changeCircles();
+            }
+            // 小圆点
+            for(var i = 0;i < cursorLi.length;i++){
+                (function(i){
+                    cursorLi[i].onclick = function(){
+                        idx = i;
+                        animate(n_umit,{"left":-672*i},1000)
+                        changeCircles();
+                    }
+                })(i)
+            }
+
+            // 小圆点函数
+            function changeCircles(){
+                var n = idx>4?0:idx;
+                for(var i = 0;i < cursorLi.length;i++){
+                    cursorLi[i].className = "";
+                }
+                cursorLi[n].className = "cur";
+            }
+        </script>
+    </body>
+</html>

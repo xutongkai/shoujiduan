@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title></title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" href="css/swiper.min.css">
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="s_sbox">
+			<div class="s_sheader">
+				<div class="s_sh_box">
+					<input type="text" class="s_shb_input" placeholder="搜索" />
+					<img src="img/ico_deleteall.png" alt="" class="s_ssh_img" />
+				</div>
+				<div class="s_sh_cancel">取消</div>
+			</div>
+			<div class="s_nav">
+				<div class="s_nav_lis s_nav_click">最佳</div>
+				<div class="s_nav_lis">我的</div>
+				<div class="s_nav_lis">用户</div>
+			</div>
+		</div>
+		<div class="s_sbox_empty"></div>
+		<div class="s_cbox">
+			<div class="s_zs" style="display: block;">
+				<div class="s_zs_title">最近搜索</div>
+				<div class="s_zs_list">cat</div>
+				<div class="s_zs_list">cat</div>
+				<div class="s_zs_list">cat</div>
+				<div class="s_zs_list">cat</div>
+				<div class="s_zs_title">设计库热门</div>
+				<div class="s_zs_list">cat</div>
+				<div class="s_zs_list">cat</div>
+				<div class="s_zs_list">cat</div>
+				<div class="s_zs_list">cat</div>
+			</div>
+			<div class="s_zs">
+				<div class="s_zs_title">最近搜索</div>
+				<div class="s_zs_list">cat</div>
+				<div class="s_zs_list">cat</div>
+				<div class="s_zs_title">设计库热门</div>
+				<div class="s_zs_list">cat</div>
+				<div class="s_zs_list">cat</div>
+			</div>
+			<div class="s_zs">
+				<div class="s_user_title">用户</div>
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+				
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$('.s_nav_lis').click(function(){
+				$(this).addClass('s_nav_click');
+				$(this).siblings().removeClass('s_nav_click');
+				$('.s_zs').hide();
+				var arr = $('.s_zs');
+				$(arr[$(this).index()]).show();
+			})
+			
+			$('.s_shb_input').on('input',function(e){
+				if($(this).val().length){
+					$('.s_ssh_img').show();
+				}else{
+					$('.s_ssh_img').hide();
+				}
+			})
+			
+			$('.s_ssh_img').click(function(){
+				$('.s_shb_input').val('');
+				$(this).hide();
+			})
+			
+		</script>
+	</body>
+</html>

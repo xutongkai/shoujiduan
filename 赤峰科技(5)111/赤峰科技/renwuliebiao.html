@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>任务列表</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+		<!-- swiper -->
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+       <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+       	<!--<script type="text/javascript" src="js/renwuliebiao.js"></script>-->
+	</head>
+	<body>
+		<div class="renwu-header">
+			<div class="renwu-header-title">完成任务每天领钱</div>
+			<div class="renwu-header-content">
+				<div class="renwu-header-content-list1">
+					<div class="renwu-header-content-list-number">1</div>
+					<div class="renwu-header-content-list-text">完成任务</div>
+				</div>
+				<div class="renwu-header-content-list1 renwu-header-content-list">
+					<div class="renwu-header-content-list-number">2</div>
+					<div class="renwu-header-content-list-text">审核通过</div>
+				</div>
+				<div class="renwu-header-content-list1 renwu-header-content-list">
+					<div class="renwu-header-content-list-number">3</div>
+					<div class="renwu-header-content-list-text">我拿奖励</div>
+				</div>
+			</div>
+		</div>
+		<!--8.12新增-->
+		<div class="r_tab">
+			<div class="r_tab-box">进行中</div>
+			<div class="r_tab-box">投放中</div>
+			<div class="r_tab-box">进行中</div>
+			<div class="r_tab-box">投放中</div>
+			<div class="r_tab-box">进行中</div>
+		</div>
+		<div class="renwu-going">进行中</div>
+		<!--列表-->
+		<div class="index-list">
+			<img class="index-list-img" src="img/ico_share01@2x.png"/>
+			<div class="index-list-center">
+				<div class="index-list-center-title">京东金融新用户</div>
+				<!--<div class="index-list-center-content">京东金融新用户金世纪阿昆index-list-center-content达…</div>-->
+				<div class="index-list-center-number"><text att='15' class="index-list-center-number-text"> <script></script> </text >后自动放弃</div>
+			</div>
+			<div class="index-list-money">+1.32元</div>
+		</div>
+		<!--列表-->
+		<div class="index-list">
+			<img class="index-list-img" src="img/ico_share01@2x.png"/>
+			<div class="index-list-center">
+				<div class="index-list-center-title">京东金融新用户</div>
+				<!--<div class="index-list-center-content">京东金融新用户金世纪阿昆index-list-center-content达…</div>-->
+				<div class="index-list-center-number"><text att='20' class="index-list-center-number-text">  </text>后自动放弃</div>
+			</div>
+			<div class="index-list-money">+1.32元</div>
+		</div>
+		<div class="index-empty"></div>
+		<div class="renwu-going">投放中</div>
+		<!--列表-->
+		<div class="index-list">
+			<img class="index-list-img" src="img/ico_share01@2x.png"/>
+			<div class="index-list-center">
+				<div class="index-list-center-title">京东金融新用户</div>
+				<div class="index-list-center-content">京东金融新用户金世纪阿昆index-list-center-content达…</div>
+				<div class="index-list-center-number">剩余237份</div>
+			</div>
+			<div class="index-list-money">+1.32元</div>
+		</div>
+		<!--列表-->
+		<div class="index-list">
+			<img class="index-list-img" src="img/ico_share01@2x.png"/>
+			<div class="index-list-center">
+				<div class="index-list-center-title">京东金融新用户</div>
+				<div class="index-list-center-content">京东金融新用户金世纪阿昆index-list-center-content达…</div>
+				<div class="index-list-center-number">剩余237份</div>
+			</div>
+			<div class="index-list-money">+1.32元</div>
+		</div>
+
+		<div class="renwu-eject"  style="display: none;">
+
+			<!--任务描述弹出层-->
+			<div class="renwu-eject-content" style="display: none;">
+				<div class="renwu-eject-content-top">
+					<div class="renwu-eject-content-top-text">映客直播新用户注册互动就送5元现金红包</div>
+					<img class="renwu-eject-content-top-img" src="img/ico_slide_close@2x.png"/>
+				</div>
+				<div class="renwu-eject-center">
+					<img class="renwu-eject-center-img" src="img/ico_jb_small@2x.png">
+					<div class="renwu-eject-center-text">
+						<div class="renwu-eject-center-text1">0.32元</div>
+						<div class="renwu-eject-center-text2">剩余237份 有专属</div>
+					</div>
+				</div>
+				<a class="renwu-eject-begin" href="">开始任务</a>
+				<a class="renwu-eject-draw" href="">领取奖励</a>
+			</div>
+			<!--任务放弃弹出层-->
+			<div class="renwu-eject-content2">
+				<div class="renwu-eject-content2-title">确认放弃任务</div>
+				<div class="renwu-eject-content2-button">
+					<div class="renwu-eject-content2-button-left">放弃任务</div>
+					<div class="renwu-eject-content2-button-right">继续任务</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script>
+//		tab切换
+		$(function(){
+			$(".r_tab-box").click(function(){
+				$(this).parent(".r_tab").find(".r_tab-box").css("color","#333")
+				$(this).parent(".r_tab").find(".r_tab-box").css("border-bottom","0.02rem solid #FFF")
+				$(this).css("color","#EC4A4A");
+				$(this).css("border-bottom","2px solid #EC4A4A");
+				
+			})
+		})
+  
+//	  $(function(){
+//	   
+//	   
+//	   juishiqi('2019-08-23 15:09:56');
+//	   
+//	  })
+//	  
+//	  function juishiqi(datas){
+//	   var time = setInterval(function(){
+//	    var data = new Date(datas);
+//	    console.log(data)
+//	    var newdate = new Date();
+//	    newdate = newdate.getTime();
+//	    console.log(newdate)
+//	    if(data - newdate>0){
+//	     var cha = new Date(data - newdate);
+//	     console.log(cha);
+//	     var h = cha.getHours();
+//	     var m = cha.getMinutes();
+//	     var s = cha.getSeconds();
+//	     console.log(h+':'+m+':'+s);
+//	    }else{
+//	     clearInterval(time);
+//	    }
+//	   },1000)
+//	   
+//	  }
+	  
+	  
+	  
+	  function timeFn(d1) {//di作为一个变量传进来
+    //如果时间格式是正确的，那下面这一步转化时间格式就可以不用了
+    var dateBegin = new Date(d1.replace(/-/g, "/"));//将-转化为/，使用new Date
+    var dateEnd = new Date();//获取当前时间
+    var dateDiff = dateEnd.getTime() - dateBegin.getTime();//时间差的毫秒数
+    var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));//计算出相差天数
+    var leave1=dateDiff%(24*3600*1000)    //计算天数后剩余的毫秒数
+    var hours=Math.floor(leave1/(3600*1000))//计算出小时数
+    //计算相差分钟数
+    var leave2=leave1%(3600*1000)    //计算小时数后剩余的毫秒数
+    var minutes=Math.floor(leave2/(60*1000))//计算相差分钟数
+    //计算相差秒数
+    var leave3=leave2%(60*1000)      //计算分钟数后剩余的毫秒数
+    var seconds=Math.round(leave3/1000)
+    console.log(" 相差 "+dayDiff+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒")
+    console.log(dateDiff+"时间差的毫秒数",dayDiff+"计算出相差天数",leave1+"计算天数后剩余的毫秒数"
+        ,hours+"计算出小时数",minutes+"计算相差分钟数",seconds+"计算相差秒数");
+		}
+		var t3="2017-08-18 04:56:38";
+		timeFn(t3);
+	  setInterval()
+	 </script>
+</html>
+
+
+<!--<script>
+	
+	$(function(){
+		
+		var arr = $('.index-list-center-number-text');
+//		console.log(arr);
+		for(let i=0;i<arr.length;i++){
+			
+			resetTime(arr[i],$(arr[i]).attr('att'));
+			
+		}
+		
+	})
+	
+	
+</script>-->
+
+

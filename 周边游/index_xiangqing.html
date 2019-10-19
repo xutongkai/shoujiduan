@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>详情</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" href="css/swiper.min.css">
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/jquery.lazyload.js"></script>
+		<script src="js/index.js"></script>
+	</head>
+	<body>
+		<div class="i_header">
+			<div class="i_h_left">周边游</div>
+			<div class="i_h_right">
+				临沂站
+				<img class="i_hr_img" src="images/search_ico_more.png"/>
+			</div>
+		</div>
+		<div class="i_empty"></div>
+		<!--轮播图-->
+		<div class="swiper-container adress">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide"><img src="images/jiemian.jpg"></div>
+		        <div class="swiper-slide"><img src="images/jiemian.jpg"></div>
+		        <div class="swiper-slide"><img src="images/jiemian.jpg"></div>
+		    </div>
+		    <!-- 如果需要分页器 -->
+		    <div class="swiper-pagination"></div>
+		</div>
+		<div class="x_adress_text">
+			【泰盛广场】28元抢原价280元的【欧赛媤】美
+容美体护理套餐！套餐包含：背部经络排毒、头
+部刮痧、面部清洁按摩…为你推开美丽大门！
+		</div>
+		<div class="x_adress_money">
+			<div class="x_am_new">￥<span>228.00</span></div>
+			<div class="x_am_old">门市价 <span>￥228.00</span></div>
+		</div>
+		<div class="x_fx_box">
+			<div class="x_fx">
+				<img class="x_fx_img" src="images/btn_ico_share.png"/>
+				<div class="x_fx_text">分享收益188元</div>
+			</div>
+		</div>
+		
+		
+		<div class="x_xiaoliang">
+			<div class="x_x_left">销量<span>175</span></div>
+			<div class="x_x_left">库存<span>175</span></div>
+		</div>
+		<div class="x_empty"></div>
+		<div class="x_sjxxi_title">商家信息</div>
+		<div class="x_dizhi">
+			<img src="images/sj_ico_pin.png" alt="" class="x_dizhi_img" />
+			<div class="x_dizhi_text">欧赛媤</div>
+		</div>
+		<div class="x_dz_text">山东省临沂市兰山区解放路88号泰盛广场B1-1021</div>
+		<div class="x_dizhi">
+			<img src="images/sj_ico_tel.png" alt="" class="x_dizhi_img" />
+			<div class="x_dizhi_number">0539 - 12341234</div>
+		</div>
+		<div class="x_empty"></div>
+		<div class="x_sjxxi_title">规格选择</div>
+		<div class="x_gg_box">
+			<div class="x_ggb_list">
+				玲珑心意
+				<img class="x_ggbl_img" src="images/lb_ico_chosen.png"/>
+			</div>
+			<div class="x_ggb_list">
+				玲珑心意
+				<img class="x_ggbl_img" src="images/lb_ico_chosen.png"/>
+			</div>
+			<div class="x_ggb_list">
+				玲珑显示
+				<img class="x_ggbl_img" src="images/lb_ico_chosen.png"/>
+			</div>
+			<div class="x_ggb_list">
+				玲珑心意
+				<img class="x_ggbl_img" src="images/lb_ico_chosen.png"/>
+			</div>
+			<div class="x_ggb_list">
+				玲珑心意
+				<img class="x_ggbl_img" src="images/lb_ico_chosen.png"/>
+			</div>
+			<div class="x_ggb_list">
+				玲珑心意
+				<img class="x_ggbl_img" src="images/lb_ico_chosen.png"/>
+			</div>
+		</div>
+		<div class="x_empty"></div>
+		<div class="x_sjxxi_title">详细信息</div>
+		<div class="picture_box">
+			<img src="images/picture.png" alt="" class="x_p_img" />
+		</div>
+		<div class="picture_box_empty"></div>
+		<div class="x_button">
+			<div class="x_button_sy">
+				<img src="images/tab_ico_shop.png" alt="" class="x_bsy_img" />
+				<div class="x_bsy_text">商城首页</div>
+			</div>
+			<div class="x_button_zx">咨询客服</div>
+			<div class="x_button_lg">立即购买</div>
+		</div>
+		<div class="xtk_fenxiang" style="display: none;">
+			<img class="xtk_fenxiang_img" src="images/fenxiang.png"/>
+			<div class="xtk_fenxiang_button">知道了</div>
+		</div>
+		<script type="text/javascript">
+			// 首页轮播切换
+			var mySwiper = new Swiper ('.swiper-container', {
+			    direction: 'horizontal',
+			    loop: true,
+			    autoplay:3000,
+			    speed:1000,
+			    // 如果需要分页器
+			    pagination: '.swiper-pagination',
+			});
+			$(function(){
+				$('.x_fx').click(function(){
+					$('.xtk_fenxiang').show();
+				});
+				$('.xtk_fenxiang_button').click(function(){
+					$('.xtk_fenxiang').hide();
+				})
+			})
+		</script>
+	</body>
+</html>

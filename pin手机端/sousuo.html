@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>积分商城</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" href="css/swiper.min.css">
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="s_sbox">
+			<div class="s_sheader">
+				<div class="s_sh_box">
+					<input type="text" class="s_shb_input" placeholder="搜索" />
+					<!--<img src="img/ico_deleteall.png" alt="" class="s_ssh_img" />-->
+				</div>
+				<div class="s_sh_cancel">取消</div>
+			</div>
+			<div class="s_nav">
+				<div class="s_nav_lis s_nav_lisa" style="border-bottom:2px solid #333333">最佳</div>
+				<div class="s_nav_lis s_nav_lisb">我的</div>
+				<div class="s_nav_lis s_nav_lisc">用户</div>
+			</div>
+		</div>
+		<div class="s_sbox_empty"></div>
+		<div class="s_cbox">
+			<div class="s_zs">
+				<div class="s_zs_title">最近搜索</div>
+				<div class="s_zs_list">cat</div>
+				<div class="s_zs_list">cat</div>
+				<div class="s_zs_list">cat</div>
+				<div class="s_zs_list">cat</div>
+				<div class="s_zs_title">设计库热门</div>
+				<div class="s_zs_list">cat</div>
+				<div class="s_zs_list">cat</div>
+				<div class="s_zs_list">cat</div>
+				<div class="s_zs_list">cat</div>
+			</div>
+			<div class="s_user" style="display: none;">
+				<div class="s_user_title">用户</div>
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+				
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+				<div class="s_user_list">
+					<img src="img/sign_ico_qq.png" alt="" class="s_ul_img" />
+					<div class="s_ul_content">
+						<div class="s_ulc_name">东东</div>
+						<div class="ulc_com">546565.com</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$('.s_nav_lis').click(function(){
+				$(this).css("border-bottom","2px solid #333333");
+				$(this).siblings().css("border-bottom","none");
+			})
+			$('.s_nav_lisa').click(function(){
+				$('.s_zs').show();
+				$('.s_zs').siblings().hide();
+			})
+			$('.s_nav_lisc').click(function(){
+				$('.s_user').show();
+				$('.s_user').siblings().hide();
+			})
+		</script>
+	</body>
+</html>

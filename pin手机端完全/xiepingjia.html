@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>写评价</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" href="css/swiper.min.css">
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<body style="background-color: #F8F8F8;">
+		<div class="dt_header">
+			<div class="dt_header_text">写评价</div>
+			<img  class="dt_header_img" src="img/title_ico_back.png"/>
+		</div>
+		<div class="write_content">
+			<div class="write_content_header">
+				<img src="img/sign_ico_google.png" alt="" class="write_ch_img" />
+				<div class="write_ch_name">评分</div>
+				<div class="write_ch_box">
+					<img src="img/pj_ico_g.png" alt="" class="write_ch_box_img write_ch_box_imga" />
+					<img src="img/pj_ico_g.png" alt="" class="write_ch_box_img write_ch_box_imgb" />
+					<img src="img/pj_ico_g.png" alt="" class="write_ch_box_img write_ch_box_imgc" />
+					<img src="img/pj_ico_g.png" alt="" class="write_ch_box_img write_ch_box_imgd" />
+					<img src="img/pj_ico_g.png" alt="" class="write_ch_box_img write_ch_box_imge" />
+				</div>
+				<div class="write_ch_good"></div>
+			</div>
+			<textarea  class="write_content_textarea" name="" placeholder="商品怎么样，评价一下" rows="" cols=""></textarea>
+			<!--<div class="write_content_box">
+				<img src="img/sign_ico_facebook.png" alt="" class="write_content_box_img" />
+				<img src="img/ico_delete_image.png" alt="" class="write_cb_img" />
+			</div>-->
+			<div class="write_content_box" id="write_content_box">
+				<img src="img/addimage.png" alt="" class="write_content_box_img" />
+				<input class="write_content_box_input" onchange="changepic(this)" type="file">
+			</div>
+		</div>		
+		
+		
+		<div class="write_button">提交</div>
+		<script type="text/javascript">
+			function changepic(obj) {
+			        //console.log(obj.files[0]);//这里可以获取上传文件的name
+			        var newsrc=getObjectURL(obj.files[0]);
+			//      document.getElementById('show').src=newsrc;
+			//      $('.identific-upload-img2').attr("src",newsrc)
+					$("#write_content_box").before('<div class="write_content_box"><img src="'+newsrc+'" alt="" class="write_content_box_img" /><img class="write_cb_img" src="img/ico_delete_image.png" alt=""/></div>')
+			    }
+		    //建立一個可存取到該file的url
+		    function getObjectURL(file) {
+		        var url = null ;
+		        // 下面函数执行的效果是一样的，只是需要针对不同的浏览器执行不同的 js 函数而已
+		        if (window.createObjectURL!=undefined) { // basic
+		            url = window.createObjectURL(file) ;
+		        } else if (window.URL!=undefined) { // mozilla(firefox)
+		            url = window.URL.createObjectURL(file) ;
+		        } else if (window.webkitURL!=undefined) { // webkit or chrome
+		            url = window.webkitURL.createObjectURL(file) ;
+		        }
+		        return url ;
+		    }
+		    //			删除照片
+		    $('.write_cb_img').click(function(){
+//				$("this").parent().remove();
+				console.log("aaa");
+				alert("aaaa");
+			})
+
+			$(".write_ch_box_img").click(function(){
+				$(this).attr("src","img/pj_ico_r.png");
+				$(this).prevAll().attr("src","img/pj_ico_r.png");
+				$(this).nextAll().attr("src","img/pj_ico_g.png");
+			})
+			$(".write_ch_box_imga").click(function(){
+				$(".write_ch_good").html("极差");
+			})
+			$(".write_ch_box_imgb").click(function(){
+				$(".write_ch_good").html("差");
+			})
+			$(".write_ch_box_imgc").click(function(){
+				$(".write_ch_good").html("好");
+			})
+			$(".write_ch_box_imgd").click(function(){
+				$(".write_ch_good").html("非常好");
+			})
+			$(".write_ch_box_imge").click(function(){
+				$(".write_ch_good").html("极好");
+			})
+		</script>
+	</body>
+</html>

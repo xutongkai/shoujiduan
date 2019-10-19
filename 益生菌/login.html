@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>注册</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<body style="background-color: #F7F7F7;">
+		<div class="x_header">
+			<!--<img src="img/sign_bg.png" alt="" class="x_h_bg" />-->
+			<div class="x_h_header">
+				<img src="img/navbar_back_white.png" alt="" class="x_hh_return" />
+				<div class="x_hh_text">注册</div>
+				<div class="x_hh_empty"></div>
+			</div>
+			<img src="img/sign_logo.png" alt="" class="x_h_img" />
+			<div class="x_h_text">xxx达瓦大邀请你加入xxx小区</div>
+			<div class="x_h_box">
+				<div class="x_hb_box" style="margin-top:0.2rem;">
+					<img src="img/icon_eye_selb.png" alt="" class="x_hbb_img" />
+					<input type="number" placeholder="请输入注册手机号" class="x_hbb_input" />
+				</div>
+				<div class="x_hb_box">
+					<img src="img/icon_eye_sela.png" alt="" class="x_hbb_img" />
+					<input type="number" placeholder="请输入验证码" class="x_hbb_inputa" />
+					<div class="x_hbb_code">获取验证码</div>
+				</div>
+				<div class="x_hb_box">
+					<img src="img/icon_eye_selc.png" alt="" class="x_hbb_img" />
+					<input type="password" placeholder="请设置登录密码" class="x_hbb_input x_hbbi_password" />
+					<img src="img/eye.png" alt="" class="x_hbb_img x_hbb_ibotton" />
+				</div>
+				<div class="x_hb_font">请设置6位及以上包含数字字母和特殊符号中至少两种组合的密码</div>
+				<div class="x_hb_botton">注册益生菌社区</div>
+			</div>
+			
+		</div>
+		<script type="text/javascript">
+			
+			$(function(){
+				$(".x_hbb_ibotton").click(function(){
+					if($(".x_hbbi_password").attr("type")=="password"){
+						$(".x_hbbi_password").attr("type","text");
+					}else{
+						$(".x_hbbi_password").attr("type","password");
+					}
+				})
+				
+				
+				var status = true;
+				$(".x_hbb_code").click(function(){
+					var time = 60;
+						if(status == false){
+							return
+						}
+						status = false;
+						
+					$(".x_hbb_code").html(time);
+					var timer = setInterval(function(){
+						time--;
+						$(".x_hbb_code").html(time);
+						if(time<=0){
+							clearInterval(timer)
+							$(".x_hbb_code").html("获取验证码");	
+							status = false;
+						}
+					},1000)
+				})
+			})
+		</script>
+	</body>
+</html>

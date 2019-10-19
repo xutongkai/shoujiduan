@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>交通执法</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" type="text/css" href="css/jt.css"/>
+   		
+	</head>
+	<body>
+		<div class="jz_box">
+			<div class="jz_name">工作内容</div>
+			<p class="jz_n_jt">具体内容信息具体内容信息具体内容信息具体内容信息具体内容信息具体内容信息具体内容信息具体内容信息具体内容信息</p>
+			<div class="jz_zrr">责任人</div>
+			<p class="jz_zrr_name">李xx</p>
+			<div class="jz_dd">地点</div>
+			<p class="jz_dd_adress">山东省临沂市兰山区上海路</p>
+			<div class="jz_li">
+				<div class="jz_li_name">路段</div>
+				<div class="jz_li_text">具体详细路段</div>
+			</div>
+			<div class="jz_li">
+				<div class="jz_li_name">时间</div>
+				<div class="jz_li_text">2019-09-06  11:30:09</div>
+			</div>
+			<div class="jz_sm">文字说明</div>
+			<p class="jz_sm_text">说明文字，说明文字说明文字，说明文字，说明文字说明文字说明文字说明文字</p>
+			<div class="jz_sm">现场照片</div>
+			<div class="jz_zhaopian">
+				<img class="jz_zhaopian_img" src="images/top_bg.png"/>
+				<img class="jz_zhaopian_img" src="images/ico_share_banner.png"/>
+				<img class="jz_zhaopian_img" src="images/top_bg.png"/>
+			</div>
+			<div class="jz_zhaopian">
+				<video class="jz_zhaopian_video" controls>
+				  <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4">
+				  <source src="movie.ogg" type="video/ogg">
+				</video>
+			</div>
+			<div class="jz_delate">删除记录</div>
+			<!--查看照片-->
+			<div class="jz_chakan" style="display: none;">
+				<div class="jx_chakan_box">
+					<img class="jz_chakan_img" src=""/>
+					<img class="jz_chakan_delate" src="images/ico_close.png"/>
+				</div>
+				
+			</div>
+		</div>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('.jz_zhaopian_img').click(function(){
+					$('.jz_chakan').css("display","flex");
+					$('.jz_chakan_img').attr("src",img=$(this).attr("src"));
+				})
+				$(".jz_chakan").click(function(){
+					$(".jz_chakan").css("display","none");
+				})
+				$('.jz_chakan_img').click(function(){
+					return false;
+				})
+			})
+			
+		</script>
+	</body>
+</html>

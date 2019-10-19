@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://jingtongdichan.com/mobile/Index/index -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
+	
+	<title>京桐地产</title>
+	<link rel="stylesheet" type="text/css" href="./京桐地产_files/css.css">
+	<link rel="stylesheet" type="text/css" href="./京桐地产_files/layer.css">
+	<link type="text/css" rel="stylesheet" href="./京桐地产_files/weui.css">
+	<link type="text/css" rel="stylesheet" href="./京桐地产_files/swiper-3.4.2.min.css">
+	
+	<script src="./京桐地产_files/jquery.js.下载" type="text/javascript"></script>
+	<!-- 其他引用 -->
+	
+	
+	<script src="./京桐地产_files/public.js.下载" type="text/javascript"></script>
+	<script src="./京桐地产_files/template.js.下载" type="text/javascript"></script>
+	<script src="./京桐地产_files/layer.js.下载" type="text/javascript"></script><link href="./京桐地产_files/layer(1).css" type="text/css" rel="styleSheet" id="layermcss">
+
+	<script src="./京桐地产_files/jquery.validate.min.js.下载"></script>
+	<script src="./京桐地产_files/messages_zh.js.下载"></script>
+	<script type="text/javascript" src="./京桐地产_files/util.js.下载"></script>
+	<script type="text/javascript" src="./京桐地产_files/additional-methods.js.下载"></script><script type="text/javascript" src="./京桐地产_files/jquery.form.min.js.下载"></script>
+	<link rel="stylesheet" type="text/css" href="./京桐地产_files/style.css">
+	
+</head>
+<body>
+	<style>
+		body .layui-m-layer .layui-m-layer-msg{
+			top: calc(50% - 75px);
+			bottom: inherit;
+		}
+
+
+		.layui-m-layer-msg .layui-m-layercont{ padding: 0 }
+
+		.error-box{
+			height:1.8rem;
+			line-height:1.8rem;
+			font-size:1.2rem;
+			color:#FF5800;
+			padding:0 2px;
+		}
+	</style>
+	<script>
+		function toast(msg,type=1){
+			if(type){
+				var path='/static/module/mobile/img/duihao.png';
+			}else{
+				var path = '/static/module/mobile/img/cuo.png';
+			}
+			
+			layer.open({
+				content:'<div style="width: 150px; height: auto; position: fixed; left: calc(50% - 75px); top:calc(50% - 50px); background: rgba(0,0,0,.7); border-radius: 4px; z-index: 2; "><img style="width: 60px; margin: 20px auto 15px; display: block;" src="'+path+'" /><span style="color: #fff; display: block; width: 100%; text-align: center; font-size: 14px;padding:0 0 20px 0">'+msg+'</span></div>',
+				skin:'msg',
+				time:2
+			})
+		}
+	</script>
+	<!-- 内容 -->
+	
+<style>
+	body{background-color: #F5F5F5;}
+</style>
+<script>
+	$(function() {
+		/*搜索框获取焦点时*/
+		$('.h_sear_inp').focus(function() {
+			$(this).css('width','92%');
+			$('.h_sear_ico').hide();
+		})
+		/*搜索框失去焦点时*/
+		$('.h_sear_inp').blur(function() {
+			if($(this).val().length == 0) {
+				$(this).css('width', '50%');
+				$('.h_sear_ico').show();
+			}
+		})
+
+	})
+</script>
+
+
+
+<div class="home_top">
+	<img class="home_banner" src="./京桐地产_files/banner.png">
+	<div class="hm_top_dw">
+		<a href="http://jingtongdichan.com/mobile/pub/city" class="home_addr">临沂</a>
+		<a href="http://jingtongdichan.com/mobile/index/user" class="home_me"></a>
+	</div>
+	<form action="http://jingtongdichan.com/mobile/second/index/city_id/20642">
+		<div class="home_ser_warp">
+			<img class="h_sear_ico" src="./京桐地产_files/ico_search.png">
+			<input class="h_sear_inp" type="search" placeholder="输入小区/区域搜索房源" name="keywords">
+		</div>
+	</form>
+</div>
+
+<div class="home_nav_warp">
+	<a class="home_nav_li" href="http://jingtongdichan.com/mobile/second/index/city_id/20642">
+		<img class="home_nav_ico" src="./京桐地产_files/home_ico_1.png">
+		<span class="home_nav_txt">二手房</span>
+	</a>
+	<a class="home_nav_li" href="http://jingtongdichan.com/mobile/rent/index/city_id/20642">
+		<img class="home_nav_ico" src="./京桐地产_files/home_ico_2.png">
+		<span class="home_nav_txt">租房</span>
+	</a>
+	<a class="home_nav_li" href="http://jingtongdichan.com/mobile/Index/index#">
+		<img class="home_nav_ico" src="./京桐地产_files/home_ico_3.png">
+		<span class="home_nav_txt">卖房</span>
+	</a>
+	<a class="home_nav_li" href="http://jingtongdichan.com/mobile/nearby/index/city_id/20642">
+		<img class="home_nav_ico" src="./京桐地产_files/home_ico_4.png">
+		<span class="home_nav_txt">门店</span>
+	</a>
+	<a class="home_nav_li" href="http://jingtongdichan.com/mobile/community/index/city_id/20642">
+		<img class="home_nav_ico" src="./京桐地产_files/home_ico_5.png">
+		<span class="home_nav_txt">小区</span>
+	</a>
+	<a class="home_nav_li" href="http://jingtongdichan.com/mobile/renovation/index">
+		<img class="home_nav_ico" src="./京桐地产_files/home_ico_6.png">
+		<span class="home_nav_txt">装修</span>
+	</a>
+	<a class="home_nav_li" href="http://jingtongdichan.com/mobile/loan/card">
+		<img class="home_nav_ico" src="./京桐地产_files/home_ico_7.png">
+		<span class="home_nav_txt">信用卡</span>
+	</a>
+	<a class="home_nav_li" href="http://jingtongdichan.com/mobile/loan/index">
+		<img class="home_nav_ico" src="./京桐地产_files/home_ico_8.png">
+		<span class="home_nav_txt">信贷</span>
+	</a>
+</div>
+
+<div class="home_cygj_warp">
+	<h2 class="home_cygj_title">常用工具</h2>
+	<div class="h_cygj_list">
+		<a class="h_cygj_li" href="http://jingtongdichan.com/mobile/pub/fangjia/city_id/20642">
+			<img class="h_cygj_li_ico" src="./京桐地产_files/home_ccgj_ico_fj.png">
+			<span class="h_cygj_li_txt">查房价</span>
+		</a>
+		<a class="h_cygj_li" href="http://jingtongdichan.com/mobile/index/zhiye">
+			<img class="h_cygj_li_ico" src="./京桐地产_files/home_ccgj_ico_gj.png">
+			<span class="h_cygj_li_txt">置业计算器</span>
+		</a>
+		<a class="h_cygj_li" href="http://jingtongdichan.com/mobile/broker/index/city_id/20642">
+			<img class="h_cygj_li_ico" src="./京桐地产_files/home_ccgj_ico_jjr.png">
+			<span class="h_cygj_li_txt">找经纪人</span>
+		</a>
+	</div>
+</div>
+
+
+
+<div class="home_tuijian" style="margin-top: 10px;">
+	<div class="home_tj_title">
+		<h1 class="h_tj_h1">二手房推荐</h1>
+		<a class="gd_more_href" href="http://jingtongdichan.com/mobile/second/index/city_id/20642">更多</a>
+	</div>
+		<a href="http://jingtongdichan.com/mobile/second/detail/id/44" class="home_tj_li">
+		<div class="h_tj_li_cio">
+						<img class="h_tk_img" src="./京桐地产_files/thumb_500_500_155831623249376.jpeg">
+		</div>
+		<div class="h_tj_li_rig">
+			<h2 class="h_tj_li_name">秀水雅苑|秀水雅苑 交通便利 生活方便 南北通透|
+			精装修 </h2>
+			<p class="h_tj_fwxx">3室2厅/120.00㎡/暂无数据/北京路</p>
+			<p class="h_tjfw_price">
+				<span>130万</span>10833元/平
+			</p>
+			<div class="home_tj_bq">
+								<span class="jdt_span" style="display:inline-block;padding:1px 10px;background-color:#fff200;text-align:center;opacity: 0.6;color:#ae00ff;font-size:12px;line-height:14px">19路\80路</span>
+					
+								<span class="jdt_span" style="display:inline-block;padding:1px 10px;background-color:#ff8800;text-align:center;opacity: 0.6;color:#0ff75c;font-size:12px;line-height:14px">九州超市、秀水农贸</span>
+					
+								<span class="jdt_span" style="display:inline-block;padding:1px 10px;background-color:#48ff00;text-align:center;opacity: 0.6;color:#ed8309;font-size:12px;line-height:14px">四小、十六中</span>
+					
+							</div>
+		</div>
+	</a>
+	</div>
+
+<div class="home_tuijian" style="margin-top: 10px;">
+	<div class="home_tj_title">
+		<h1 class="h_tj_h1">租房推荐</h1>
+		<a class="gd_more_href" href="http://jingtongdichan.com/mobile/rent/index">更多</a>
+	</div>
+		
+</div>
+
+
+
+	<!-- 客服电话 -->
+	<a class="kf_ico_href" href="tel:0539-8758777"></a>
+
+</body></html>

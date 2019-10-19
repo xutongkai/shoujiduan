@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>搜索用户</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" href="css/swiper.min.css">
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="s_sheader">
+			<div class="s_sh_box">
+				<input type="text" class="s_shb_input" placeholder="搜索" value="" />
+				<img src="img/ico_deleteall.png" alt="" class="s_ssh_img" />
+			</div>
+			<!--<div class="s_sh_cancel">取消</div>-->
+			<img src="img/nav_ico_scan.png" alt="" class="s_sh_img" />
+		</div>
+		<div class="sbehind_nav">
+			<div class="sbn_list">funny</div>
+			<div class="sbn_list">funny</div>
+			<div class="sbn_list">funny</div>
+			<div class="sbn_list">funny</div>
+			<div class="sbn_list">funny</div>
+			<div class="sbn_list">funny</div>
+			<div class="sbn_list">funny</div>
+			<div class="sbn_list">funny</div>
+			<div class="sbn_list">funny</div>
+		</div>
+		<div class="ss_tababr-empty"></div>
+		<div class="ss_tabbar">
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_home.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text" style="color:#333;">主页</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_class.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">分类</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_follow.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">关注</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_notice.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">通知</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_me.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">已收藏</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			$(function(){
+				$('.s_ssh_img').click(function(){
+					$('.s_shb_input').val("");
+				})
+			})
+			
+		</script>
+	</body>
+</html>

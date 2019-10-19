@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="layui/css/layui.css" media="all">
+   		<script src="layui/layui.all.js"></script>
+<!--{load href="__layui__/css/layui.css,__layui__/layui.all.js"}-->
+<style>
+.mycustom {
+ width: calc(100% - 0.3rem);
+}
+</style>
+<body>
+    <div class="prepara-header-empty"></div>
+    <div class="header-sousuo1-box">
+        <div class="header-sousuo1-box-box">
+            < img class="header-sousuo1-box-box-img" src="__mobile__/img/ico_select@2x.png"/>
+            <input class="header-sousuo1-box-box-input" type="" name="" id="" value="" placeholder="请搜索" />
+        </div>
+        <div class="header-sousuo1-box-title">搜索</div>
+    </div>
+    <div class="mycustom">
+        <div class="mycustom-box">
+            <div class="mycustom-box-title">直推合伙人数(人)</div>
+            <div class="mycustom-box-number">{$data['one_childs']}</div>
+            <div class="mycustom-box-text">
+                        昨日新增
+                        <text class="mycustom-box-text-text">+{$data['one_yesterday']}</text>
+                    </div>
+        </div>
+        <div class="mycustom-box">
+            <div class="mycustom-box-title">团队总人数(人)</div>
+            <div class="mycustom-box-number">{$data['team_childs']}</div>
+            <div class="mycustom-box-text">
+                        昨日新增
+                        <text class="mycustom-box-text-text">+{$data['team_yesterday']}</text>
+                    </div>
+        </div>
+        <div class="mycustom-box" style="margin-top:0.25rem;">
+            <div class="mycustom-box-title">本月订单完成(单)</div>
+            <div class="mycustom-box-number">{$data['finish_num']}</div>
+            <div class="mycustom-box-text">
+                        昨日完成
+                        <text class="mycustom-box-text-text">+{$data['finish_yesterday']}</text>
+                    </div>
+        </div>
+        <div class="mycustom-box"  style="margin-top:0.25rem;">
+            <div class="mycustom-box-title">本月团队收入(元)</div>
+            <div class="mycustom-box-number">{$data['bill']}</div>
+            <div class="mycustom-box-text">
+                        昨日收入
+         

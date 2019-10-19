@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>关注</title>
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/jquery.js"></script>
+	</head>
+
+	<body>
+		<div class="sp_header">
+			<img src="img/title_ico_back2.png" alt="" class="sp_ha" />
+		</div>
+		<div class="usergz_tops">
+			<div class="usergz_tlefts">
+				<h1 class="usergz_tlgznumb">25</h1>
+				<span class="usergz_txts">关注</span>
+			</div>
+			<img class="user_img_head" src="img/23.jpeg" />
+		</div>
+		
+		<div class="user_gz_types">
+			<div class="user_gztp_li user_gztp_click">主题</div>
+			<div class="user_gztp_li">用户</div>
+			<div class="user_gztp_li">画板</div>
+		</div>
+		
+		<div class="user_gzlist">
+			<a class="user_gzli_k" href="#">
+				<div class="ugzhb_tops">
+					<div class="ugzhb_top_lis">
+						<img src="img/23.jpeg" />
+					</div>
+					<div class="ugzhb_top_lis">
+						<img src="img/23.jpeg" />
+					</div>
+					<div class="ugzhb_top_lis">
+						<img src="img/23.jpeg" />
+					</div>
+					<div class="ugzhb_top_lis">
+					</div>
+				</div>
+				<div class="ugzhbmc_txt">画板名称</div>
+				<div class="ugzhbmc_buts ygz_but">关注</div>
+			</a>
+			<a class="user_gzli_k" href="#">
+				<div class="ugzhb_tops">
+					<div class="ugzhb_top_lis">
+						<img src="img/23.jpeg" />
+					</div>
+					<div class="ugzhb_top_lis">
+						<img src="img/23.jpeg" />
+					</div>
+					<div class="ugzhb_top_lis">
+						<img src="img/23.jpeg" />
+					</div>
+					<div class="ugzhb_top_lis">
+					</div>
+				</div>
+				<div class="ugzhbmc_txt">画板名称</div>
+				<div class="ugzhbmc_buts">关注</div>
+			</a>
+			
+			<a class="user_gzli_k" href="#">
+				<img class="gz_userhed" src="img/sign_ico_wechat.png" />
+				<div class="pt_susername">用户名</div>
+				<div class="ugzhbmc_buts">关注</div>
+			</a>
+			<a class="user_gzli_k" href="#">
+				<img class="gz_userhed" src="img/sign_ico_wechat.png" />
+				<div class="pt_susername">用户名</div>
+				<div class="ugzhbmc_buts">关注</div>
+			</a>
+			
+			<a class="user_gzli_k" href="#">
+				<div class="gz_zt_lis">
+					<img src="img/zx.jpg" class="l_ztgzlt_ico" />
+					<div class="l_ztgzli_mb">装修</div>
+				</div>
+				<div class="ugzhbmc_buts">关注</div>
+			</a>
+			<a class="user_gzli_k" href="#">
+				<div class="gz_zt_lis">
+					<img src="img/zx.jpg" class="l_ztgzlt_ico" />
+					<div class="l_ztgzli_mb">装修</div>
+				</div>
+				<div class="ugzhbmc_buts">关注</div>
+			</a>
+			
+		</div>
+		
+		
+	</body>
+
+</html>
+
+<script>
+	
+	$(function(){
+		$('.user_gztp_li').click(function(){
+			if(!$(this).	hasClass('user_gztp_click')){
+				$(this).siblings().removeClass('user_gztp_click');
+				$(this).addClass('user_gztp_click');
+			}
+		})
+	})
+	
+</script>

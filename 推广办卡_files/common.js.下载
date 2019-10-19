@@ -1,0 +1,604 @@
+(function() {
+  var rem, dpr, time, doc = window.document,
+  docEl = doc.documentElement,
+  viewport = doc.querySelector('meta[name="viewport"]'),
+  zoomScale,
+  zoomScaleNum;
+  if (viewport) {
+      //console.warn("将根据已有的meta标签来设置缩放比例");
+      zoomScale = viewport.getAttribute("content").match(/initial\-scale=(["']?)([\d\.]+)\1?/);
+      if(zoomScale){
+          zoomScaleNum = parseFloat(zoomScale[2]);
+          dpr = parseInt(1 / zoomScaleNum);
+      }
+  }
+  if (!dpr && !zoomScaleNum) {
+      var os = (window.navigator.appVersion.match(/android/gi), window.navigator.appVersion.match(/iphone/gi)),
+      dpr = window.devicePixelRatio;
+      dpr = os ? dpr >= 3 ? 3 : dpr >= 2 ? 2 : 1 : 1;
+      zoomScaleNum = 1 / dpr;
+  }
+  window.addEventListener("resize",
+      function() {
+          clearTimeout(time);
+          time = setTimeout(changeRem, 300);
+      },false);
+  //改变基准rem
+  function changeRem(){
+      var docWidth = docEl.getBoundingClientRect().width;
+      if(docWidth / dpr > 540){
+          docWidth = 540 * dpr;
+      }
+      //rem字号以320下的16px为基线进行等比缩放
+      rem = docWidth/320 * 16;
+      //console.log(dpr);
+      //console.log(rem);
+      docEl.style.fontSize = rem + "px";
+  }
+  changeRem();
+
+  //判断ios8+，边框用0.5px宽度
+  if (/iP(hone|od|ad)/.test(navigator.userAgent)) {
+      var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/),
+          version = parseInt(v[1], 10);
+      if(version >= 8){
+          document.documentElement.classList.add('hairlines')
+      }
+  }
+})();
+$.cookie = function(name, value, options) {
+  if (typeof value != 'undefined') { // name and value given, set cookie
+      options = options || {};
+      if (value === null) {
+          value = '';
+          options.expires = -1;
+      }
+      var expires = '';
+      if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
+          var date;
+          if (typeof options.expires == 'number') {
+              date = new Date();
+              date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
+          } else {
+              date = options.expires;
+          }
+          expires = '; expires=' + date.toUTCString(); // use expires attribute, max-age is not supported by IE
+      }
+      var path = options.path ? '; path=' + options.path : '';
+      var domain = options.domain ? '; domain=' + options.domain : '';
+      var secure = options.secure ? '; secure' : '';
+      document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');
+  } else { // only name given, get cookie
+      var cookieValue = null;
+      if (document.cookie && document.cookie != '') {
+          var cookies = document.cookie.split(';');
+          for (var i = 0; i < cookies.length; i++) {
+              var cookie = $.trim(cookies[i]);
+              // Does this cookie string begin with the name we want?
+              if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                  cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                  break;
+              }
+          }
+      }
+      return cookieValue;
+  }
+};
+
+// 如果浏览器不支持使用Object.create创建对象时调用
+if (typeof Object.create !== "function") {
+  Object.create = function (proto, propertiesObject) {
+      if (typeof proto !== 'object' && typeof proto !== 'function') {
+          throw new TypeError('Object prototype may only be an Object: ' + proto);
+      } else if (proto === null) {
+          throw new Error("This browser's implementation of Object.create is a shim and doesn't support 'null' as the first argument.");
+      }
+      if (typeof propertiesObject != 'undefined') throw new Error("This browser's implementation of Object.create is a shim and doesn't support a second argument.");
+      function F() {}
+      F.prototype = proto;
+
+      return new F();
+  };
+}
+
+
+// 处理安卓手机输入法遮挡输入框问题
+if ((/Android/gi).test(navigator.userAgent)) {
+  window.addEventListener('resize', function () {
+      if (document.activeElement.tagName == 'INPUT' ||
+          document.activeElement.tagName == 'TEXTAREA') {
+          window.setTimeout(function () {
+              document.activeElement.scrollIntoViewIfNeeded();
+          }, 0);
+      }
+  });
+}
+
+/**
+ * 自定义Toast
+ */
+
+var Toast = function (o) {
+  this.content = o.content || '';
+  this.callback = o.callback || '';
+  this.icon = o.icon || '';   //success  fail
+}
+Toast.prototype.show = function () {
+  var callback = this.callback;
+  var icon = this.icon;
+  $('.custom-toast').remove();
+  var html = '<div class="custom-toast">';
+  if(icon != ''){
+    html += '<p class="icon icon-'+ icon +'"></p>';
+  }
+  html += '<p class="content">' + this.content + '</p></div>';
+  $('body').append(html);
+  var $toast = $('.custom-toast');
+  $toast.addClass('custom-toast-show');
+  setTimeout(function () {
+      $toast.removeClass('custom-toast-show').addClass('custom-toast-hide');
+      if(callback){
+        callback();
+      }
+  }, 2500);
+}
+
+/**
+ * 验证码获取
+ * 1.监听手机号，位数不够11位或者为空时，验证码按钮不可点击
+ * 2.图片验证码为空时，验证码按钮不可点击
+ * 3.“获取验证码”按钮点击之后，60s倒计时，60s后按钮改为“重新获取”
+ */
+var Authcode = {
+  clock: '',
+  light: function (dom, mobile, imgCode, className, hasImgCode) { 
+    if((mobile != '' && mobile.length == 11 && hasImgCode && imgCode != '')
+    || (mobile != '' && mobile.length == 11 && !hasImgCode)){
+      dom.addClass(className);
+    } else {
+      dom.removeClass(className);
+    }
+  },
+  getAuthcode : function (authDom, timeDom, className) {
+    var clock;
+    if(!authDom.hasClass(className))return;
+    var count = timeDom.text();
+    timeDom.css('display','block');
+    authDom.css('display', 'none');
+
+    clock = setInterval(function(){
+        if(count <= 0){
+          timeDom.css('display','none');
+          authDom.css('display', 'block');
+          timeDom.text(60);
+          authDom.text('重新获取');
+          clearInterval(clock);
+        } else {
+          count--;
+          timeDom.text(count);
+        }
+    },1000);
+    this.clock = clock;
+  },
+  clearAuthTime : function(authDom, timeDom, className){
+    timeDom.css('display','none');
+    authDom.css('display', 'block');
+    timeDom.text(60);
+    authDom.text('重新获取');
+    clearInterval(this.clock);
+  }
+};
+
+/**
+ * 表单验证
+ */
+var Validator = {
+  isNoEmpty: function (element, value, errMsg) {
+    if(value === ''){
+      return {
+        type: 'isEmpty',
+        errMsg: errMsg
+      }
+    }
+    return true;
+  },
+  maxlength: function(element, value, errMsg, length){
+    if(value.length > length){
+      return {
+        type: 'maxlength',
+        errMsg: errMsg
+      }
+    }
+    return true;
+  },
+  isID: function(element, value, errMsg){
+    var reg = /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/;
+    if(!reg.test(value)){
+      return {
+        type: 'isNoID',
+        errMsg: errMsg
+      }
+    }
+    return true;
+  },
+  isMobile: function(element, value, errMsg){
+    var reg = /[0-9]/;
+    if(!reg.test(value)){
+      return {
+        type: 'isNoMobile',
+        errMsg: errMsg
+      }
+    }
+    return true;
+  },
+  isChineseName: function(element, value, errMsg){
+    // var reg = /^([\u4E00-\uFA29]|[\uE7C7-\uE7F3]){2,}$/; 
+    var reg = /^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,}$/;
+    if(!reg.test(value)){
+      return {
+        type: 'isNoChineseName',
+        errMsg: errMsg
+      }
+    }
+    return true;
+  },
+  onlyNum: function(value){
+    var newValue = value;
+    newValue = newValue.replace(/[^\d.]/g,'');
+    newValue = newValue.replace(/\.{2}/g,'.');
+    newValue = newValue.replace('.','$#$').replace(/\./g,'').replace('$#$','.');
+    newValue = newValue.replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3');
+    if(newValue.indexOf('.')<0 && newValue !=''){
+      newValue = parseFloat(newValue);
+    }
+    return newValue;
+  },
+
+  // 车牌号校验，包括新能源
+  checkCarNum: function(value) {
+    var newValue = value.toUpperCase();
+    console.log(newValue);
+    var reg = /^([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z](([DF]((?![IO])[A-Z0-9](?![IO]))[0-9]{4})|([0-9]{5}[DF]))|[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1})$/;
+    // var reg = /([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}(([0-9]{5}[DF])|([DF]([A-HJ-NP-Z0-9])[0-9]{4})))|([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]{1})/;
+    
+    if(value == '') {
+      return {
+        type: false,
+        errMsg: '请输入车牌号'
+      }
+    }
+    
+    else if(!reg.test(newValue)) {
+      return {
+        type: false,
+        errMsg: '车牌号格式不正确'
+      }
+    }
+    return newValue;
+  }
+}
+
+/* 基础方法 */
+var baseFn = {
+  // 获取URL中参数
+  GetQueryString: function(name){
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if(r!=null)
+      return filterXSS(decodeURIComponent(r[2]).replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g, "&quot;").replace(/'/g, "&#039;"));
+  },
+  // 删除URL中参数
+  removeQueryString: function(name) {
+    var loca = window.location;
+    var baseUrl = loca.origin + loca.pathname + "?";
+    var query = loca.search.substr(1);
+    if (query.indexOf(name)>-1) {
+        var obj = {}
+        var arr = query.split("&");
+        for (var i = 0; i < arr.length; i++) {
+            arr[i] = arr[i].split("=");
+            obj[arr[i][0]] = arr[i][1];
+        };
+        delete obj[name];
+        var url = baseUrl + JSON.stringify(obj).replace(/[\"\{\}]/g,"").replace(/\:/g,"=").replace(/\,/g,"&");
+        return url
+    };
+  },
+  changeUrlArg: function(url, arg, val){
+    var pattern = arg+'=([^&]*)';
+    var replaceText = arg+'='+val;
+    return url.match(pattern) ? url.replace(eval('/('+ arg+'=)([^&]*)/gi'), replaceText) : (url.match('[\?]') ? url+'&'+replaceText : url+'?'+replaceText);
+  },
+
+  // 禁用微信分享功能
+  forbidShare: function(){
+    if(this.isApp()){
+      return false;
+    }
+    if (typeof WeixinJSBridge == "undefined") {
+      if (document.addEventListener) {
+          document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+      } else if (document.attachEvent) {
+          document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+          document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+      }
+    } else {
+      onBridgeReady();
+    }
+
+    function onBridgeReady() {
+      WeixinJSBridge.call('hideOptionMenu');
+    }
+  },
+
+  // 获取微信配置
+  getWxConfig: function(params){
+    var _this = this;
+    var jsApiList = ['checkJsApi'];
+    var platform_id = $.cookie('platform_id');
+    if(this.isApp()){
+      return false;
+    }
+    // if(platform_id == 1003){
+    //   jsApiList = jsApiList.concat(['hideMenuItems'])
+    // }
+    $.ajax({
+      type: 'get',
+      //url: 'https://www.rong360.com/apizg/outapi/weixinshare',
+      url: 'https://m.hhrcard.com/credit/miniprogram/copartner/WeixinShare',
+      dataType: 'jsonp',
+      jsonp: "callback",
+      data: {
+          url: location.href.split('#')[0]
+      },
+      success: function (result) {
+        console.log(result);
+          if (result.status == 0) {
+              wx.config({
+                debug: false,
+                appId: result.data.appid,
+                timestamp: result.data.timestamp,
+                nonceStr: result.data.noncestr,
+                signature: result.data.signature,
+                jsApiList: jsApiList.concat(params.jsApiList)
+              });
+              wx.ready(function(){
+                if(platform_id == 1003){
+                  _this.hideShare();
+                }
+                if(params.callback){
+                  params.callback();
+                }
+              });
+          }
+      },
+      error: function(err){
+        console.log('从后端获取微信配置失败:',err);
+      }
+    });
+  },
+
+  // 合伙人分享配置
+  shareConfig: function(params){
+    wx.onMenuShareTimeline({
+      title: params.title, // 分享标题
+      link: params.link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+      imgUrl: params.imgUrl, // 分享图标
+      success: function () { // 用户点击了分享后执行的回调函数
+        if(params.success){
+          params.success();
+        } else{
+          //alert('分享成功');
+        }
+      },
+      cancel: function(){
+        if(params.cancel){
+          params.cancel();
+        } else{
+          //alert('取消分享');
+        }
+      }
+    });
+    wx.onMenuShareAppMessage({
+      title: params.title, // 分享标题
+      desc: params.desc, // 分享描述
+      link: params.link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+      imgUrl: params.imgUrl, // 分享图标
+      type: params.type || '', // 分享类型,music、video或link，不填默认为link
+      dataUrl: params.dataType || '', // 如果type是music或video，则要提供数据链接，默认为空
+      success: function () { // 用户点击了分享后执行的回调函数
+        if(params.success){
+          params.success();
+        } else{
+          //alert('分享成功');
+        }
+      },
+      cancel: function(){
+        if(params.cancel){
+          params.cancel();
+        } else{
+          //alert('取消分享');
+        }
+      }
+    });
+  },
+
+  hideShare: function(){
+    wx.hideMenuItems({
+      menuList: [ // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮
+        "menuItem:share:appMessage",
+        "menuItem:share:timeline",
+        "menuItem:share:qq",
+        "menuItem:share:weiboApp",
+        "menuItem:favorite",
+        "menuItem:share:facebook",
+        "menuItem:share:QZone",
+        "menuItem:copyUrl",
+        "menuItem:openWithQQBrowser",
+        "menuItem:openWithSafari",
+        "menuItem:share:email"
+      ],
+      success: function(){
+        console.log('隐藏成功');
+      }
+    });
+  },
+
+  scrollToView: function(element){
+    element.scrollToView(false);
+  },
+
+  isApp: function(){
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.match(/hhrcard/i) == "hhrcard") {
+        return true;
+    } else {
+        return false;
+    }
+  },
+
+  isDaApp: function(){
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.match(/rong360/i) == "rong360") {
+        return true;
+    } else {
+        return false;
+    }
+  },
+
+  isAndroid: function(){
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.match(/android/i) == "android") {
+        return true;
+    } else {
+        return false;
+    }
+  },
+
+  isIos: function(){
+    var ua = navigator.userAgent.toLowerCase();
+    if (/(iphone|ipad|ipod|ios)/i.test(ua)) {
+        return true;
+    } else {
+        return false;
+    }
+  },
+
+  prevImages: function(sources, callback) {
+    var count = 0,
+    images ={},
+    imgNum = 0;
+    for(src in sources){
+        imgNum++;
+    }
+    for(src in sources){
+        images[src] = new Image();
+        images[src].src = sources[src];
+        images[src].onload = function(){
+            
+            if(++count >= imgNum){
+                callback(images);
+            }
+        }
+    }
+    
+  },
+
+  isWeixin: function() {
+    var ua = window.navigator.userAgent;
+    if(ua.match(/MicroMessenger/i) == 'MicroMessenger'){
+      return true;
+    }else{
+      return false;
+    }
+  },
+
+  //字数包括汉字
+  strLength: function(str) {
+    if(str){
+      return str.replace(/([^\x00-\xFF])/g,'..').length;
+    }else{
+      return 0;
+    }
+
+  },
+
+  refreshFlag: null,
+  refreshImg: function() {
+    clearTimeout(this.refreshFlag);
+    this.refreshFlag = setTimeout(function() {
+      $(".img-auth").attr("src", "https://m.hhrcard.com/copartnerpassport/vcode?t=" + Math.random());
+    }, 300);
+  }
+}
+function whenRNPostMessageReady(cb) {
+  if (window.postMessage.length !== 1) {
+    setTimeout(function () {
+      whenRNPostMessageReady(cb)
+    }, 200);
+  }
+  else {
+    cb();
+  }
+}
+window.whenRNPostMessageReady = whenRNPostMessageReady;
+
+$(function() {
+  //var baseFn = Object.create(baseFn);
+  //APP内隐藏原生titlebar
+  if(baseFn.isApp()){
+    if(baseFn.isAndroid()){
+      window.nativeMethod && window.nativeMethod.showTitleBar(0); //0隐藏  1显示
+    }else if(baseFn.isIos()){
+      window.location.href = 'hhrcardscheme://showTitleBar?show=0';
+      // window.whenRNPostMessageReady(function () {
+      //   window.postMessage(JSON.stringify({
+      //     "command": "showTitleBar",
+      //     "params": {
+      //       "show": 0 //1显示 0隐藏
+      //     }
+      //   }));
+      // });
+    }
+  }
+})
+
+
+//调用通用禁用分享
+// if($.cookie('platform_id') == 1002){
+//   var baseFn = Object.create(baseFn);
+//   // 隐藏微信分享
+//   baseFn.getWxConfig({
+//     jsApiList: ['hideMenuItems'],
+//     callback: function(){
+//       baseFn.hideShare();
+//     }
+//   })
+// }
+
+
+//调用通用禁用分享
+// if($.cookie('platform_id') == 1002){
+//   var baseFn = Object.create(baseFn);
+//   // 隐藏微信分享
+//   baseFn.getWxConfig({
+//     jsApiList: ['hideMenuItems'],
+//     callback: function(){
+//       baseFn.hideShare();
+//     }
+//   })
+// }
+
+/*绘制圆角矩形*/
+CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
+  if (w < 2 * r) r = w / 2;
+  if (h < 2 * r) r = h / 2;
+  this.beginPath();
+  this.moveTo(x+r, y);
+  this.arcTo(x+w, y, x+w, y+h, r);
+  this.arcTo(x+w, y+h, x, y+h, r);
+  this.arcTo(x, y+h, x, y, r);
+  this.arcTo(x, y, x+w, y, r);
+  this.closePath();
+  return this;
+}

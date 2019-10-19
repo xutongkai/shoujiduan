@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>分类</title>
+   		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+   		<link rel="stylesheet" href="css/swiper.min.css">
+   		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<body>
+		
+		<div class="x_news_header">
+			<div class="s_sh_box">
+				<img src="img/top_ico_search.png" alt="" class="search_t_icos" />
+				<input type="text" class="s_shb_input" placeholder="搜索" value="" />
+				<img src="img/ico_deleteall.png" alt="" class="s_ssh_img" />
+			</div>
+			<a href="#">
+				<img src="img/nav_ico_message.png" alt="" class="s_sh_img" />
+			</a>
+		</div>
+		
+		<div class="fl_wp_mids">
+			<div class="fl_mid_lf">
+				<div class="fl_mid_types fl_mtype_click">
+					家装参考
+				</div>
+				<div class="fl_mid_types">
+					家装参考
+				</div>
+				<div class="fl_mid_types">
+					家装参考
+				</div>
+				<div class="fl_mid_types">
+					家装参考
+				</div>
+				<div class="fl_mid_types">
+					家装参考
+				</div>
+				<div class="fl_mid_types">
+					家装参考
+				</div>
+				<div class="fl_mid_types">
+					家装参考
+				</div>
+				<div class="fl_mid_types">
+					家装参考
+				</div>
+				<div class="fl_mid_types">
+					家装参考
+				</div>
+				<div class="fl_mid_types">
+					家装参考
+				</div>
+				<div class="fl_mid_types">
+					家装参考
+				</div>
+			</div>
+			<div class="fl_mid_rg">
+				<div class="fl_mid_rtitle">
+					水龙头花洒
+				</div>
+				<div class="fl_mid_rlists">
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+					<a class="fl_mid_rli" href="#">面盆龙头</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="ss_tabbar">
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_home.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">主页</div>
+			</div>
+			<div class="ss_tabbar_list ss_tabbar_click">
+				<img src="img/tab_ico_classed.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">分类</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_follow.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">关注</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_notice.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">通知</div>
+			</div>
+			<div class="ss_tabbar_list">
+				<img src="img/tab_ico_me.png" alt="" class="ss_tl-img" />
+				<div class="ss_tl-text">已收藏</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
+
+
+<script>
+	$(function(){
+		/*输入框js*/
+		$('.s_ssh_img').click(function() {
+			$('.s_shb_input').val("");
+		})
+		$('.s_shb_input').on('input', function(e) {
+			if($(this).val().length) {
+				$('.s_ssh_img').show();
+			} else {
+				$('.s_ssh_img').hide();
+			}
+		})
+		$('.s_ssh_img').click(function() {
+			$('.s_shb_input').val('');
+			$(this).hide();
+		})
+	})
+</script>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://www.swiper.com.cn/demo/slides-scale.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/css.css"/>
+  <link rel="stylesheet" href="./renwulunbo3_files/swiper.min.css">
+  <!--<link rel="stylesheet" href="css/index.css">-->
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <script src="Swiper-3.4.2/dist/js/swiper.min.js"></script>
+  <script src="js/html2canvas.js"></script>
+  <script type="text/javascript" src="js/zepto.min.js.下载"></script>
+  <!--<link rel="stylesheet" type="text/css" href="css/customer.css">-->
+  <link rel="stylesheet" href="css/swiper-4.0.2.min.css">
+  <style>
+    .poster{width:100%;height:100%}
+	.poster .swiper-slide{padding:.74666667rem 0 0;min-height:26.66666667rem}
+	.poster .swiper-slide img{width:95%;display:block;margin:0 auto;-webkit-transform:scale(.95);-ms-transform:scale(.95);transform:scale(.95);-webkit-transition:.3s;-o-transition:.3s;transition:.3s}
+	.poster .swiper-slide .loading{height:26.66666667rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-justify-content:center;font-size:.90666667rem}
+	.poster .swiper-slide.swiper-slide-active img{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}
+	.poster .update{text-align:center;padding-bottom:.53333333rem}
+	.poster .update .p1{color:#333;font-size:.69333333rem;padding-top:.53333333rem;margin-bottom:.42666667rem}
+	.poster .update .p2.single{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-ms-flex-pack:distribute;justify-content:space-around;-webkit-align-items:center;-webkit-justify-content:space-around;margin:0 1.46666667rem}
+	.poster .update .p2 button{background-image:-webkit-gradient(linear,left top, right top,color-stop(1%, #4AB4FF),color-stop(97%, #2D7CF9));background-image:-webkit-linear-gradient(left,#4AB4FF 1%,#2D7CF9 97%);background-image:-o-linear-gradient(left,#4AB4FF 1%,#2D7CF9 97%);background-image:linear-gradient(90deg,#4AB4FF 1%,#2D7CF9 97%);-webkit-box-shadow:#B9DFFE 0 .10666667rem .53333333rem;box-shadow:#B9DFFE 0 .10666667rem .53333333rem;-webkit-border-radius:5.33333333rem;border-radius:5.33333333rem;font-size:.69333333rem;color:#FFF;display:inline-block;width:5.70666667rem;height:1.6rem;line-height:1.6rem;border:none;margin:0 1.06666667rem;outline:0}
+	.poster .update .p2 button span#loading{display:inline-block;width:.69333333rem;height:.69333333rem;position:relative;top:.08rem;right:.13333333rem}
+	.poster .tip{display:none;height:1.6rem;background-color:#FFFAEF;font-size:.64rem;color:#FC6900;text-align:center}
+	.poster .tip span{display:inline-block}
+	.poster .tip span:nth-of-type(1){position:absolute;top:.42666667rem;left:.8rem;width:.69333333rem;height:.69333333rem;background:url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient x1='77.13%25' y1='84.367%25' x2='0%25' y2='28.397%25' id='a'%3E%3Cstop stop-color='%23FC370C' offset='0%25'/%3E%3Cstop stop-color='%23FFB008' offset='100%25'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M10.126 1.504a.46.46 0 0 0-.241-.082.403.403 0 0 0-.403.403c0 .161.095.29.23.363a4.975 4.975 0 0 1 .003 8.601c-.13.071-.242.204-.242.369 0 .223.18.403.403.403.09 0 .16-.034.238-.079a5.774 5.774 0 0 0 .012-9.978zm.467 4.986c0-1.25-.677-2.34-1.685-2.927a.607.607 0 0 0-.228-.07.408.408 0 1 0-.204.759 2.574 2.574 0 0 1-.04 4.5.405.405 0 0 0 .21.752c.095 0 .208-.056.208-.056a3.384 3.384 0 0 0 1.739-2.958zM6.37.592c-.185.133-.655.483-1.449 1.067-1.38 1.017-1.782 1.186-1.863 1.213H1.329l-.029.001H.417a.403.403 0 0 0-.403.403V9.71c0 .223.18.402.403.402h2.961c.08.03.46.205 1.684 1.204.713.58 1.3 1.032 1.308 1.037.091.082.34.267.577.197.18-.053.29-.254.29-.447v-2.066a.396.396 0 0 0 .019-.123L7.236.882A.49.49 0 0 0 6.96.44c-.17-.082-.407 0-.59.152z' fill='url(%23a)' fill-rule='nonzero'/%3E%3C/svg%3E");-webkit-background-size:100% 100%;background-size:100% 100%}
+	.poster .tip span:nth-of-type(2){width:80%;margin-top:.4rem}
+	.poster .tip span:nth-of-type(3){position:absolute;top:.48rem;right:.8rem;width:.74666667rem;height:.74666667rem;background:url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(1 1)' fill='none' fill-rule='evenodd'%3E%3Ccircle stroke='%23FC6900' stroke-width='.5' cx='6' cy='6' r='6'/%3E%3Cpath d='M6 5.293l2.121-2.121.707.707L6.708 6l2.12 2.121-.707.707L6 6.708l-2.121 2.12-.707-.707L5.292 6l-2.12-2.121.707-.707L6 5.292z' fill='%23FC6900'/%3E%3C/g%3E%3C/svg%3E");-webkit-background-size:100% 100%;background-size:100% 100%}
+  </style>
+</head>
+<body>
+	  <div class="poster">
+	  <div class="swiper-container swiper-container-horizontal swiper-container-ios">
+		    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-508.296px, 0px, 0px);">
+		              <div class="swiper-slide" style="width: 277.519px; margin-right: 1px;"><img src="img/ico_share_banner@2x (1).png" alt=""></div>
+		              <div class="swiper-slide swiper-slide-prev" style="width: 277.519px; margin-right: 1px;"><img src="img/ico_share_banner@2x (1).png" alt=""></div>
+		              <div class="swiper-slide swiper-slide-active" style="width: 277.519px; margin-right: 1px;"><img src="img/ico_share_banner@2x (1).png" alt=""></div>
+		    </div>
+		  </div>
+		<!--</div>-->
+  <script src="js/swiper-4.0.2.min.js.下载"></script>
+  <script> 
+  var shareImg = '';
+  var mySwiper = new Swiper('.swiper-container', {
+    initialSlide :1,
+    slidesPerView: 1.35,//模块前后
+    centeredSlides: true,//选中tab居中
+    spaceBetween: 1,//tab间距
+    preventClicks: false,//阻止点击事件，false时，loop不能为true
+    effect:"slider",//coverflow,slider
+    on: {
+      slideChangeTransitionEnd: function(){
+        shareImg = $('.swiper-slide').eq(this.activeIndex).find('img').attr('src');
+      }
+    }
+  })
+  shareImg = $('.swiper-slide-active img').attr('src');
+
+  //分享回调
+  window.hhr_share = function(){
+    //location.href = 'hhrcardscheme://share?imgurl=' + encodeURIComponent(shareImg);
+    location.href = 'hhrcardscheme://share/?title=免费办理信用卡&desc=手机办卡最快1天领卡&imgurl=https%3A%2F%2Fstatic.rong360.com%2Fgl%2Fuploads%2Fallimg%2F180702%2F211_1130387721.png&page_url=' + encodeURIComponent(location.href);
+  }
+  //APP内保存海报
+  $("#saveBtn").click(function() {
+    if(baseFn.isAndroid()){
+      window.nativeMethod.saveImageToLocal(shareImg);
+    }else if(baseFn.isIos()){
+      window.whenRNPostMessageReady(function () {
+        window.postMessage(JSON.stringify({
+          "command": "saveImageToLocal",
+          "params": {
+          "imageUrl": shareImg
+          }
+        }));
+      });
+    }
+  })
+  </script>
+</body>
+</html>
